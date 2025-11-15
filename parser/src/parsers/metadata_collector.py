@@ -21,8 +21,9 @@ class MetadataCollector:
         Args:
             section: Section to process (mutates in place)
         """
-        # Count references
-        table_count = len(section.references.tables)
+        # Count references and tables
+        # Tables are stored at document root, section.references.table contains IDs
+        table_count = len(section.references.table)
         figure_count = len(section.references.figures)
         
         # Update metadata

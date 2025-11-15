@@ -34,7 +34,7 @@ class Section(BaseModel):
     )
     references: References = Field(
         default_factory=References,
-        description="References found in section"
+        description="References to tables, sections, figures, and external docs (IDs only, actual data stored at document root)"
     )
     metadata: Optional[Metadata] = Field(None, description="Section metadata")
 
@@ -56,6 +56,14 @@ class Document(BaseModel):
     chapters: list[Chapter] = Field(
         default_factory=list,
         description="Document chapters"
+    )
+    tables: dict[str, dict] = Field(
+        default_factory=dict,
+        description="All extracted tables: {table_id: {headers, rows, page, accuracy}}"
+    )
+    figures: dict[str, dict] = Field(
+        default_factory=dict,
+        description="All extracted figures: {figure_id: {data, page, ...}}"
     )
     
     def model_dump_json(self, **kwargs) -> str:

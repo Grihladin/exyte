@@ -7,7 +7,6 @@ from typing import Optional
 from ..models import (
     References,
     InternalSectionReference,
-    TableReference,
     FigureReference,
     ExternalDocumentReference,
     Position,
@@ -41,13 +40,13 @@ class ReferenceExtractor:
         
         # Extract each type of reference
         references.internal_sections = self._extract_internal_sections(text)
-        references.tables = self._extract_tables(text)
+        # NOTE: Tables are NOT part of references anymore - they're extracted by Camelot
+        # and added directly to section.tables (see pipeline.py _attach_tables_to_sections)
         references.figures = self._extract_figures(text)
         references.external_documents = self._extract_external_documents(text)
         
         total_refs = (
             len(references.internal_sections) +
-            len(references.tables) +
             len(references.figures) +
             len(references.external_documents)
         )
@@ -56,7 +55,6 @@ class ReferenceExtractor:
             logger.debug(
                 f"Extracted {total_refs} references: "
                 f"{len(references.internal_sections)} sections, "
-                f"{len(references.tables)} tables, "
                 f"{len(references.figures)} figures, "
                 f"{len(references.external_documents)} external"
             )
@@ -76,40 +74,17 @@ class ReferenceExtractor:
         pattern = PATTERNS['internal_section']
         
         for match in pattern.finditer(text):
+            # Extract just the section numbers, remove "Section" prefix
+            full_text = match.group(0)
+            # Extract numbers: "Section 414" -> "414", "Sections 308.4.1 through 308.4.5" -> "308.4.1 through 308.4.5"
+            # Handle case-insensitive: SECTION, Section, section
+            normalized = re.sub(r'\b[Ss]ections?\s+', '', full_text, flags=re.IGNORECASE)
+            
             ref = InternalSectionReference(
-                reference=match.group(0),
+                reference=normalized,
                 position=Position(start=match.start(), end=match.end())
             )
             references.append(ref)
-        
-        return references
-    
-    def _extract_tables(self, text: str) -> list[TableReference]:
-        """Extract table references.
-        
-        Args:
-            text: Text to scan
-            
-        Returns:
-            List of table references
-        """
-        references = []
-        seen_positions = set()
-        
-        # Try multiple table patterns
-        for pattern in PATTERNS['table']:
-            for match in pattern.finditer(text):
-                # Avoid duplicates from overlapping patterns
-                pos = (match.start(), match.end())
-                if pos in seen_positions:
-                    continue
-                seen_positions.add(pos)
-                
-                ref = TableReference(
-                    reference=match.group(0),
-                    position=Position(start=match.start(), end=match.end())
-                )
-                references.append(ref)
         
         return references
     
@@ -134,8 +109,15 @@ class ReferenceExtractor:
                     continue
                 seen_positions.add(pos)
                 
+                # Extract just the figure number, remove "Figure" or "Fig." prefix
+                full_text = match.group(0)
+                # "Figure 1.2" -> "1.2", "Fig. 3.4" -> "3.4", "FIGURE 5" -> "5"
+                # Handle case-insensitive
+                normalized = re.sub(r'\b[Ff]igures?\s+', '', full_text, flags=re.IGNORECASE)
+                normalized = re.sub(r'\bFig\.\s+', '', normalized, flags=re.IGNORECASE)
+                
                 ref = FigureReference(
-                    reference=match.group(0),
+                    reference=normalized,
                     position=Position(start=match.start(), end=match.end())
                 )
                 references.append(ref)
@@ -182,9 +164,10 @@ class ReferenceExtractor:
             new_refs = self.extract_references(section.text)
         else:
             new_refs = References()
-        # Preserve any pre-attached references (e.g., tables extracted via Camelot)
+        
+        # Preserve any pre-attached references and merge with new ones
         new_refs.internal_sections = existing_refs.internal_sections + new_refs.internal_sections
-        new_refs.tables = existing_refs.tables + new_refs.tables
+        new_refs.table = existing_refs.table  # Preserve table IDs added during extraction
         new_refs.figures = existing_refs.figures + new_refs.figures
         new_refs.external_documents = existing_refs.external_documents + new_refs.external_documents
         section.references = new_refs
@@ -194,8 +177,5 @@ class ReferenceExtractor:
             item_refs = self.extract_references(item.text)
             # Merge with section references
             section.references.internal_sections.extend(item_refs.internal_sections)
-            section.references.tables.extend(item_refs.tables)
             section.references.figures.extend(item_refs.figures)
             section.references.external_documents.extend(item_refs.external_documents)
-        
-        # No subsections to process; sections are flat

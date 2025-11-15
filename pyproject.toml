@@ -1,0 +1,13 @@
+[project]
+name = "parsing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "camelot-py>=1.0.9",
+    "pydantic>=2.12.4",
+    "pymupdf>=1.26.6",
+    "pypdf2>=3.0.1",
+    "tqdm>=4.67.1",
+]

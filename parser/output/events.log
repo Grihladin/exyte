@@ -1,922 +1,377 @@
-2025-11-15 22:21:09,968 - Page 32: Detected Chapter 1 - SCOPE AND ADMINISTRATION
-2025-11-15 22:21:10,133 - Page 44: Detected Chapter 2 - DEFINITIONS
-2025-11-15 22:21:10,179 - Page 47: Table hint detected
-2025-11-15 22:21:11,179 - Page 58: Table hint detected
-2025-11-15 22:21:12,042 - Page 58: Attached TABLE TYPE. to Section 16
-2025-11-15 22:21:12,057 - Page 59: Table hint detected
-2025-11-15 22:21:12,757 - Page 59: Attached Table 2506.2 to Section 16
-2025-11-15 22:21:12,867 - Page 66: Table hint detected
-2025-11-15 22:21:13,586 - Page 66: Attached table for to Section 16
-2025-11-15 22:21:13,631 - Page 69: Table hint detected
-2025-11-15 22:21:14,297 - Page 69: Attached Table 1613.2.3(1) to Section 16
-2025-11-15 22:21:14,399 - Page 76: Detected Chapter 3 - OCCUPANCY CLASSIFICATION AND USE
-2025-11-15 22:21:14,440 - Page 80: Table hint detected
-2025-11-15 22:21:14,991 - Page 80: Attached TABLE 307.1(1) to Section 307.1.1
-2025-11-15 22:21:15,007 - Page 81: Table hint detected
-2025-11-15 22:21:15,514 - Page 81: Attached TABLE 307.1(1) to Section 307.1.1
-2025-11-15 22:21:15,527 - Page 82: Table hint detected
-2025-11-15 22:21:16,005 - Page 82: Attached TABLE 307.1(2) to Section 307.4
-2025-11-15 22:21:16,019 - Page 83: Table hint detected
-2025-11-15 22:21:16,701 - Page 83: Attached Table 307.1(1) to Section 308.3.1
-2025-11-15 22:21:16,728 - Page 85: Table hint detected
-2025-11-15 22:21:17,392 - Page 85: Attached Table 414.2.5(1). to Section 310.5.1
-2025-11-15 22:21:17,392 - Page 85: Attached Page 85 Table 2 to Section 310.5.1
-2025-11-15 22:21:17,392 - Page 85: Attached Page 85 Table 3 to Section 310.5.1
-2025-11-15 22:21:17,403 - Page 86: Table hint detected
-2025-11-15 22:21:18,042 - Page 86: Attached Table 307.1(1) to Section 311.3
-2025-11-15 22:21:18,042 - Page 86: Attached Page 86 Table 2 to Section 311.3
-2025-11-15 22:21:18,059 - Page 88: Detected Chapter 4 - SPECIAL DETAILED REQUIREMENTS BASED ON OCCUPANCY AND USE
-2025-11-15 22:21:18,074 - Page 89: Table hint detected
-2025-11-15 22:21:18,766 - Page 89: Attached Table
-705.5. to Section 402.6
-2025-11-15 22:21:18,812 - Page 92: Table hint detected
-2025-11-15 22:21:19,503 - Page 92: Attached TABLE 601 to Section 403.2.1.2
-2025-11-15 22:21:19,519 - Page 93: Table hint detected
-2025-11-15 22:21:20,233 - Page 93: Attached Table 403.2.3. to Section 403.4.3
-2025-11-15 22:21:20,321 - Page 99: Table hint detected
-2025-11-15 22:21:21,040 - Page 99: Attached Table 406.5.4 to Section 406.5.2.1
-2025-11-15 22:21:21,054 - Page 100: Table hint detected
-2025-11-15 22:21:21,577 - Page 100: Attached Table 406.5.4 to Section 406.6.1
-2025-11-15 22:21:21,757 - Page 111: Table hint detected
-2025-11-15 22:21:22,297 - Page 111: Attached Table 412.2.1.1. to Section 412.2.2.3.2
-2025-11-15 22:21:22,326 - Page 113: Table hint detected
-2025-11-15 22:21:22,856 - Page 113: Attached Table 412.3.6. to Section 412.5
-2025-11-15 22:21:22,871 - Page 114: Table hint detected
-2025-11-15 22:21:23,365 - Page 114: Attached Table 307.1(1). to Section 412.7.4
-2025-11-15 22:21:23,380 - Page 115: Table hint detected
-2025-11-15 22:21:24,075 - Page 115: Attached Table 414.2.2. to Section 414.2.4
-2025-11-15 22:21:24,087 - Page 116: Table hint detected
-2025-11-15 22:21:24,585 - Page 116: Attached Table
-414.2.5(1). to Section 414.5.2
-2025-11-15 22:21:24,598 - Page 117: Table hint detected
-2025-11-15 22:21:25,082 - Page 117: Attached TABLE 414.2.5(1) to Section 414.5.2
-2025-11-15 22:21:25,082 - Page 117: Attached Table 414.2.2 to Section 414.5.2
-2025-11-15 22:21:25,091 - Page 118: Table hint detected
-2025-11-15 22:21:25,553 - Page 118: Attached TABLE 414.5.1 to Section 3
-2025-11-15 22:21:25,585 - Page 120: Table hint detected
-2025-11-15 22:21:26,301 - Page 120: Attached Table 415.6.5). to Section 415.8.5
-2025-11-15 22:21:26,315 - Page 121: Table hint detected
-2025-11-15 22:21:26,815 - Page 121: Attached TABLE 415.6.5 to Section 415.9.1.4
-2025-11-15 22:21:26,831 - Page 122: Table hint detected
-2025-11-15 22:21:27,522 - Page 122: Attached Table 415.11.1.1.1. to Section 415.11.1.3
-2025-11-15 22:21:27,531 - Page 123: Table hint detected
-2025-11-15 22:21:28,001 - Page 123: Attached TABLE 415.11.1.1.1 to Section 415.11.1.3
-2025-11-15 22:21:28,133 - Page 132: Table hint detected
-2025-11-15 22:21:28,820 - Page 132: Attached Table 1604.5 to Section 423.5.1
-2025-11-15 22:21:28,835 - Page 133: Table hint detected
-2025-11-15 22:21:29,527 - Page 133: Attached Table 803.13 to Section 426.1
-2025-11-15 22:21:29,527 - Page 133: Attached Page 133 Table 2 to Section 426.1
-2025-11-15 22:21:29,527 - Page 133: Attached Page 133 Table 3 to Section 426.1
-2025-11-15 22:21:29,545 - Page 134: Table hint detected
-2025-11-15 22:21:30,334 - Page 134: Attached TABLE 307.1(1) to Section 427.2.2
-2025-11-15 22:21:30,334 - Page 134: Attached TABLE
-307.1(2) to Section 427.2.2
-2025-11-15 22:21:30,347 - Page 135: Table hint detected
-2025-11-15 22:21:30,865 - Page 135: Attached Table 428.3. to Section 428.3.2
-2025-11-15 22:21:30,872 - Page 136: Table hint detected
-2025-11-15 22:21:31,441 - Page 136: Attached Table
-428.3. to Section 428.3.9
-2025-11-15 22:21:31,457 - Page 138: Detected Chapter 5 - GENERAL BUILDING HEIGHTS AND AREAS
-2025-11-15 22:21:31,457 - Page 138: Table hint detected
-2025-11-15 22:21:32,151 - Page 138: Attached Table 504.4 to Section 502.1
-2025-11-15 22:21:32,166 - Page 139: Table hint detected
-2025-11-15 22:21:32,846 - Page 139: Attached Table 504.3. to Section 505.1
-2025-11-15 22:21:32,846 - Page 139: Attached Table 504.4. to Section 505.1
-2025-11-15 22:21:32,859 - Page 140: Table hint detected
-2025-11-15 22:21:33,435 - Page 140: Attached TABLE 504.3 to Section 505.1
-2025-11-15 22:21:33,442 - Page 141: Table hint detected
-2025-11-15 22:21:34,332 - Page 141: Attached TABLE 504.4 to Section 505.1
-2025-11-15 22:21:34,344 - Page 142: Table hint detected
-2025-11-15 22:21:34,924 - Page 142: Attached TABLE 504.4 to Section 505.3.3
-2025-11-15 22:21:34,940 - Page 143: Table hint detected
-2025-11-15 22:21:35,676 - Page 143: Attached Table 506.2. to Section 506.3.1
-2025-11-15 22:21:35,686 - Page 144: Table hint detected
-2025-11-15 22:21:36,528 - Page 144: Attached TABLE 506.2 to Section 506.3.1
-2025-11-15 22:21:36,539 - Page 145: Table hint detected
-2025-11-15 22:21:37,420 - Page 145: Attached TABLE 506.2 to Section 506.3.1
-2025-11-15 22:21:37,433 - Page 146: Table hint detected
-2025-11-15 22:21:37,943 - Page 146: Attached Table 506.3.3. to Section 507.1.1
-2025-11-15 22:21:37,943 - Page 146: Attached Table 506.3.3.1. to Section 507.1.1
-2025-11-15 22:21:37,974 - Page 148: Table hint detected
-2025-11-15 22:21:38,657 - Page 148: Attached Table 508.4. to Section 507.12
-2025-11-15 22:21:38,672 - Page 149: Table hint detected
-2025-11-15 22:21:39,371 - Page 149: Attached Table 415.6.5 to Section 508.4.1
-2025-11-15 22:21:39,385 - Page 150: Table hint detected
-2025-11-15 22:21:39,983 - Page 150: Attached Table 508.4. to Section 508.5.2
-2025-11-15 22:21:39,996 - Page 151: Table hint detected
-2025-11-15 22:21:40,468 - Page 151: Attached Table 1004.5. to Section 508.5.11
-2025-11-15 22:21:40,484 - Page 152: Table hint detected
-2025-11-15 22:21:41,230 - Page 152: Attached Table 509.1 to Section 510.2
-2025-11-15 22:21:41,247 - Page 153: Table hint detected
-2025-11-15 22:21:41,964 - Page 153: Attached Table 406.5.4. to Section 510.8
-2025-11-15 22:21:41,985 - Page 156: Detected Chapter 6 - TYPES OF CONSTRUCTION
-2025-11-15 22:21:41,985 - Page 156: Table hint detected
-2025-11-15 22:21:42,489 - Page 156: Attached Table 601 to Section 602.1.1
-2025-11-15 22:21:42,506 - Page 157: Table hint detected
-2025-11-15 22:21:43,298 - Page 157: Attached Table 601. to Section 602.4.2.1
-2025-11-15 22:21:43,313 - Page 158: Table hint detected
-2025-11-15 22:21:44,055 - Page 158: Attached Table 722.7.1(1). to Section 602.4.2.5
-2025-11-15 22:21:44,055 - Page 158: Attached Table 722.7.1(1) to Section 602.4.2.5
-2025-11-15 22:21:44,071 - Page 159: Table hint detected
-2025-11-15 22:21:44,787 - Page 159: Attached Table
-722.7.1(1). to Section 602.4.4.4
-2025-11-15 22:21:44,800 - Page 160: Table hint detected
-2025-11-15 22:21:45,515 - Page 160: Attached Table 601 to Section 603.1
-2025-11-15 22:21:45,515 - Page 160: Attached Page 160 Table 2 to Section 603.1
-2025-11-15 22:21:45,515 - Page 160: Attached Page 160 Table 3 to Section 603.1
-2025-11-15 22:21:45,537 - Page 162: Detected Chapter 7 - FIRE AND SMOKE PROTECTION FEATURES
-2025-11-15 22:21:45,553 - Page 163: Table hint detected
-2025-11-15 22:21:46,290 - Page 163: Attached Table 716.1(1) to Section 704.1
-2025-11-15 22:21:46,308 - Page 164: Table hint detected
-2025-11-15 22:21:47,041 - Page 164: Attached Table 601 to Section 704.12
-2025-11-15 22:21:47,055 - Page 165: Table hint detected
-2025-11-15 22:21:47,731 - Page 165: Attached Table 705.2. to Section 705.2
-2025-11-15 22:21:47,731 - Page 165: Attached Page 165 Table 2 to Section 705.2
-2025-11-15 22:21:47,731 - Page 165: Attached Page 165 Table 3 to Section 705.2
-2025-11-15 22:21:47,747 - Page 166: Table hint detected
-2025-11-15 22:21:48,288 - Page 166: Attached TABLE 705.2 to Section 705.2.3.1
-2025-11-15 22:21:48,303 - Page 167: Table hint detected
-2025-11-15 22:21:48,822 - Page 167: Attached Table 601 to Section 705.8.2
-2025-11-15 22:21:48,916 - Page 169: Table hint detected
-2025-11-15 22:21:49,399 - Page 169: Attached TABLE 705.8 to Section 705.8.5
-2025-11-15 22:21:49,414 - Page 170: Table hint detected
-2025-11-15 22:21:50,121 - Page 170: Attached Table 705.5 to Section 705.11.1
-2025-11-15 22:21:50,122 - Page 170: Attached Page 170 Table 2 to Section 705.11.1
-2025-11-15 22:21:50,137 - Page 171: Table hint detected
-2025-11-15 22:21:50,676 - Page 171: Attached Table
-706.4. to Section 706.5.2
-2025-11-15 22:21:50,706 - Page 173: Table hint detected
-2025-11-15 22:21:51,238 - Page 173: Attached Table 509.1. to Section 707.3.9
-2025-11-15 22:21:51,253 - Page 174: Table hint detected
-2025-11-15 22:21:51,964 - Page 174: Attached Table 601 to Section 707.7.1
-2025-11-15 22:21:51,980 - Page 175: Table hint detected
-2025-11-15 22:21:52,715 - Page 175: Attached Table 1020.2. to Section 708.4.1
-2025-11-15 22:21:52,745 - Page 177: Table hint detected
-2025-11-15 22:21:53,433 - Page 177: Attached Table 509.1 to Section 711.2.3
-2025-11-15 22:21:53,433 - Page 177: Attached Page 177 Table 2 to Section 711.2.3
-2025-11-15 22:21:53,433 - Page 177: Attached Page 177 Table 3 to Section 711.2.3
-2025-11-15 22:21:53,479 - Page 180: Table hint detected
-2025-11-15 22:21:54,184 - Page 180: Attached Table 601. to Section 713.8.1
-2025-11-15 22:21:54,184 - Page 180: Attached Page 180 Table 2 to Section 713.8.1
-2025-11-15 22:21:54,184 - Page 180: Attached Page 180 Table 3 to Section 713.8.1
-2025-11-15 22:21:54,201 - Page 181: Table hint detected
-2025-11-15 22:21:54,952 - Page 181: Attached Table 509.1Waste to Section 714.4.1
-2025-11-15 22:21:55,019 - Page 186: Table hint detected
-2025-11-15 22:21:55,505 - Page 186: Attached TABLE 716.1(1) to Section 716.1.2.2.1
-2025-11-15 22:21:55,506 - Page 186: Attached TABLE 716.1(2) to Section 716.1.2.2.1
-2025-11-15 22:21:55,513 - Page 187: Table hint detected
-2025-11-15 22:21:55,993 - Page 187: Attached TABLE 716.1(2) to Section 716.1.2.2.1
-2025-11-15 22:21:56,006 - Page 188: Table hint detected
-2025-11-15 22:21:56,480 - Page 188: Attached Table 716.1(1). to Section 716.1.2.3
-2025-11-15 22:21:56,496 - Page 189: Table hint detected
-2025-11-15 22:21:57,232 - Page 189: Attached Table
-716.1(2). to Section 716.2.2.3.1
-2025-11-15 22:21:57,247 - Page 190: Table hint detected
-2025-11-15 22:21:57,954 - Page 190: Attached Table
-716.1(2). to Section 716.2.6.6
-2025-11-15 22:21:57,969 - Page 191: Table hint detected
-2025-11-15 22:21:58,698 - Page 191: Attached Table 716.1(1) to Section 716.3.1.1
-2025-11-15 22:21:58,714 - Page 192: Table hint detected
-2025-11-15 22:21:59,407 - Page 192: Attached Table
-716.1(3). to Section 716.4.3
-2025-11-15 22:21:59,422 - Page 193: Table hint detected
-2025-11-15 22:21:59,955 - Page 193: Attached Table 717.3.2.1. to Section 717.3.3.1
-2025-11-15 22:22:00,070 - Page 201: Table hint detected
-2025-11-15 22:22:00,809 - Page 201: Attached Table 721.1(1) to Section 721.1.5
-2025-11-15 22:22:00,821 - Page 202: Table hint detected
-2025-11-15 22:22:01,322 - Page 202: Attached TABLE 721.1(1) to Section 721.1.5
-2025-11-15 22:22:01,336 - Page 203: Table hint detected
-2025-11-15 22:22:01,838 - Page 203: Attached TABLE 721.1(1) to Section 721.1.5
-2025-11-15 22:22:01,850 - Page 204: Table hint detected
-2025-11-15 22:22:02,326 - Page 204: Attached TABLE 721.1(1) to Section 721.1.5
-2025-11-15 22:22:02,339 - Page 205: Table hint detected
-2025-11-15 22:22:02,836 - Page 205: Attached TABLE 721.1(1) to Section 721.1.5
-2025-11-15 22:22:02,846 - Page 206: Table hint detected
-2025-11-15 22:22:03,331 - Page 206: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:03,342 - Page 207: Table hint detected
-2025-11-15 22:22:03,830 - Page 207: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:03,843 - Page 208: Table hint detected
-2025-11-15 22:22:04,345 - Page 208: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:04,357 - Page 209: Table hint detected
-2025-11-15 22:22:04,815 - Page 209: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:04,827 - Page 210: Table hint detected
-2025-11-15 22:22:05,313 - Page 210: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:05,325 - Page 211: Table hint detected
-2025-11-15 22:22:05,816 - Page 211: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:05,828 - Page 212: Table hint detected
-2025-11-15 22:22:06,320 - Page 212: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:06,337 - Page 213: Table hint detected
-2025-11-15 22:22:06,859 - Page 213: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:06,871 - Page 214: Table hint detected
-2025-11-15 22:22:07,384 - Page 214: Attached TABLE 721.1(2) to Section 721.1.5
-2025-11-15 22:22:07,393 - Page 215: Table hint detected
-2025-11-15 22:22:07,881 - Page 215: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:07,889 - Page 216: Table hint detected
-2025-11-15 22:22:08,322 - Page 216: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:08,330 - Page 217: Table hint detected
-2025-11-15 22:22:08,815 - Page 217: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:08,821 - Page 218: Table hint detected
-2025-11-15 22:22:09,288 - Page 218: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:09,292 - Page 219: Table hint detected
-2025-11-15 22:22:09,728 - Page 219: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:09,733 - Page 220: Table hint detected
-2025-11-15 22:22:10,144 - Page 220: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:10,150 - Page 221: Table hint detected
-2025-11-15 22:22:10,609 - Page 221: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:10,619 - Page 222: Table hint detected
-2025-11-15 22:22:11,108 - Page 222: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:11,117 - Page 223: Table hint detected
-2025-11-15 22:22:11,591 - Page 223: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:11,604 - Page 224: Table hint detected
-2025-11-15 22:22:12,278 - Page 224: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:12,294 - Page 225: Table hint detected
-2025-11-15 22:22:12,809 - Page 225: Attached TABLE 721.1(3) to Section 721.1.5
-2025-11-15 22:22:12,824 - Page 226: Table hint detected
-2025-11-15 22:22:13,334 - Page 226: Attached Table 722.2.1.1. to Section 722.2.1.2.2
-2025-11-15 22:22:13,342 - Page 227: Table hint detected
-2025-11-15 22:22:13,854 - Page 227: Attached TABLE 722.2.1.2(1) to Section 0.59
-2025-11-15 22:22:13,854 - Page 227: Attached TABLE 722.2.1.2(2) to Section 0.59
-2025-11-15 22:22:13,868 - Page 228: Table hint detected
-2025-11-15 22:22:14,405 - Page 228: Attached Table 705.8. to Section 1
-2025-11-15 22:22:14,405 - Page 228: Attached Table 705.8. to Section 1
-2025-11-15 22:22:14,405 - Page 228: Attached Table 722.2.1.4(1) to Section 1
-2025-11-15 22:22:14,418 - Page 229: Table hint detected
-2025-11-15 22:22:14,933 - Page 229: Attached Table
-722.2.2.1. to Section 722.2.2.1.2
-2025-11-15 22:22:14,933 - Page 229: Attached TABLE 722.2.2.1 to Section 722.2.2.1.2
-2025-11-15 22:22:14,945 - Page 230: Table hint detected
-2025-11-15 22:22:15,662 - Page 230: Attached Table 722.2.2.1 to Section 722.2.3.1
-2025-11-15 22:22:15,662 - Page 230: Attached Table 722.2.3(1) to Section 722.2.3.1
-2025-11-15 22:22:15,676 - Page 231: Table hint detected
-2025-11-15 22:22:16,566 - Page 231: Attached Table 722.2.3(3) to Section 722.2.3.3.1
-2025-11-15 22:22:16,581 - Page 232: Table hint detected
-2025-11-15 22:22:17,087 - Page 232: Attached TABLE 722.2.4 to Section 722.2.4.2
-2025-11-15 22:22:17,088 - Page 232: Attached Table 722.2.4. to Section 722.2.4.2
-2025-11-15 22:22:17,088 - Page 232: Attached TABLE 722.2.3(1) to Section 722.2.4.2
-2025-11-15 22:22:17,088 - Page 232: Attached TABLE 722.2.3(2) to Section 722.2.4.2
-2025-11-15 22:22:17,101 - Page 233: Table hint detected
-2025-11-15 22:22:17,613 - Page 233: Attached Table 722.2.4 to Section 722.2.4.4
-2025-11-15 22:22:17,613 - Page 233: Attached TABLE 722.2.3(4) to Section 722.2.4.4
-2025-11-15 22:22:17,630 - Page 234: Table hint detected
-2025-11-15 22:22:18,172 - Page 234: Attached Table 722.3.2. to Section 722.3.2.5
-2025-11-15 22:22:18,184 - Page 235: Table hint detected
-2025-11-15 22:22:18,713 - Page 235: Attached Table 722.3.4 to Section 722.4.1.1
-2025-11-15 22:22:18,713 - Page 235: Attached TABLE 722.3.4 to Section 722.4.1.1
-2025-11-15 22:22:18,713 - Page 235: Attached Table 722.3.5 to Section 722.4.1.1
-2025-11-15 22:22:18,713 - Page 235: Attached TABLE 722.3.5 to Section 722.4.1.1
-2025-11-15 22:22:18,713 - Page 235: Attached TABLE 722.4.1(3) to Section 722.4.1.1
-2025-11-15 22:22:18,726 - Page 236: Table hint detected
-2025-11-15 22:22:19,240 - Page 236: Attached TABLE 722.4.1(1) to Section 722.4.1.1.3
-2025-11-15 22:22:19,240 - Page 236: Attached TABLE 722.4.1(2) to Section 722.4.1.1.3
-2025-11-15 22:22:19,302 - Page 237: Table hint detected
-2025-11-15 22:22:20,090 - Page 237: Attached Table 722.4.1(3). to Section 722.5.1.1.3
-2025-11-15 22:22:20,090 - Page 237: Attached Table 722.4.1(4) to Section 722.5.1.1.3
-2025-11-15 22:22:20,090 - Page 237: Attached Table 722.4.1(3). to Section 722.5.1.1.3
-2025-11-15 22:22:20,096 - Page 238: Table hint detected
-2025-11-15 22:22:20,588 - Page 238: Attached TABLE 722.5.1(1) to Section 722.5.1.1.3
-2025-11-15 22:22:20,588 - Page 238: Attached TABLE 722.5.1(1) to Section 722.5.1.1.3
-2025-11-15 22:22:20,592 - Page 239: Table hint detected
-2025-11-15 22:22:20,990 - Page 239: Attached TABLE 722.5.1(2) to Section 0.20
-2025-11-15 22:22:20,990 - Page 239: Attached TABLE 722.5.1(3) to Section 0.20
-2025-11-15 22:22:20,997 - Page 240: Table hint detected
-2025-11-15 22:22:21,556 - Page 240: Attached TABLE 722.5.1(4) to Section 0.20
-2025-11-15 22:22:21,556 - Page 240: Attached TABLE 722.5.1(4) to Section 0.20
-2025-11-15 22:22:21,563 - Page 241: Table hint detected
-2025-11-15 22:22:22,063 - Page 241: Attached TABLE 722.5.1(4) to Section 0.20
-2025-11-15 22:22:22,063 - Page 241: Attached TABLE 722.5.1(4) to Section 0.20
-2025-11-15 22:22:22,073 - Page 242: Table hint detected
-2025-11-15 22:22:22,863 - Page 242: Attached TABLE 722.5.1(5) to Section 0.20
-2025-11-15 22:22:22,864 - Page 242: Attached TABLE 722.5.1(5) to Section 0.20
-2025-11-15 22:22:22,874 - Page 243: Table hint detected
-2025-11-15 22:22:23,490 - Page 243: Attached TABLE 722.5.1(5) to Section 0.20
-2025-11-15 22:22:23,490 - Page 243: Attached TABLE 722.5.1(5) to Section 0.20
-2025-11-15 22:22:23,502 - Page 244: Table hint detected
-2025-11-15 22:22:24,074 - Page 244: Attached TABLE 722.5.1(6) to Section 0.20
-2025-11-15 22:22:24,080 - Page 245: Table hint detected
-2025-11-15 22:22:24,550 - Page 245: Attached TABLE 722.5.1(7) to Section 0.20
-2025-11-15 22:22:24,550 - Page 245: Attached Table 722.5.1(2). to Section 0.20
-2025-11-15 22:22:24,557 - Page 246: Table hint detected
-2025-11-15 22:22:25,074 - Page 246: Attached TABLE 722.5.1(9) to Section 0.20
-2025-11-15 22:22:25,074 - Page 246: Attached Table 722.5.1(2). to Section 0.20
-2025-11-15 22:22:25,129 - Page 248: Table hint detected
-2025-11-15 22:22:25,759 - Page 248: Attached Table
-722.5.1(1). to Section 3
-2025-11-15 22:22:25,784 - Page 250: Table hint detected
-2025-11-15 22:22:26,547 - Page 250: Attached Table 722.5.1(2) to Section 722.5.1.4.5
-2025-11-15 22:22:26,584 - Page 251: Table hint detected
-2025-11-15 22:22:27,347 - Page 251: Attached Table 722.5.1(4). to Section 722.6.1.1
-2025-11-15 22:22:27,361 - Page 252: Table hint detected
-2025-11-15 22:22:27,863 - Page 252: Attached Table
-722.6.2(1) to Section 722.6.2.6
-2025-11-15 22:22:27,874 - Page 253: Table hint detected
-2025-11-15 22:22:28,376 - Page 253: Attached Table 722.7.1(1). to Section 722.7.2.1
-2025-11-15 22:22:28,376 - Page 253: Attached Table
-722.7.1(2) to Section 722.7.2.1
-2025-11-15 22:22:28,376 - Page 253: Attached Table
-722.7.1(2) to Section 722.7.2.1
-2025-11-15 22:22:28,386 - Page 254: Table hint detected
-2025-11-15 22:22:28,835 - Page 254: Attached Table 722.7.1(1) to Section 722.7.2.2
-2025-11-15 22:22:28,849 - Page 256: Detected Chapter 8 - INTERIOR FINISHES
-2025-11-15 22:22:28,865 - Page 257: Table hint detected
-2025-11-15 22:22:29,625 - Page 257: Attached Table 803.13 to Section 803.9
-2025-11-15 22:22:29,640 - Page 258: Table hint detected
-2025-11-15 22:22:30,164 - Page 258: Attached Table 803.13 to Section 803.15.1.1
-2025-11-15 22:22:30,215 - Page 262: Detected Chapter 9 - FIRE PROTECTION AND LIFE SAFETY SYSTEMS
-2025-11-15 22:22:30,258 - Page 265: Table hint detected
-2025-11-15 22:22:30,788 - Page 265: Attached Table 903.2.5.2. to Section 903.2.9
-2025-11-15 22:22:30,817 - Page 267: Table hint detected
-2025-11-15 22:22:31,362 - Page 267: Attached Table 903.2.11.6 to Section 903.3.1.1.1
-2025-11-15 22:22:31,477 - Page 275: Table hint detected
-2025-11-15 22:22:32,315 - Page 275: Attached Table 906.1. to Section 906.2
-2025-11-15 22:22:32,315 - Page 275: Attached Page 275 Table 2 to Section 906.2
-2025-11-15 22:22:32,315 - Page 275: Attached Page 275 Table 3 to Section 906.2
-2025-11-15 22:22:32,328 - Page 276: Table hint detected
-2025-11-15 22:22:32,913 - Page 276: Attached TABLE 906.3(1) to Section 906.3.3
-2025-11-15 22:22:32,913 - Page 276: Attached TABLE 906.3(2) to Section 906.3.3
-2025-11-15 22:22:32,913 - Page 276: Attached Table 906.3(1). to Section 906.3.3
-2025-11-15 22:22:33,072 - Page 287: Table hint detected
-2025-11-15 22:22:33,606 - Page 287: Attached Table
-907.5.2.3.2 to Section 907.6.2
-2025-11-15 22:22:33,768 - Page 297: Table hint detected
-2025-11-15 22:22:34,507 - Page 297: Attached Table 3206.2 to Section 910.2.2
-2025-11-15 22:22:34,609 - Page 304: Detected Chapter 10 - MEANS OF EGRESS
-2025-11-15 22:22:34,609 - Page 304: Table hint detected
-2025-11-15 22:22:35,280 - Page 304: Attached table in to Section 1002.1
-2025-11-15 22:22:35,280 - Page 304: Attached Page 304 Table 2 to Section 1002.2
-2025-11-15 22:22:35,310 - Page 306: Table hint detected
-2025-11-15 22:22:35,864 - Page 306: Attached Table 1004.5. to Section 1004.5.1
-2025-11-15 22:22:35,880 - Page 307: Table hint detected
-2025-11-15 22:22:36,628 - Page 307: Attached Table 1030.6.2 to Section 1005.3.2
-2025-11-15 22:22:36,644 - Page 308: Table hint detected
-2025-11-15 22:22:37,378 - Page 308: Attached Table 1006.2.1. to Section 1006.2.2.2
-2025-11-15 22:22:37,378 - Page 308: Attached Page 308 Table 2 to Section 1006.2.2.2
-2025-11-15 22:22:37,378 - Page 308: Attached Page 308 Table 3 to Section 1006.2.2.2
-2025-11-15 22:22:37,390 - Page 309: Table hint detected
-2025-11-15 22:22:37,904 - Page 309: Attached TABLE 1006.2.1 to Section 1006.2.2.6
-2025-11-15 22:22:37,919 - Page 310: Table hint detected
-2025-11-15 22:22:38,463 - Page 310: Attached Table
-1006.3.3. to Section 1006.3.1
-2025-11-15 22:22:38,476 - Page 311: Table hint detected
-2025-11-15 22:22:38,961 - Page 311: Attached TABLE 1006.3.4(2) to Section 1007.1.1.1
-2025-11-15 22:22:39,119 - Page 322: Table hint detected
-2025-11-15 22:22:39,675 - Page 322: Attached Table 1010.3.1(1). to Section 1010.3.1
-2025-11-15 22:22:39,689 - Page 323: Table hint detected
-2025-11-15 22:22:40,223 - Page 323: Attached TABLE 1010.3.1(2) to Section 1010.3.2
-2025-11-15 22:22:40,400 - Page 335: Table hint detected
-2025-11-15 22:22:40,936 - Page 335: Attached Table 1017.2. to Section 1017.3.2.1
-2025-11-15 22:22:40,965 - Page 337: Table hint detected
-2025-11-15 22:22:41,502 - Page 337: Attached Table 1020.2. to Section 1020.2.1
-2025-11-15 22:22:41,502 - Page 337: Attached Table 705.5 to Section 1020.2.1
-2025-11-15 22:22:41,650 - Page 347: Table hint detected
-2025-11-15 22:22:42,189 - Page 347: Attached Table 1030.6.2. to Section 1030.6.3
-2025-11-15 22:22:42,234 - Page 350: Table hint detected
-2025-11-15 22:22:42,978 - Page 350: Attached table or to Section 1030.14
-2025-11-15 22:22:42,992 - Page 351: Table hint detected
-2025-11-15 22:22:43,517 - Page 351: Attached TABLE 1030.13.2.1 to Section 1030.14.2.4
-2025-11-15 22:22:43,571 - Page 356: Detected Chapter 11 - ACCESSIBILITY
-2025-11-15 22:22:43,599 - Page 358: Table hint detected
-2025-11-15 22:22:44,335 - Page 358: Attached Table
-1105.1.1 to Section 1105.1.5
-2025-11-15 22:22:44,350 - Page 359: Table hint detected
-2025-11-15 22:22:44,923 - Page 359: Attached Table
-1106.2 to Section 1106.9.1
-2025-11-15 22:22:44,969 - Page 362: Table hint detected
-2025-11-15 22:22:45,470 - Page 362: Attached Table 1108.6.1.1. to Section 1108.6.2.1
-2025-11-15 22:22:45,487 - Page 363: Table hint detected
-2025-11-15 22:22:46,247 - Page 363: Attached Table 1108.6.1.1. to Section 1108.7.1.2
-2025-11-15 22:22:46,261 - Page 364: Table hint detected
-2025-11-15 22:22:46,798 - Page 364: Attached Table 1109.2.2.1. to Section 1109.2.2.1
-2025-11-15 22:22:46,812 - Page 365: Table hint detected
-2025-11-15 22:22:47,405 - Page 365: Attached Table 1109.2.7.1. to Section 1109.2.8
-2025-11-15 22:22:47,421 - Page 366: Table hint detected
-2025-11-15 22:22:48,213 - Page 366: Attached Table 1109.3. to Section 1110.1
-2025-11-15 22:22:48,213 - Page 366: Attached TABLE 1109.3 to Section 1110.1
-2025-11-15 22:22:48,213 - Page 366: Attached Table 1109.3. to Section 1110.1
-2025-11-15 22:22:48,213 - Page 366: Attached Table 1109.2.2.1. to Section 1110.1
-2025-11-15 22:22:48,284 - Page 370: Table hint detected
-2025-11-15 22:22:49,154 - Page 370: Attached Table 1110.13.1. to Section 1111.1
-2025-11-15 22:22:49,175 - Page 371: Table hint detected
-2025-11-15 22:22:49,987 - Page 371: Attached Table 1111.4.9.1. to Section 1111.4.9
-2025-11-15 22:22:49,987 - Page 371: Attached Page 371 Table 2 to Section 1111.4.9
-2025-11-15 22:22:49,987 - Page 371: Attached Page 371 Table 3 to Section 1111.4.9
-2025-11-15 22:22:50,000 - Page 372: Table hint detected
-2025-11-15 22:22:50,532 - Page 372: Attached TABLE 1111.4.9.1 to Section 1111.4.14.2
-2025-11-15 22:22:50,560 - Page 374: Detected Chapter 12 - INTERIOR ENVIRONMENT
-2025-11-15 22:22:50,571 - Page 375: Table hint detected
-2025-11-15 22:22:51,120 - Page 375: Attached Table
-1202.3 to Section 1202.2.1
-2025-11-15 22:22:51,198 - Page 382: Detected Chapter 13 - ENERGY EFFICIENCY
-2025-11-15 22:22:51,214 - Page 384: Detected Chapter 14 - EXTERIOR WALLS
-2025-11-15 22:22:51,245 - Page 385: Table hint detected
-2025-11-15 22:22:52,024 - Page 385: Attached Table 1404.2. to Section 1403.12
-2025-11-15 22:22:52,037 - Page 386: Table hint detected
-2025-11-15 22:22:52,573 - Page 386: Attached Table 1404.2 to Section 1404.2
-2025-11-15 22:22:52,573 - Page 386: Attached Table 1404.3(1). to Section 1404.2
-2025-11-15 22:22:52,589 - Page 387: Table hint detected
-2025-11-15 22:22:53,135 - Page 387: Attached TABLE 1404.3(2) to Section 1404.3.2
-2025-11-15 22:22:53,135 - Page 387: Attached TABLE 1404.3(3) to Section 1404.3.2
-2025-11-15 22:22:53,136 - Page 387: Attached table apply to Section 1404.3.2
-2025-11-15 22:22:53,201 - Page 391: Table hint detected
-2025-11-15 22:22:53,971 - Page 391: Attached Table 2304.10.2 to Section 1404.17
-2025-11-15 22:22:53,985 - Page 392: Table hint detected
-2025-11-15 22:22:54,548 - Page 392: Attached Table 2308.6.3(3). to Section 1405.1.2
-2025-11-15 22:22:54,601 - Page 396: Detected Chapter 15 - ROOF ASSEMBLIES AND ROOFTOP STRUCTURES
-2025-11-15 22:22:54,615 - Page 397: Table hint detected
-2025-11-15 22:22:55,124 - Page 397: Attached Table 1504.2 to Section 1504.4.3
-2025-11-15 22:22:55,139 - Page 398: Table hint detected
-2025-11-15 22:22:55,795 - Page 398: Attached Table 1504.9. to Section 1505.1
-2025-11-15 22:22:55,813 - Page 399: Table hint detected
-2025-11-15 22:22:56,617 - Page 399: Attached TABLE 1505.1 to Section 1507.1.1
-2025-11-15 22:22:56,633 - Page 400: Table hint detected
-2025-11-15 22:22:57,215 - Page 400: Attached Table 1507.1.1(1). to Section 1507.1.1
-2025-11-15 22:22:57,230 - Page 401: Table hint detected
-2025-11-15 22:22:57,773 - Page 401: Attached TABLE 1507.1.1(2) to Section 1507.1.1
-2025-11-15 22:22:57,788 - Page 402: Table hint detected
-2025-11-15 22:22:58,313 - Page 402: Attached TABLE 1507.1.1(3) to Section 1507.2.8
-2025-11-15 22:22:58,325 - Page 403: Table hint detected
-2025-11-15 22:22:58,800 - Page 403: Attached Table
-1507.2.8.2. to Section 1507.3.6
-2025-11-15 22:22:58,813 - Page 404: Table hint detected
-2025-11-15 22:22:59,327 - Page 404: Attached TABLE 1507.3.7 to Section 1507.3.6
-2025-11-15 22:22:59,342 - Page 405: Table hint detected
-2025-11-15 22:22:59,888 - Page 405: Attached Table 1507.4.3(1). to Section 1507.4.3
-2025-11-15 22:22:59,888 - Page 405: Attached Table 1507.4.3(2). to Section 1507.4.3
-2025-11-15 22:22:59,904 - Page 406: Table hint detected
-2025-11-15 22:23:00,446 - Page 406: Attached Table 1507.4.3(1). to Section 1507.8.1.1
-2025-11-15 22:23:00,459 - Page 407: Table hint detected
-2025-11-15 22:23:00,963 - Page 407: Attached Table 1507.8.5. to Section 1507.8.6
-2025-11-15 22:23:00,978 - Page 408: Table hint detected
-2025-11-15 22:23:01,516 - Page 408: Attached TABLE 1507.8.7 to Section 1507.9.6
-2025-11-15 22:23:01,516 - Page 408: Attached Table 1507.8. to Section 1507.9.6
-2025-11-15 22:23:01,528 - Page 409: Table hint detected
-2025-11-15 22:23:02,049 - Page 409: Attached Table
-1507.10.2 to Section 1507.11.2
-2025-11-15 22:23:02,050 - Page 409: Attached TABLE 1507.9.8 to Section 1507.11.2
-2025-11-15 22:23:02,064 - Page 410: Table hint detected
-2025-11-15 22:23:02,603 - Page 410: Attached Table
-1507.12.2. to Section 1507.16.8
-2025-11-15 22:23:02,603 - Page 410: Attached TABLE 1507.12.2 to Section 1507.16.8
-2025-11-15 22:23:02,617 - Page 411: Table hint detected
-2025-11-15 22:23:03,149 - Page 411: Attached Table 1508.2. to Section 1509.2
-2025-11-15 22:23:03,149 - Page 411: Attached TABLE 1508.2 to Section 1509.2
-2025-11-15 22:23:03,165 - Page 412: Table hint detected
-2025-11-15 22:23:03,873 - Page 412: Attached Table 705.5 to Section 1511.3.2
-2025-11-15 22:23:03,873 - Page 412: Attached Table 705.5. to Section 1511.3.2
-2025-11-15 22:23:03,905 - Page 414: Table hint detected
-2025-11-15 22:23:04,656 - Page 414: Attached Table 601. to Section 1512.2
-2025-11-15 22:23:04,672 - Page 416: Detected Chapter 16 - STRUCTURAL DESIGN
-2025-11-15 22:23:04,686 - Page 417: Table hint detected
-2025-11-15 22:23:05,404 - Page 417: Attached Table 1604.3. to Section 1604.3.2
-2025-11-15 22:23:05,404 - Page 417: Attached Table 1604.3. to Section 1604.3.2
-2025-11-15 22:23:05,404 - Page 417: Attached Page 417 Table 3 to Section 1604.3.2
-2025-11-15 22:23:05,420 - Page 418: Table hint detected
-2025-11-15 22:23:05,942 - Page 418: Attached TABLE 1604.3 to Section 1604.3.7
-2025-11-15 22:23:05,958 - Page 419: Table hint detected
-2025-11-15 22:23:06,694 - Page 419: Attached Table 1604.5. to Section 1604.9
-2025-11-15 22:23:06,705 - Page 420: Table hint detected
-2025-11-15 22:23:07,222 - Page 420: Attached TABLE 1604.5 to Section 1604.9
-2025-11-15 22:23:07,253 - Page 422: Table hint detected
-2025-11-15 22:23:08,667 - Page 422: Attached Table 1607.1. to Section 1607.1
-2025-11-15 22:23:08,674 - Page 423: Table hint detected
-2025-11-15 22:23:09,218 - Page 423: Attached TABLE 1607.1 to Section 1607.1
-2025-11-15 22:23:09,223 - Page 424: Table hint detected
-2025-11-15 22:23:09,705 - Page 424: Attached TABLE 1607.1 to Section 1607.1
-2025-11-15 22:23:09,714 - Page 425: Table hint detected
-2025-11-15 22:23:10,223 - Page 425: Attached TABLE 1607.1 to Section 1607.1
-2025-11-15 22:23:10,240 - Page 426: Table hint detected
-2025-11-15 22:23:11,029 - Page 426: Attached Table 1607.1 to Section 1607.11.1
-2025-11-15 22:23:11,043 - Page 427: Table hint detected
-2025-11-15 22:23:11,633 - Page 427: Attached Table 1607.1 to Section 1607.12.2
-2025-11-15 22:23:11,651 - Page 428: Table hint detected
-2025-11-15 22:23:13,085 - Page 428: Attached Table 1607.1. to Section 1607.14.4.1
-2025-11-15 22:23:13,086 - Page 428: Attached Table 1607.1 to Section 1607.14.4.1
-2025-11-15 22:23:13,086 - Page 428: Attached Table 1607.1). to Section 1607.14.4.1
-2025-11-15 22:23:13,107 - Page 429: Table hint detected
-2025-11-15 22:23:13,898 - Page 429: Attached Table 1607.1. to Section 1607.16.1
-2025-11-15 22:23:13,915 - Page 430: Table hint detected
-2025-11-15 22:23:14,663 - Page 430: Attached Table
-1607.1 to Section 1609.1
-2025-11-15 22:23:14,675 - Page 431: Table hint detected
-2025-11-15 22:23:15,206 - Page 431: Attached TABLE 1608.2 to Section 1609.2
-2025-11-15 22:23:15,222 - Page 432: Table hint detected
-2025-11-15 22:23:15,766 - Page 432: Attached Table 1609.2 to Section 1609.2.3
-2025-11-15 22:23:15,957 - Page 433: Table hint detected
-2025-11-15 22:23:16,760 - Page 433: Attached Table 7.2-2 to Section 1609.2.3
-2025-11-15 22:23:16,891 - Page 434: Table hint detected
-2025-11-15 22:23:17,703 - Page 434: Attached Table 7.2-8 to Section 1609.2.3
-2025-11-15 22:23:18,357 - Page 439: Table hint detected
-2025-11-15 22:23:19,105 - Page 439: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:19,201 - Page 440: Table hint detected
-2025-11-15 22:23:19,960 - Page 440: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:20,046 - Page 441: Table hint detected
-2025-11-15 22:23:20,810 - Page 441: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:20,908 - Page 442: Table hint detected
-2025-11-15 22:23:21,620 - Page 442: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:21,703 - Page 443: Table hint detected
-2025-11-15 22:23:22,434 - Page 443: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:22,525 - Page 444: Table hint detected
-2025-11-15 22:23:23,226 - Page 444: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:23,310 - Page 445: Table hint detected
-2025-11-15 22:23:24,032 - Page 445: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:24,124 - Page 446: Table hint detected
-2025-11-15 22:23:24,821 - Page 446: Attached Table 26.6-1 to Section 1609.2.3
-2025-11-15 22:23:24,834 - Page 447: Table hint detected
-2025-11-15 22:23:25,556 - Page 447: Attached Table 1609.3.1 to Section 1609.5.2
-2025-11-15 22:23:25,573 - Page 448: Table hint detected
-2025-11-15 22:23:26,309 - Page 448: Attached Table 1610.1 to Section 1610.1
-2025-11-15 22:23:26,309 - Page 448: Attached Page 448 Table 2 to Section 1610.1
-2025-11-15 22:23:26,309 - Page 448: Attached Page 448 Table 3 to Section 1610.1
-2025-11-15 22:23:26,322 - Page 449: Table hint detected
-2025-11-15 22:23:26,833 - Page 449: Attached TABLE 1610.1 to Section 1611.3
-2025-11-15 22:23:27,461 - Page 456: Table hint detected
-2025-11-15 22:23:28,239 - Page 456: Attached Table 1613.2.3(1). to Section 1613.2.5.2
-2025-11-15 22:23:28,239 - Page 456: Attached Table 1613.2.3(2). to Section 1613.2.5.2
-2025-11-15 22:23:28,239 - Page 456: Attached Table 1613.2.5(1) to Section 1613.2.5.2
-2025-11-15 22:23:28,246 - Page 457: Table hint detected
-2025-11-15 22:23:28,722 - Page 457: Attached TABLE 1613.2.3(1) to Section 1613.2.5.2
-2025-11-15 22:23:28,722 - Page 457: Attached TABLE 1613.2.3(2) to Section 1613.2.5.2
-2025-11-15 22:23:28,722 - Page 457: Attached TABLE 1613.2.5(1) to Section 1613.2.5.2
-2025-11-15 22:23:28,722 - Page 457: Attached TABLE 1613.2.5(2) to Section 1613.2.5.2
-2025-11-15 22:23:28,738 - Page 458: Table hint detected
-2025-11-15 22:23:29,464 - Page 458: Attached table testing to Section 1616.3.1
-2025-11-15 22:23:31,145 - Page 472: Detected Chapter 17 - SPECIAL INSPECTIONS AND TESTS
-2025-11-15 22:23:31,191 - Page 475: Table hint detected
-2025-11-15 22:23:31,932 - Page 475: Attached Table 1705.2.3. to Section 1705.2.2
-2025-11-15 22:23:31,946 - Page 476: Table hint detected
-2025-11-15 22:23:32,474 - Page 476: Attached Table 1705.3. to Section 1705.5.1
-2025-11-15 22:23:32,483 - Page 477: Table hint detected
-2025-11-15 22:23:33,009 - Page 477: Attached TABLE 1705.3 to Section 1705.5.1
-2025-11-15 22:23:33,023 - Page 478: Table hint detected
-2025-11-15 22:23:33,558 - Page 478: Attached Table 1705.5.3. to Section 1705.9
-2025-11-15 22:23:33,558 - Page 478: Attached Table
-1705.6. to Section 1705.9
-2025-11-15 22:23:33,572 - Page 479: Table hint detected
-2025-11-15 22:23:34,109 - Page 479: Attached TABLE 1705.8 to Section 1705.13
-2025-11-15 22:23:34,109 - Page 479: Attached TABLE 1705.7 to Section 1705.13
-2025-11-15 22:23:34,123 - Page 480: Table hint detected
-2025-11-15 22:23:34,896 - Page 480: Attached Table 12.2-1 to Section 1705.13.2
-2025-11-15 22:23:34,910 - Page 481: Table hint detected
-2025-11-15 22:23:35,464 - Page 481: Attached Table 1705.13.7. to Section 1705.13.8
-2025-11-15 22:23:35,480 - Page 482: Table hint detected
-2025-11-15 22:23:36,222 - Page 482: Attached Table 12.2- to Section 1705.15.2
-2025-11-15 22:23:36,222 - Page 482: Attached Table 15.4-1. to Section 1705.15.2
-2025-11-15 22:23:36,295 - Page 488: Detected Chapter 18 - SOILS AND FOUNDATIONS
-2025-11-15 22:23:36,309 - Page 489: Table hint detected
-2025-11-15 22:23:37,044 - Page 489: Attached table is to Section 1803.5.12
-2025-11-15 22:23:37,073 - Page 491: Table hint detected
-2025-11-15 22:23:37,832 - Page 491: Attached table rises to Section 1805.2.1
-2025-11-15 22:23:37,862 - Page 493: Table hint detected
-2025-11-15 22:23:38,392 - Page 493: Attached Table 1806.2 to Section 1807.1.2
-2025-11-15 22:23:38,408 - Page 494: Table hint detected
-2025-11-15 22:23:39,196 - Page 494: Attached Table 1807.1.6.2. to Section 1807.1.6.3
-2025-11-15 22:23:39,207 - Page 495: Table hint detected
-2025-11-15 22:23:39,757 - Page 495: Attached Table 1807.1.6.3(1) to Section 1807.1.6.3
-2025-11-15 22:23:39,771 - Page 496: Table hint detected
-2025-11-15 22:23:40,742 - Page 496: Attached Table 1807.1.6.3(2) to Section 1807.2.4
-2025-11-15 22:23:40,760 - Page 497: Table hint detected
-2025-11-15 22:23:41,659 - Page 497: Attached TABLE 1807.1.6.3(2) to Section 1807.3.2.1
-2025-11-15 22:23:41,671 - Page 498: Table hint detected
-2025-11-15 22:23:42,199 - Page 498: Attached Table 1806.2. to Section 1807.3.2.3
-2025-11-15 22:23:42,210 - Page 499: Table hint detected
-2025-11-15 22:23:42,732 - Page 499: Attached TABLE 1807.1.6.3(4) to Section 1808.2
-2025-11-15 22:23:42,761 - Page 501: Table hint detected
-2025-11-15 22:23:43,302 - Page 501: Attached Table 1809.7 to Section 1808.8
-2025-11-15 22:23:43,316 - Page 502: Table hint detected
-2025-11-15 22:23:43,857 - Page 502: Attached Table 1808.8.2. to Section 1808.9
-2025-11-15 22:23:43,874 - Page 503: Table hint detected
-2025-11-15 22:23:44,437 - Page 503: Attached Table 1809.7. to Section 1809.10
-2025-11-15 22:23:44,485 - Page 506: Table hint detected
-2025-11-15 22:23:45,259 - Page 506: Attached Table 1810.3.2.6. to Section 1810.3.2.6
-2025-11-15 22:23:45,284 - Page 507: Table hint detected
-2025-11-15 22:23:45,840 - Page 507: Attached TABLE 1810.3.2.6 to Section 0.6
-2025-11-15 22:23:45,855 - Page 508: Table hint detected
-2025-11-15 22:23:46,619 - Page 508: Attached Table
-1806.2 to Section 1810.3.3.1.9
-2025-11-15 22:23:46,678 - Page 512: Table hint detected
-2025-11-15 22:23:47,441 - Page 512: Attached Table 18.10.6.4(g) to Section 1810.3.9.6
-2025-11-15 22:23:47,502 - Page 516: Detected Chapter 19 - CONCRETE
-2025-11-15 22:23:47,540 - Page 519: Table hint detected
-2025-11-15 22:23:48,273 - Page 519: Attached Table
-12E to Section 1905.1.8
-2025-11-15 22:23:48,287 - Page 522: Detected Chapter 20 - ALUMINUM
-2025-11-15 22:23:48,301 - Page 524: Detected Chapter 21 - MASONRY
-2025-11-15 22:23:48,301 - Page 524: Table hint detected
-2025-11-15 22:23:49,000 - Page 524: Attached Table 705.5. to Section 2101.2.1
-2025-11-15 22:23:49,015 - Page 525: Table hint detected
-2025-11-15 22:23:49,558 - Page 525: Attached TABLE 2103.2.3 to Section 2104.1.2
-2025-11-15 22:23:49,588 - Page 527: Table hint detected
-2025-11-15 22:23:50,143 - Page 527: Attached Table 2109.2.3.1. to Section 2109.2.4.7
-2025-11-15 22:23:50,344 - Page 535: Table hint detected
-2025-11-15 22:23:50,848 - Page 535: Attached TABLE 2113.16(1) to Section 2113.18
-2025-11-15 22:23:50,849 - Page 535: Attached TABLE 2113.16(2) to Section 2113.18
-2025-11-15 22:23:50,859 - Page 536: Table hint detected
-2025-11-15 22:23:51,378 - Page 536: Attached Table
-2114.4. to Section 2114.5
-2025-11-15 22:23:51,378 - Page 536: Attached Table 2114.4 to Section 2114.5
-2025-11-15 22:23:51,392 - Page 538: Detected Chapter 22 - STEEL
-2025-11-15 22:23:51,407 - Page 539: Table hint detected
-2025-11-15 22:23:52,120 - Page 539: Attached Table 12.2-1 to Section 2207.2
-2025-11-15 22:23:52,120 - Page 539: Attached Table 12.2-1 to Section 2207.2
-2025-11-15 22:23:52,120 - Page 539: Attached Table 15.4-1. to Section 2207.2
-2025-11-15 22:23:52,134 - Page 540: Table hint detected
-2025-11-15 22:23:52,879 - Page 540: Attached Table 12.2-1 to Section 2210.1.1.3
-2025-11-15 22:23:52,879 - Page 540: Attached Page 540 Table 2 to Section 2210.1.1.3
-2025-11-15 22:23:52,889 - Page 541: Table hint detected
-2025-11-15 22:23:53,577 - Page 541: Attached Table 12.2-1 to Section 2211.2
-2025-11-15 22:23:53,577 - Page 541: Attached Table 12.2-1 to Section 2211.2
-2025-11-15 22:23:53,577 - Page 541: Attached Page 541 Table 3 to Section 2211.2
-2025-11-15 22:23:53,591 - Page 542: Detected Chapter 23 - WOOD
-2025-11-15 22:23:54,833 - Page 552: Table hint detected
-2025-11-15 22:23:55,388 - Page 552: Attached Table 2304.6.1 to Section 2304.8.2
-2025-11-15 22:23:55,397 - Page 553: Table hint detected
-2025-11-15 22:23:55,900 - Page 553: Attached TABLE 2304.8(2) to Section 2304.8.2
-2025-11-15 22:23:55,900 - Page 553: Attached TABLE 2304.8(3) to Section 2304.8.2
-2025-11-15 22:23:55,913 - Page 554: Table hint detected
-2025-11-15 22:23:56,438 - Page 554: Attached TABLE 2304.8(4) to Section 2304.9.2.2
-2025-11-15 22:23:56,438 - Page 554: Attached TABLE 2304.8(5) to Section 2304.9.2.2
-2025-11-15 22:23:56,452 - Page 555: Table hint detected
-2025-11-15 22:23:57,030 - Page 555: Attached Table 2304.9.3.2 to Section 2304.9.3.2
-2025-11-15 22:23:57,046 - Page 556: Table hint detected
-2025-11-15 22:23:58,306 - Page 556: Attached Table 2304.10.2. to Section 2304.10.5
-2025-11-15 22:23:58,315 - Page 557: Table hint detected
-2025-11-15 22:23:58,828 - Page 557: Attached TABLE 2304.10.2 to Section 2304.10.5
-2025-11-15 22:23:58,838 - Page 558: Table hint detected
-2025-11-15 22:23:59,407 - Page 558: Attached TABLE 2304.10.2 to Section 2304.10.5
-2025-11-15 22:23:59,416 - Page 559: Table hint detected
-2025-11-15 22:23:59,909 - Page 559: Attached TABLE 2304.10.2 to Section 2304.10.5
-2025-11-15 22:23:59,917 - Page 560: Table hint detected
-2025-11-15 22:24:00,370 - Page 560: Attached TABLE 2304.10.2 to Section 2304.10.5
-2025-11-15 22:24:00,386 - Page 561: Table hint detected
-2025-11-15 22:24:00,934 - Page 561: Attached TABLE 2304.10.2 to Section 2304.11
-2025-11-15 22:24:00,948 - Page 562: Table hint detected
-2025-11-15 22:24:01,475 - Page 562: Attached Table 2304.11 to Section 2304.11.3.1
-2025-11-15 22:24:01,515 - Page 565: Table hint detected
-2025-11-15 22:24:02,042 - Page 565: Attached Table 2305.2(1) to Section 2305.2
-2025-11-15 22:24:02,043 - Page 565: Attached Table
-2305.2(2) to Section 2305.2
-2025-11-15 22:24:02,043 - Page 565: Attached TABLE 2305.2(1) to Section 2305.2
-2025-11-15 22:24:02,057 - Page 566: Table hint detected
-2025-11-15 22:24:02,600 - Page 566: Attached Table 2305.2(1) to Section 2306.1.3
-2025-11-15 22:24:02,616 - Page 567: Table hint detected
-2025-11-15 22:24:03,306 - Page 567: Attached Table
-2306.2(1) to Section 2308.2
-2025-11-15 22:24:03,345 - Page 568: Table hint detected
-2025-11-15 22:24:04,301 - Page 568: Attached TABLE 2306.2(1) to Section 2308.2
-2025-11-15 22:24:04,317 - Page 569: Table hint detected
-2025-11-15 22:24:04,902 - Page 569: Attached TABLE 2306.2(2) to Section 2308.2
-2025-11-15 22:24:04,936 - Page 570: Table hint detected
-2025-11-15 22:24:05,580 - Page 570: Attached TABLE 2306.2(2) to Section 2308.2
-2025-11-15 22:24:05,595 - Page 571: Table hint detected
-2025-11-15 22:24:06,163 - Page 571: Attached TABLE 2306.3(1) to Section 2308.2
-2025-11-15 22:24:06,163 - Page 571: Attached table for to Section 2308.2
-2025-11-15 22:24:06,176 - Page 572: Table hint detected
-2025-11-15 22:24:06,665 - Page 572: Attached Table 2308.2.1. to Section 2308.2.2
-2025-11-15 22:24:06,665 - Page 572: Attached TABLE 2308.2.1 to Section 2308.2.2
-2025-11-15 22:24:06,681 - Page 573: Table hint detected
-2025-11-15 22:24:07,455 - Page 573: Attached Table
-2308.4.1.1(1) to Section 2308.4.1.1
-2025-11-15 22:24:07,468 - Page 574: Table hint detected
-2025-11-15 22:24:10,163 - Page 574: Attached TABLE 2308.4.1.1(1) to Section 2308.4.1.1
-2025-11-15 22:24:10,176 - Page 575: Table hint detected
-2025-11-15 22:24:11,591 - Page 575: Attached TABLE 2308.4.1.1(1) to Section 2308.4.1.1
-2025-11-15 22:24:11,599 - Page 576: Table hint detected
-2025-11-15 22:24:12,356 - Page 576: Attached TABLE 2308.4.1.1(2) to Section 2308.4.1.1
-2025-11-15 22:24:12,374 - Page 577: Table hint detected
-2025-11-15 22:24:13,095 - Page 577: Attached TABLE 2308.4.2.1(1) to Section 2308.4.1.1
-2025-11-15 22:24:13,104 - Page 578: Table hint detected
-2025-11-15 22:24:13,863 - Page 578: Attached TABLE 2308.4.2.1(1) to Section 2308.4.1.1
-2025-11-15 22:24:13,872 - Page 579: Table hint detected
-2025-11-15 22:24:14,519 - Page 579: Attached TABLE 2308.4.2.1(2) to Section 2308.4.1.1
-2025-11-15 22:24:14,568 - Page 580: Table hint detected
-2025-11-15 22:24:15,291 - Page 580: Attached TABLE 2308.4.2.1(2) to Section 2308.4.1.1
-2025-11-15 22:24:15,341 - Page 583: Table hint detected
-2025-11-15 22:24:15,847 - Page 583: Attached Table
-2308.5.1. to Section 2308.5.4
-2025-11-15 22:24:15,889 - Page 584: Table hint detected
-2025-11-15 22:24:16,699 - Page 584: Attached Table
-2308.4.1.1(1) to Section 2308.5.8
-2025-11-15 22:24:16,699 - Page 584: Attached Table 2308.4.1.1(1) to Section 2308.5.8
-2025-11-15 22:24:16,715 - Page 585: Table hint detected
-2025-11-15 22:24:17,263 - Page 585: Attached Table
-2308.5.11 to Section 2308.6.4
-2025-11-15 22:24:17,269 - Page 586: Table hint detected
-2025-11-15 22:24:18,645 - Page 586: Attached TABLE 2308.6.1 to Section 2308.6.4
-2025-11-15 22:24:18,655 - Page 587: Table hint detected
-2025-11-15 22:24:19,140 - Page 587: Attached TABLE 2308.6.1 to Section 2308.6.4
-2025-11-15 22:24:19,172 - Page 588: Table hint detected
-2025-11-15 22:24:19,697 - Page 588: Attached TABLE 2308.6.3(1) to Section 2308.6.4
-2025-11-15 22:24:19,703 - Page 589: Table hint detected
-2025-11-15 22:24:20,124 - Page 589: Attached TABLE 2308.6.3(2) to Section 2308.6.4
-2025-11-15 22:24:20,124 - Page 589: Attached TABLE 2308.6.3(3) to Section 2308.6.4
-2025-11-15 22:24:20,124 - Page 589: Attached TABLE 2308.6.3(4) to Section 2308.6.4
-2025-11-15 22:24:20,159 - Page 590: Table hint detected
-2025-11-15 22:24:20,887 - Page 590: Attached Table 2308.6.1 to Section 2308.6.5.1
-2025-11-15 22:24:20,887 - Page 590: Attached TABLE 2308.6.3(5) to Section 2308.6.5.1
-2025-11-15 22:24:20,953 - Page 591: Table hint detected
-2025-11-15 22:24:21,714 - Page 591: Attached Table
-2304.10.2 to Section 2308.6.5.2
-2025-11-15 22:24:21,731 - Page 592: Table hint detected
-2025-11-15 22:24:22,464 - Page 592: Attached Table 2308.6.1. to Section 2308.6.7.2
-2025-11-15 22:24:22,470 - Page 593: Table hint detected
-2025-11-15 22:24:23,009 - Page 593: Attached Table 2308.6.3(1) to Section 2308.6.7.2
-2025-11-15 22:24:23,009 - Page 593: Attached TABLE 2304.10.2 to Section 2308.6.7.2
-2025-11-15 22:24:23,098 - Page 596: Table hint detected
-2025-11-15 22:24:23,865 - Page 596: Attached Table 2308.6.1. to Section 2308.6.9
-2025-11-15 22:24:23,865 - Page 596: Attached Page 596 Table 2 to Section 2308.6.9
-2025-11-15 22:24:23,865 - Page 596: Attached Page 596 Table 3 to Section 2308.6.9
-2025-11-15 22:24:23,883 - Page 597: Table hint detected
-2025-11-15 22:24:24,688 - Page 597: Attached Table 2308.7.1(1) to Section 2308.7.6.1
-2025-11-15 22:24:24,703 - Page 598: Table hint detected
-2025-11-15 22:24:25,260 - Page 598: Attached Table
-2308.7.12. to Section 2308.8
-2025-11-15 22:24:25,260 - Page 598: Attached TABLE 2308.7.5 to Section 2308.8
-2025-11-15 22:24:25,270 - Page 600: Table hint detected
-2025-11-15 22:24:25,794 - Page 600: Attached TABLE 2308.7.1(1) to Section 2309.1
-2025-11-15 22:24:25,802 - Page 601: Table hint detected
-2025-11-15 22:24:26,370 - Page 601: Attached TABLE 2308.7.1(1) to Section 2309.1
-2025-11-15 22:24:26,377 - Page 602: Table hint detected
-2025-11-15 22:24:26,901 - Page 602: Attached TABLE 2308.7.1(2) to Section 2309.1
-2025-11-15 22:24:26,908 - Page 603: Table hint detected
-2025-11-15 22:24:27,471 - Page 603: Attached TABLE 2308.7.1(2) to Section 2309.1
-2025-11-15 22:24:27,481 - Page 604: Table hint detected
-2025-11-15 22:24:28,303 - Page 604: Attached TABLE 2308.7.2(1) to Section 2309.1
-2025-11-15 22:24:28,314 - Page 605: Table hint detected
-2025-11-15 22:24:29,235 - Page 605: Attached TABLE 2308.7.2(1) to Section 2309.1
-2025-11-15 22:24:29,245 - Page 606: Table hint detected
-2025-11-15 22:24:30,114 - Page 606: Attached TABLE 2308.7.2(2) to Section 2309.1
-2025-11-15 22:24:30,130 - Page 607: Table hint detected
-2025-11-15 22:24:31,517 - Page 607: Attached TABLE 2308.7.2(2) to Section 2309.1
-2025-11-15 22:24:31,527 - Page 608: Table hint detected
-2025-11-15 22:24:32,322 - Page 608: Attached TABLE 2308.7.2(3) to Section 2309.1
-2025-11-15 22:24:32,334 - Page 609: Table hint detected
-2025-11-15 22:24:33,146 - Page 609: Attached TABLE 2308.7.2(3) to Section 2309.1
-2025-11-15 22:24:33,155 - Page 610: Table hint detected
-2025-11-15 22:24:33,930 - Page 610: Attached TABLE 2308.7.2(4) to Section 2309.1
-2025-11-15 22:24:33,941 - Page 611: Table hint detected
-2025-11-15 22:24:34,767 - Page 611: Attached TABLE 2308.7.2(4) to Section 2309.1
-2025-11-15 22:24:34,777 - Page 612: Table hint detected
-2025-11-15 22:24:35,585 - Page 612: Attached TABLE 2308.7.2(5) to Section 2309.1
-2025-11-15 22:24:35,596 - Page 613: Table hint detected
-2025-11-15 22:24:36,379 - Page 613: Attached TABLE 2308.7.2(5) to Section 2309.1
-2025-11-15 22:24:36,388 - Page 614: Table hint detected
-2025-11-15 22:24:37,148 - Page 614: Attached TABLE 2308.7.2(6) to Section 2309.1
-2025-11-15 22:24:37,159 - Page 615: Table hint detected
-2025-11-15 22:24:37,674 - Page 615: Attached TABLE 2308.7.2(6) to Section 2309.1
-2025-11-15 22:24:37,675 - Page 615: Attached Table 2308.7.2(7). to Section 2309.1
-2025-11-15 22:24:37,684 - Page 616: Table hint detected
-2025-11-15 22:24:38,186 - Page 616: Attached TABLE 2308.7.3.1 to Section 2309.1
-2025-11-15 22:24:38,191 - Page 617: Table hint detected
-2025-11-15 22:24:38,684 - Page 617: Attached TABLE 2308.7.3.1(1) to Section 2309.1
-2025-11-15 22:24:38,684 - Page 617: Attached TABLE 2308.7.12 to Section 2309.1
-2025-11-15 22:24:38,689 - Page 618: Table hint detected
-2025-11-15 22:24:39,141 - Page 618: Attached TABLE 2308.7.12 to Section 2309.1
-2025-11-15 22:24:39,158 - Page 620: Detected Chapter 24 - GLASS AND GLAZING
-2025-11-15 22:24:39,220 - Page 624: Table hint detected
-2025-11-15 22:24:39,766 - Page 624: Attached Table
-2406.2(1). to Section 2406.4
-2025-11-15 22:24:39,808 - Page 628: Detected Chapter 25 - GYPSUM BOARD, GYPSUM PANEL PRODUCTS AND PLASTER
-2025-11-15 22:24:39,820 - Page 629: Table hint detected
-2025-11-15 22:24:40,299 - Page 629: Attached Table 2506.2 to Section 2508.2.1
-2025-11-15 22:24:40,299 - Page 629: Attached Table 2507.2 to Section 2508.2.1
-2025-11-15 22:24:40,309 - Page 630: Table hint detected
-2025-11-15 22:24:40,819 - Page 630: Attached Table 2508.6. to Section 2508.2.1
-2025-11-15 22:24:40,819 - Page 630: Attached TABLE 2507.2 to Section 2508.2.1
-2025-11-15 22:24:40,834 - Page 631: Table hint detected
-2025-11-15 22:24:41,368 - Page 631: Attached Table 2508.6. to Section 2510.6
-2025-11-15 22:24:41,383 - Page 632: Table hint detected
-2025-11-15 22:24:41,921 - Page 632: Attached Table 2511.1.1 to Section 2512.1.2
-2025-11-15 22:24:41,937 - Page 633: Table hint detected
-2025-11-15 22:24:42,478 - Page 633: Attached Table 2512.6. to Section 2513.6
-2025-11-15 22:24:42,496 - Page 636: Detected Chapter 26 - PLASTIC
-2025-11-15 22:24:42,597 - Page 640: Table hint detected
-2025-11-15 22:24:43,305 - Page 640: Attached Table
-2603.12.1. to Section 2603.12.2
-2025-11-15 22:24:43,318 - Page 641: Table hint detected
-2025-11-15 22:24:43,924 - Page 641: Attached TABLE 2603.12.1 to Section 2603.12.2
-2025-11-15 22:24:43,924 - Page 641: Attached TABLE 2603.12.2 to Section 2603.12.2
-2025-11-15 22:24:43,937 - Page 642: Table hint detected
-2025-11-15 22:24:44,476 - Page 642: Attached Table 2603.13.1. to Section 2604.2.4
-2025-11-15 22:24:44,491 - Page 643: Table hint detected
-2025-11-15 22:24:45,046 - Page 643: Attached TABLE 2603.13.2 to Section 2606.4
-2025-11-15 22:24:45,076 - Page 645: Table hint detected
-2025-11-15 22:24:45,607 - Page 645: Attached Table 2607.4. to Section 2608.1
-2025-11-15 22:24:45,621 - Page 646: Table hint detected
-2025-11-15 22:24:46,154 - Page 646: Attached Table 601. to Section 2610.2
-2025-11-15 22:24:46,197 - Page 650: Detected Chapter 27 - ELECTRICAL
-2025-11-15 22:24:46,215 - Page 652: Detected Chapter 28 - MECHANICAL SYSTEMS
-2025-11-15 22:24:46,227 - Page 654: Detected Chapter 29 - PLUMBING SYSTEMS
-2025-11-15 22:24:46,227 - Page 654: Table hint detected
-2025-11-15 22:24:46,901 - Page 654: Attached Table 2902.1 to Section 2901.1
-2025-11-15 22:24:46,901 - Page 654: Attached Table 2902.1 to Section 2902.1
-2025-11-15 22:24:46,909 - Page 655: Table hint detected
-2025-11-15 22:24:47,392 - Page 655: Attached TABLE 2902.1 to Section 410
-2025-11-15 22:24:47,399 - Page 656: Table hint detected
-2025-11-15 22:24:47,834 - Page 656: Attached TABLE 2902.1 to Section 410
-2025-11-15 22:24:47,842 - Page 657: Table hint detected
-2025-11-15 22:24:48,318 - Page 657: Attached TABLE 2902.1 to Section 410
-2025-11-15 22:24:48,362 - Page 660: Detected Chapter 30 - ELEVATORS AND CONVEYING SYSTEMS
-2025-11-15 22:24:48,362 - Page 660: Table hint detected
-2025-11-15 22:24:48,894 - Page 660: Attached Table 3001.3 to Section 3001.3
-2025-11-15 22:24:49,008 - Page 668: Detected Chapter 31 - SPECIAL CONSTRUCTION
-2025-11-15 22:24:49,022 - Page 669: Table hint detected
-2025-11-15 22:24:49,780 - Page 669: Attached Table 705.5 to Section 3103.4
-2025-11-15 22:24:49,781 - Page 669: Attached Page 669 Table 2 to Section 3103.4
-2025-11-15 22:24:49,854 - Page 674: Table hint detected
-2025-11-15 22:24:50,723 - Page 674: Attached Table 1604.5. to Section 3115.8.1
-2025-11-15 22:24:50,738 - Page 675: Table hint detected
-2025-11-15 22:24:51,620 - Page 675: Attached Table
-12.2-1 to Section 3115.8.5.3
-2025-11-15 22:24:51,636 - Page 676: Table hint detected
-2025-11-15 22:24:52,341 - Page 676: Attached TABLE 3115.8.5.3 to Section 3115.8.5.3
-2025-11-15 22:24:52,366 - Page 680: Detected Chapter 32 - ENCROACHMENTS INTO THE PUBLIC RIGHT-OF-WAY
-2025-11-15 22:24:52,381 - Page 682: Detected Chapter 33 - SAFEGUARDS DURING CONSTRUCTION
-2025-11-15 22:24:52,396 - Page 683: Table hint detected
-2025-11-15 22:24:53,236 - Page 683: Attached Table 3306.1. to Section 3306.6
-2025-11-15 22:24:53,288 - Page 688: Detected Chapter 34 - DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER.
-2025-11-15 22:24:53,299 - Page 690: Detected Chapter 35 - REFERENCED STANDARDS
-2025-11-15 22:24:53,299 - Page 690: Table hint detected
-2025-11-15 22:24:54,517 - Page 690: Table hint but no tables extracted
-2025-11-15 22:24:54,527 - Page 691: Table hint detected
-2025-11-15 22:24:55,153 - Page 691: Attached Table 2506.2 to Section 25
-2025-11-15 22:24:55,162 - Page 692: Table hint detected
-2025-11-15 22:24:55,812 - Page 692: Table hint but no tables extracted
-2025-11-15 22:24:55,821 - Page 693: Table hint detected
-2025-11-15 22:24:56,427 - Page 693: Attached Table 1504.2 to Section 1801
-2025-11-15 22:24:56,433 - Page 694: Table hint detected
-2025-11-15 22:24:57,066 - Page 694: Attached Table 3001.3 to Section 100
-2025-11-15 22:24:57,076 - Page 695: Table hint detected
-2025-11-15 22:24:57,732 - Page 695: Attached Table 1507.4.3(1) to Section 100
-2025-11-15 22:24:57,740 - Page 696: Table hint detected
-2025-11-15 22:24:58,340 - Page 696: Table hint but no tables extracted
-2025-11-15 22:24:58,349 - Page 697: Table hint detected
-2025-11-15 22:24:59,006 - Page 697: Table hint but no tables extracted
-2025-11-15 22:24:59,016 - Page 698: Table hint detected
-2025-11-15 22:24:59,630 - Page 698: Attached Table 1508.2 to Section 100
-2025-11-15 22:24:59,639 - Page 699: Table hint detected
-2025-11-15 22:25:00,291 - Page 699: Table hint but no tables extracted
-2025-11-15 22:25:00,301 - Page 700: Table hint detected
-2025-11-15 22:25:00,954 - Page 700: Attached Table 2506.2 to Section 100
-2025-11-15 22:25:00,964 - Page 701: Table hint detected
-2025-11-15 22:25:01,584 - Page 701: Attached Table 1507.10.2 to Section 100
-2025-11-15 22:25:01,593 - Page 702: Table hint detected
-2025-11-15 22:25:02,238 - Page 702: Table hint but no tables extracted
-2025-11-15 22:25:02,248 - Page 703: Table hint detected
-2025-11-15 22:25:02,905 - Page 703: Attached Table 1507.1.1(1) to Section 100
-2025-11-15 22:25:02,916 - Page 704: Table hint detected
-2025-11-15 22:25:03,551 - Page 704: Table hint but no tables extracted
-2025-11-15 22:25:03,570 - Page 706: Table hint detected
-2025-11-15 22:25:04,221 - Page 706: Attached Table 2506.2 to Section 513
-2025-11-15 22:25:04,228 - Page 707: Table hint detected
-2025-11-15 22:25:04,805 - Page 707: Attached Table 1507.9.6 to Section 19465
-2025-11-15 22:25:04,812 - Page 708: Table hint detected
-2025-11-15 22:25:05,442 - Page 708: Attached Table 2406.2(1) to Section 1300
-2025-11-15 22:25:05,448 - Page 709: Table hint detected
-2025-11-15 22:25:06,028 - Page 709: Attached Table 2304.8(4) to Section 500
-2025-11-15 22:25:06,036 - Page 710: Table hint detected
-2025-11-15 22:25:06,671 - Page 710: Table hint but no tables extracted
-2025-11-15 22:25:06,682 - Page 711: Table hint detected
-2025-11-15 22:25:07,338 - Page 711: Table hint but no tables extracted
-2025-11-15 22:25:07,345 - Page 712: Table hint detected
-2025-11-15 22:25:07,940 - Page 712: Attached Table 3001.3 to Section 1
-2025-11-15 22:25:07,948 - Page 713: Table hint detected
-2025-11-15 22:25:08,586 - Page 713: Attached Table 509.1 to Section 1
-2025-11-15 22:25:08,595 - Page 714: Table hint detected
-2025-11-15 22:25:09,209 - Page 714: Table hint but no tables extracted
-2025-11-15 22:25:09,224 - Page 716: Table hint detected
-2025-11-15 22:25:09,854 - Page 716: Attached Table 721.1(2) to Section 105
-2025-11-15 22:25:09,863 - Page 717: Table hint detected
-2025-11-15 22:25:10,509 - Page 717: Attached Table 716.1(1) to Section 333
-2025-11-15 22:25:10,525 - Page 719: Table hint detected
-2025-11-15 22:25:11,124 - Page 719: Attached Table 1504.2 to Section 18
-2025-11-15 22:25:11,138 - Page 722: Table hint detected
-2025-11-15 22:25:11,630 - Page 722: Attached Table A102.1 to Section 942
-2025-11-15 22:25:11,659 - Page 726: Table hint detected
-2025-11-15 22:25:12,374 - Page 726: Attached Table C102.1. to Section 942
-2025-11-15 22:25:12,374 - Page 726: Attached TABLE C102.1 to Section 942
-2025-11-15 22:25:12,394 - Page 728: Table hint detected
-2025-11-15 22:25:13,849 - Page 728: Attached Table 601 to Section 942
-2025-11-15 22:25:13,865 - Page 729: Table hint detected
-2025-11-15 22:25:14,648 - Page 729: Attached Table 601 to Section 942
-2025-11-15 22:25:14,648 - Page 729: Attached Table 601. to Section 942
-2025-11-15 22:25:14,648 - Page 729: Attached Table 601. to Section 942
-2025-11-15 22:25:14,654 - Page 730: Table hint detected
-2025-11-15 22:25:15,124 - Page 730: Attached Table D106.1 to Section 942
-2025-11-15 22:25:15,138 - Page 732: Table hint detected
-2025-11-15 22:25:15,859 - Page 732: Attached table or to Section 942
-2025-11-15 22:25:15,859 - Page 732: Attached Table
-E104.2.1. to Section 942
-2025-11-15 22:25:15,872 - Page 733: Table hint detected
-2025-11-15 22:25:16,415 - Page 733: Attached Table E106.2. to Section 942
-2025-11-15 22:25:16,415 - Page 733: Attached TABLE E106.2 to Section 942
-2025-11-15 22:25:16,459 - Page 736: Table hint detected
-2025-11-15 22:25:16,941 - Page 736: Attached Table E111.1 to Section 942
-2025-11-15 22:25:17,051 - Page 746: Table hint detected
-2025-11-15 22:25:17,511 - Page 746: Attached Table G115.1 to Section 942
-2025-11-15 22:25:17,571 - Page 751: Table hint detected
-2025-11-15 22:25:18,115 - Page 751: Attached TABLE H115.1(1) to Section 942
-2025-11-15 22:25:18,115 - Page 751: Attached TABLE H115.1(2) to Section 942
-2025-11-15 22:25:18,115 - Page 751: Attached Table H115.1 to Section 942
-2025-11-15 22:25:18,172 - Page 757: Table hint detected
-2025-11-15 22:25:18,712 - Page 757: Attached Table J111.1 to Section 5
-2025-11-15 22:25:18,777 - Page 764: Table hint detected
-2025-11-15 22:25:19,217 - Page 764: Attached Table M102.1 to Section 5
+2025-11-16 00:03:37,697 - Page 32: Detected Chapter 1 - SCOPE AND ADMINISTRATION
+2025-11-16 00:03:37,866 - Page 44: Detected Chapter 2 - DEFINITIONS
+2025-11-16 00:03:39,071 - Page 59: Extracted 2507.2 (accuracy: 100.0%, 2 cols × 102 rows) -> Section 16
+2025-11-16 00:03:39,329 - Page 76: Detected Chapter 3 - OCCUPANCY CLASSIFICATION AND USE
+2025-11-16 00:03:39,862 - Page 80: Extracted 307.1(1) (accuracy: 99.7%, 15 cols × 40 rows) -> Section 307.1.1
+2025-11-16 00:03:40,328 - Page 81: Extracted 307.1(1)_1 (accuracy: 99.4%, 12 cols × 10 rows) -> Section 307.1.1
+2025-11-16 00:03:40,743 - Page 82: Extracted 307.1(2) (accuracy: 97.4%, 12 cols × 11 rows) -> Section 307.4
+2025-11-16 00:03:40,812 - Page 88: Detected Chapter 4 - SPECIAL DETAILED REQUIREMENTS BASED ON OCCUPANCY AND USE
+2025-11-16 00:03:41,530 - Page 93: Extracted 403.2.3 (accuracy: 99.9%, 2 cols × 88 rows) -> Section 403.4.3
+2025-11-16 00:03:42,260 - Page 99: Extracted 406.5.4 (accuracy: 99.9%, 2 cols × 75 rows) -> Section 406.5.2.1
+2025-11-16 00:03:42,722 - Page 100: Extracted 406.5.4_1 (accuracy: 100.0%, 6 cols × 3 rows) -> Section 406.6.1
+2025-11-16 00:03:43,808 - Page 111: Extracted 412.2.1.1 (accuracy: 99.9%, 2 cols × 74 rows) -> Section 412.2.2.3.2
+2025-11-16 00:03:44,317 - Page 114: Extracted 412.6 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 412.7.4
+2025-11-16 00:03:44,958 - Page 115: Extracted 414.2.2. (accuracy: 99.9%, 2 cols × 81 rows) -> Section 414.2.4
+2025-11-16 00:03:45,685 - Page 122: Extracted 307.1(2). (accuracy: 99.9%, 2 cols × 104 rows) -> Section 415.11.1.3
+2025-11-16 00:03:46,306 - Page 135: Extracted 428.3. (accuracy: 99.4%, 6 cols × 5 rows) -> Section 428.3.2
+2025-11-16 00:03:46,840 - Page 136: Extracted 428.3._1 (accuracy: 52.6%, 4 cols × 37 rows) -> Section 428.3.9
+2025-11-16 00:03:46,855 - Page 138: Detected Chapter 5 - GENERAL BUILDING HEIGHTS AND AREAS
+2025-11-16 00:03:47,362 - Page 140: Extracted 504.3 (accuracy: 98.2%, 19 cols × 16 rows) -> Section 505.1
+2025-11-16 00:03:48,264 - Page 141: Extracted 504.4 (accuracy: 99.5%, 15 cols × 42 rows) -> Section 505.1
+2025-11-16 00:03:48,773 - Page 142: Extracted 504.4_1 (accuracy: 98.8%, 15 cols × 20 rows) -> Section 505.3.3
+2025-11-16 00:03:49,488 - Page 143: Extracted 506.2. (accuracy: 99.7%, 3 cols × 93 rows) -> Section 506.3.1
+2025-11-16 00:03:50,310 - Page 144: Extracted 506.2 (accuracy: 99.4%, 16 cols × 31 rows) -> Section 506.3.1
+2025-11-16 00:03:51,120 - Page 145: Extracted 506.2_1 (accuracy: 99.4%, 18 cols × 30 rows) -> Section 506.3.1
+2025-11-16 00:03:51,571 - Page 146: Extracted 506.3.3. (accuracy: 100.0%, 3 cols × 2 rows) -> Section 507.1.1
+2025-11-16 00:03:51,571 - Page 146: Extracted 506.2_2 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 507.1.1
+2025-11-16 00:03:52,259 - Page 148: Extracted 508.4. (accuracy: 100.0%, 2 cols × 97 rows) -> Section 507.12
+2025-11-16 00:03:52,840 - Page 150: Extracted 508.4._1 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 508.5.2
+2025-11-16 00:03:53,249 - Page 151: Extracted 1004.5. (accuracy: 100.0%, 4 cols × 19 rows) -> Section 508.5.11
+2025-11-16 00:03:53,934 - Page 152: Extracted 509.1 (accuracy: 99.8%, 2 cols × 94 rows) -> Section 510.2
+2025-11-16 00:03:54,593 - Page 153: Extracted 406.5.4. (accuracy: 100.0%, 2 cols × 89 rows) -> Section 510.8
+2025-11-16 00:03:54,614 - Page 156: Detected Chapter 6 - TYPES OF CONSTRUCTION
+2025-11-16 00:03:55,040 - Page 156: Extracted 601 (accuracy: 97.5%, 14 cols × 9 rows) -> Section 602.1.1
+2025-11-16 00:03:55,754 - Page 157: Extracted 722.7.1(1). (accuracy: 100.0%, 2 cols × 98 rows) -> Section 602.4.2.1
+2025-11-16 00:03:56,481 - Page 158: Extracted 722.7.1(1)._1 (accuracy: 100.0%, 2 cols × 26 rows) -> Section 602.4.2.5
+2025-11-16 00:03:56,482 - Page 158: Extracted 722.7.1(2) (accuracy: 100.0%, 2 cols × 87 rows) -> Section 602.4.2.5
+2025-11-16 00:03:57,159 - Page 159: Extracted 722.7.1(1) (accuracy: 100.0%, 2 cols × 92 rows) -> Section 602.4.4.4
+2025-11-16 00:03:57,189 - Page 162: Detected Chapter 7 - FIRE AND SMOKE PROTECTION FEATURES
+2025-11-16 00:03:57,853 - Page 164: Extracted 601. (accuracy: 99.8%, 2 cols × 105 rows) -> Section 704.12
+2025-11-16 00:03:58,542 - Page 166: Extracted 705.2 (accuracy: 96.7%, 3 cols × 13 rows) -> Section 705.2.3.1
+2025-11-16 00:03:58,542 - Page 166: Extracted 166.2 (accuracy: 96.7%, 3 cols × 84 rows) -> Section 705.2.3.1
+2025-11-16 00:03:59,001 - Page 167: Extracted 705.5 (accuracy: 100.0%, 3 cols × 4 rows) -> Section 705.8.2
+2025-11-16 00:03:59,508 - Page 169: Extracted 705.8 (accuracy: 100.0%, 3 cols × 15 rows) -> Section 705.8.5
+2025-11-16 00:04:00,198 - Page 171: Extracted 706.4 (accuracy: 99.8%, 2 cols × 87 rows) -> Section 706.5.2
+2025-11-16 00:04:00,874 - Page 173: Extracted 509.1. (accuracy: 100.0%, 2 cols × 17 rows) -> Section 707.3.9
+2025-11-16 00:04:00,874 - Page 173: Extracted 707.3.10. (accuracy: 100.0%, 2 cols × 37 rows) -> Section 707.3.9
+2025-11-16 00:04:00,874 - Page 173: Extracted 707.3.10 (accuracy: 86.6%, 4 cols × 15 rows) -> Section 707.3.9
+2025-11-16 00:04:00,874 - Page 173: Extracted 173.4 (accuracy: 100.0%, 2 cols × 22 rows) -> Section 707.3.9
+2025-11-16 00:04:01,444 - Page 186: Extracted 716.1(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 716.1.2.2.1
+2025-11-16 00:04:01,444 - Page 186: Extracted 716.1(2) (accuracy: 96.3%, 12 cols × 30 rows) -> Section 716.1.2.2.1
+2025-11-16 00:04:01,857 - Page 187: Extracted 716.1(2)_1 (accuracy: 94.3%, 11 cols × 32 rows) -> Section 716.1.2.2.1
+2025-11-16 00:04:02,283 - Page 188: Extracted 716.1(2)_2 (accuracy: 100.0%, 5 cols × 10 rows) -> Section 716.1.2.3
+2025-11-16 00:04:02,943 - Page 189: Extracted 716.1(2)_3 (accuracy: 99.8%, 2 cols × 90 rows) -> Section 716.2.2.3.1
+2025-11-16 00:04:03,450 - Page 193: Extracted 717.3.2.1 (accuracy: 100.0%, 4 cols × 3 rows) -> Section 717.3.3.1
+2025-11-16 00:04:04,234 - Page 201: Extracted 721.1(1) (accuracy: 100.0%, 2 cols × 97 rows) -> Section 721.1.5
+2025-11-16 00:04:04,678 - Page 202: Extracted 721.1(1)_1 (accuracy: 87.1%, 11 cols × 37 rows) -> Section 721.1.5
+2025-11-16 00:04:05,120 - Page 203: Extracted 721.1(1)_2 (accuracy: 97.4%, 10 cols × 20 rows) -> Section 721.1.5
+2025-11-16 00:04:05,531 - Page 204: Extracted 721.1(1)_3 (accuracy: 96.4%, 10 cols × 11 rows) -> Section 721.1.5
+2025-11-16 00:04:05,931 - Page 205: Extracted 721.1(1)_4 (accuracy: 97.2%, 10 cols × 18 rows) -> Section 721.1.5
+2025-11-16 00:04:06,397 - Page 206: Extracted 721.1(2) (accuracy: 98.7%, 11 cols × 23 rows) -> Section 721.1.5
+2025-11-16 00:04:06,801 - Page 207: Extracted 721.1(2)_1 (accuracy: 98.7%, 10 cols × 24 rows) -> Section 721.1.5
+2025-11-16 00:04:07,530 - Page 208: Extracted 721.1(2)_2 (accuracy: 98.4%, 11 cols × 24 rows) -> Section 721.1.5
+2025-11-16 00:04:07,964 - Page 209: Extracted 721.1(2)_3 (accuracy: 98.1%, 11 cols × 22 rows) -> Section 721.1.5
+2025-11-16 00:04:08,385 - Page 210: Extracted 721.1(2)_4 (accuracy: 97.0%, 11 cols × 8 rows) -> Section 721.1.5
+2025-11-16 00:04:08,815 - Page 211: Extracted 721.1(2)_5 (accuracy: 98.0%, 10 cols × 12 rows) -> Section 721.1.5
+2025-11-16 00:04:09,246 - Page 212: Extracted 721.1(2)_6 (accuracy: 98.2%, 9 cols × 16 rows) -> Section 721.1.5
+2025-11-16 00:04:09,702 - Page 213: Extracted 721.1(2)_7 (accuracy: 97.8%, 10 cols × 10 rows) -> Section 721.1.5
+2025-11-16 00:04:10,097 - Page 214: Extracted 721.1(2)_8 (accuracy: 97.6%, 15 cols × 14 rows) -> Section 721.1.5
+2025-11-16 00:04:10,518 - Page 215: Extracted 721.1(3) (accuracy: 97.6%, 17 cols × 18 rows) -> Section 721.1.5
+2025-11-16 00:04:10,911 - Page 216: Extracted 721.1(3)_1 (accuracy: 97.7%, 14 cols × 8 rows) -> Section 721.1.5
+2025-11-16 00:04:11,322 - Page 217: Extracted 721.1(3)_2 (accuracy: 97.1%, 17 cols × 12 rows) -> Section 721.1.5
+2025-11-16 00:04:11,697 - Page 218: Extracted 721.1(3)_3 (accuracy: 97.3%, 14 cols × 6 rows) -> Section 721.1.5
+2025-11-16 00:04:12,052 - Page 219: Extracted 721.1(3)_4 (accuracy: 95.0%, 17 cols × 6 rows) -> Section 721.1.5
+2025-11-16 00:04:12,385 - Page 220: Extracted 721.1(3)_5 (accuracy: 96.1%, 14 cols × 6 rows) -> Section 721.1.5
+2025-11-16 00:04:12,794 - Page 221: Extracted 721.1(3)_6 (accuracy: 96.2%, 15 cols × 4 rows) -> Section 721.1.5
+2025-11-16 00:04:13,245 - Page 222: Extracted 721.1(3)_7 (accuracy: 93.6%, 15 cols × 9 rows) -> Section 721.1.5
+2025-11-16 00:04:13,646 - Page 223: Extracted 721.1(3)_8 (accuracy: 97.8%, 13 cols × 8 rows) -> Section 721.1.5
+2025-11-16 00:04:14,084 - Page 224: Extracted 721.1(3)_9 (accuracy: 98.2%, 15 cols × 8 rows) -> Section 721.1.5
+2025-11-16 00:04:14,489 - Page 225: Extracted 721.1(3)_10 (accuracy: 94.1%, 14 cols × 4 rows) -> Section 721.1.5
+2025-11-16 00:04:14,975 - Page 226: Extracted 722.2.1.1 (accuracy: 95.8%, 7 cols × 4 rows) -> Section 722.2.1.2.2
+2025-11-16 00:04:15,403 - Page 227: Extracted 722.2.1.2(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 0.59
+2025-11-16 00:04:15,874 - Page 228: Extracted 722.2.1.4(1) (accuracy: 85.3%, 7 cols × 7 rows) -> Section 1
+2025-11-16 00:04:15,874 - Page 228: Extracted 228.2 (accuracy: 94.0%, 2 cols × 2 rows) -> Section 1
+2025-11-16 00:04:15,874 - Page 228: Extracted 228.3 (accuracy: 81.5%, 6 cols × 6 rows) -> Section 1
+2025-11-16 00:04:15,874 - Page 228: Extracted 228.4 (accuracy: 98.6%, 7 cols × 3 rows) -> Section 1
+2025-11-16 00:04:16,344 - Page 229: Extracted 722.2.2.1 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.2.2.1.2
+2025-11-16 00:04:16,344 - Page 229: Extracted 722.2.1.4(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.2.2.1.2
+2025-11-16 00:04:16,821 - Page 232: Extracted 722.2.4 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.2.4.2
+2025-11-16 00:04:16,821 - Page 232: Extracted 722.2.3(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.2.4.2
+2025-11-16 00:04:16,821 - Page 232: Extracted 722.2.3(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.2.4.2
+2025-11-16 00:04:16,821 - Page 232: Extracted 722.2.3(3) (accuracy: 100.0%, 4 cols × 5 rows) -> Section 722.2.4.2
+2025-11-16 00:04:17,273 - Page 233: Extracted 722.2.3(4) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 722.2.4.4
+2025-11-16 00:04:17,273 - Page 233: Extracted 722.2.3(5) (accuracy: 100.0%, 5 cols × 9 rows) -> Section 722.2.4.4
+2025-11-16 00:04:17,754 - Page 234: Extracted 722.3.2 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.3.2.5
+2025-11-16 00:04:18,212 - Page 235: Extracted 722.3.4 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 722.4.1.1
+2025-11-16 00:04:18,212 - Page 235: Extracted 722.3.5 (accuracy: 100.0%, 4 cols × 3 rows) -> Section 722.4.1.1
+2025-11-16 00:04:18,212 - Page 235: Extracted 722.4.1(3) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 722.4.1.1
+2025-11-16 00:04:18,212 - Page 235: Extracted 722.4.1(4) (accuracy: 100.0%, 4 cols × 3 rows) -> Section 722.4.1.1
+2025-11-16 00:04:18,657 - Page 236: Extracted 722.4.1(1) (accuracy: 94.7%, 7 cols × 3 rows) -> Section 722.4.1.1.3
+2025-11-16 00:04:18,657 - Page 236: Extracted 722.4.1(2) (accuracy: 100.0%, 4 cols × 9 rows) -> Section 722.4.1.1.3
+2025-11-16 00:04:19,428 - Page 237: Extracted 722.4.1(3). (accuracy: 100.0%, 2 cols × 22 rows) -> Section 722.5.1.1.3
+2025-11-16 00:04:19,428 - Page 237: Extracted 722.4.1(1)_1 (accuracy: 100.0%, 2 cols × 47 rows) -> Section 722.5.1.1.3
+2025-11-16 00:04:19,428 - Page 237: Extracted 237.3 (accuracy: 91.1%, 3 cols × 49 rows) -> Section 722.5.1.1.3
+2025-11-16 00:04:20,080 - Page 238: Extracted 722.5.1(1) (accuracy: 99.3%, 5 cols × 62 rows) -> Section 722.5.1.1.3
+2025-11-16 00:04:20,080 - Page 238: Extracted 722.5.1(1)_1 (accuracy: 99.0%, 6 cols × 63 rows) -> Section 722.5.1.1.3
+2025-11-16 00:04:20,554 - Page 239: Extracted 722.5.1(2) (accuracy: 99.3%, 3 cols × 6 rows) -> Section 0.20
+2025-11-16 00:04:20,554 - Page 239: Extracted 722.5.1(3) (accuracy: 98.1%, 3 cols × 21 rows) -> Section 0.20
+2025-11-16 00:04:21,299 - Page 240: Extracted 722.5.1(4) (accuracy: 99.0%, 6 cols × 47 rows) -> Section 0.20
+2025-11-16 00:04:21,955 - Page 241: Extracted 722.5.1(4)_1 (accuracy: 98.3%, 6 cols × 47 rows) -> Section 0.20
+2025-11-16 00:04:22,705 - Page 242: Extracted 722.5.1(5) (accuracy: 100.0%, 4 cols × 22 rows) -> Section 0.20
+2025-11-16 00:04:22,705 - Page 242: Extracted 722.5.1(5)_1 (accuracy: 100.0%, 5 cols × 22 rows) -> Section 0.20
+2025-11-16 00:04:23,238 - Page 243: Extracted 722.5.1(5)_2 (accuracy: 100.0%, 4 cols × 10 rows) -> Section 0.20
+2025-11-16 00:04:23,238 - Page 243: Extracted 722.5.1(5)_3 (accuracy: 100.0%, 4 cols × 22 rows) -> Section 0.20
+2025-11-16 00:04:23,774 - Page 244: Extracted 722.5.1(6) (accuracy: 97.0%, 18 cols × 39 rows) -> Section 0.20
+2025-11-16 00:04:24,176 - Page 245: Extracted 722.5.1(7) (accuracy: 98.3%, 9 cols × 22 rows) -> Section 0.20
+2025-11-16 00:04:24,176 - Page 245: Extracted 722.5.1(8) (accuracy: 99.2%, 8 cols × 38 rows) -> Section 0.20
+2025-11-16 00:04:24,608 - Page 246: Extracted 722.5.1(9) (accuracy: 98.9%, 9 cols × 40 rows) -> Section 0.20
+2025-11-16 00:04:24,608 - Page 246: Extracted 722.5.1(10) (accuracy: 99.3%, 7 cols × 48 rows) -> Section 0.20
+2025-11-16 00:04:25,315 - Page 252: Extracted 722.6.2(1) (accuracy: 86.2%, 4 cols × 45 rows) -> Section 722.6.2.6
+2025-11-16 00:04:25,315 - Page 252: Extracted 722.6.2(1)_1 (accuracy: 98.1%, 3 cols × 15 rows) -> Section 722.6.2.6
+2025-11-16 00:04:25,315 - Page 252: Extracted 722.6.2(2) (accuracy: 86.0%, 2 cols × 11 rows) -> Section 722.6.2.6
+2025-11-16 00:04:25,763 - Page 253: Extracted 722.6.2(5) (accuracy: 100.0%, 5 cols × 2 rows) -> Section 722.7.2.1
+2025-11-16 00:04:25,763 - Page 253: Extracted 722.6.2(4) (accuracy: 100.0%, 6 cols × 3 rows) -> Section 722.7.2.1
+2025-11-16 00:04:25,763 - Page 253: Extracted 722.6.2(3) (accuracy: 100.0%, 4 cols × 1 rows) -> Section 722.7.2.1
+2025-11-16 00:04:26,346 - Page 254: Extracted 722.7.1(1)_1 (accuracy: 100.0%, 3 cols × 54 rows) -> Section 722.7.2.2
+2025-11-16 00:04:26,361 - Page 256: Detected Chapter 8 - INTERIOR FINISHES
+2025-11-16 00:04:26,849 - Page 258: Extracted 803.13 (accuracy: 100.0%, 11 cols × 5 rows) -> Section 803.15.1.1
+2025-11-16 00:04:26,900 - Page 262: Detected Chapter 9 - FIRE PROTECTION AND LIFE SAFETY SYSTEMS
+2025-11-16 00:04:27,515 - Page 304: Detected Chapter 10 - MEANS OF EGRESS
+2025-11-16 00:04:28,002 - Page 306: Extracted 1004.5 (accuracy: 100.0%, 4 cols × 8 rows) -> Section 1004.5.1
+2025-11-16 00:04:28,469 - Page 309: Extracted 1006.2.1 (accuracy: 99.5%, 5 cols × 3 rows) -> Section 1006.2.2.6
+2025-11-16 00:04:29,123 - Page 310: Extracted 1006.3.3 (accuracy: 92.7%, 4 cols × 11 rows) -> Section 1006.3.1
+2025-11-16 00:04:29,123 - Page 310: Extracted 310.2 (accuracy: 99.9%, 4 cols × 19 rows) -> Section 1006.3.1
+2025-11-16 00:04:29,123 - Page 310: Extracted 310.3 (accuracy: 100.0%, 2 cols × 57 rows) -> Section 1006.3.1
+2025-11-16 00:04:29,531 - Page 311: Extracted 1006.3.4(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1007.1.1.1
+2025-11-16 00:04:30,139 - Page 322: Extracted 1010.3.1(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1010.3.1
+2025-11-16 00:04:30,596 - Page 323: Extracted 1010.3.1(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1010.3.2
+2025-11-16 00:04:31,402 - Page 335: Extracted 1017.2 (accuracy: 92.8%, 5 cols × 31 rows) -> Section 1017.3.2.1
+2025-11-16 00:04:31,402 - Page 335: Extracted 335.2 (accuracy: 94.5%, 3 cols × 36 rows) -> Section 1017.3.2.1
+2025-11-16 00:04:31,402 - Page 335: Extracted 335.3 (accuracy: 100.0%, 2 cols × 18 rows) -> Section 1017.3.2.1
+2025-11-16 00:04:31,878 - Page 337: Extracted 1020.2 (accuracy: 100.0%, 3 cols × 7 rows) -> Section 1020.2.1
+2025-11-16 00:04:31,878 - Page 337: Extracted 1020.3. (accuracy: 97.7%, 5 cols × 4 rows) -> Section 1020.2.1
+2025-11-16 00:04:32,479 - Page 347: Extracted 1030.6.2 (accuracy: 98.7%, 6 cols × 3 rows) -> Section 1030.6.3
+2025-11-16 00:04:33,171 - Page 350: Extracted or (accuracy: 99.8%, 2 cols × 95 rows) -> Section 1030.14
+2025-11-16 00:04:33,617 - Page 351: Extracted 1030.13.2.1 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1030.14.2.4
+2025-11-16 00:04:33,671 - Page 356: Detected Chapter 11 - ACCESSIBILITY
+2025-11-16 00:04:34,340 - Page 358: Extracted 1105.1.1 (accuracy: 100.0%, 2 cols × 94 rows) -> Section 1105.1.5
+2025-11-16 00:04:34,800 - Page 359: Extracted 1106.2 (accuracy: 100.0%, 3 cols × 3 rows) -> Section 1106.9.1
+2025-11-16 00:04:35,261 - Page 362: Extracted 1108.6.1.1 (accuracy: 100.0%, 5 cols × 3 rows) -> Section 1108.6.2.1
+2025-11-16 00:04:35,749 - Page 364: Extracted 1109.2.2.1 (accuracy: 100.0%, 4 cols × 3 rows) -> Section 1109.2.2.1
+2025-11-16 00:04:36,374 - Page 365: Extracted 1109.2.7.1 (accuracy: 100.0%, 2 cols × 74 rows) -> Section 1109.2.8
+2025-11-16 00:04:37,076 - Page 366: Extracted 1109.3 (accuracy: 100.0%, 2 cols × 23 rows) -> Section 1110.1
+2025-11-16 00:04:37,076 - Page 366: Extracted 366.2 (accuracy: 100.0%, 2 cols × 17 rows) -> Section 1110.1
+2025-11-16 00:04:37,076 - Page 366: Extracted 366.3 (accuracy: 100.0%, 2 cols × 36 rows) -> Section 1110.1
+2025-11-16 00:04:37,076 - Page 366: Extracted 366.4 (accuracy: 86.6%, 3 cols × 14 rows) -> Section 1110.1
+2025-11-16 00:04:37,619 - Page 370: Extracted 1110.13.1 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 1111.1
+2025-11-16 00:04:38,086 - Page 372: Extracted 1111.4.9.1 (accuracy: 100.0%, 3 cols × 1 rows) -> Section 1111.4.14.2
+2025-11-16 00:04:38,115 - Page 374: Detected Chapter 12 - INTERIOR ENVIRONMENT
+2025-11-16 00:04:38,736 - Page 375: Extracted 1202.3 (accuracy: 99.5%, 3 cols × 71 rows) -> Section 1202.2.1
+2025-11-16 00:04:38,736 - Page 375: Extracted 375.2 (accuracy: 98.4%, 3 cols × 9 rows) -> Section 1202.2.1
+2025-11-16 00:04:38,806 - Page 382: Detected Chapter 13 - ENERGY EFFICIENCY
+2025-11-16 00:04:38,820 - Page 384: Detected Chapter 14 - EXTERIOR WALLS
+2025-11-16 00:04:39,255 - Page 386: Extracted 1404.3(1) (accuracy: 100.0%, 4 cols × 7 rows) -> Section 1404.2
+2025-11-16 00:04:39,745 - Page 387: Extracted 1404.3(2) (accuracy: 97.8%, 5 cols × 7 rows) -> Section 1404.3.2
+2025-11-16 00:04:39,745 - Page 387: Extracted 1404.3(3) (accuracy: 100.0%, 3 cols × 7 rows) -> Section 1404.3.2
+2025-11-16 00:04:39,745 - Page 387: Extracted 1404.3.1 (accuracy: 100.0%, 3 cols × 16 rows) -> Section 1404.3.2
+2025-11-16 00:04:40,472 - Page 392: Extracted 1405.1.1.1.2 (accuracy: 100.0%, 2 cols × 40 rows) -> Section 1405.1.2
+2025-11-16 00:04:40,472 - Page 392: Extracted 392.2 (accuracy: 94.5%, 4 cols × 34 rows) -> Section 1405.1.2
+2025-11-16 00:04:40,472 - Page 392: Extracted 392.3 (accuracy: 100.0%, 2 cols × 44 rows) -> Section 1405.1.2
+2025-11-16 00:04:40,524 - Page 396: Detected Chapter 15 - ROOF ASSEMBLIES AND ROOFTOP STRUCTURES
+2025-11-16 00:04:41,171 - Page 397: Extracted 1504.2 (accuracy: 96.6%, 3 cols × 77 rows) -> Section 1504.4.3
+2025-11-16 00:04:41,171 - Page 397: Extracted 397.2 (accuracy: 98.6%, 4 cols × 11 rows) -> Section 1504.4.3
+2025-11-16 00:04:41,742 - Page 398: Extracted 1504.9 (accuracy: 100.0%, 5 cols × 5 rows) -> Section 1505.1
+2025-11-16 00:04:42,427 - Page 399: Extracted 1505.1 (accuracy: 100.0%, 2 cols × 97 rows) -> Section 1507.1.1
+2025-11-16 00:04:42,878 - Page 400: Extracted 1507.1.1(1) (accuracy: 100.0%, 5 cols × 17 rows) -> Section 1507.1.1
+2025-11-16 00:04:43,282 - Page 401: Extracted 1507.1.1(2) (accuracy: 100.0%, 6 cols × 13 rows) -> Section 1507.1.1
+2025-11-16 00:04:43,752 - Page 402: Extracted 1507.1.1(3) (accuracy: 100.0%, 5 cols × 7 rows) -> Section 1507.2.8
+2025-11-16 00:04:44,373 - Page 403: Extracted 1507.2.8.2. (accuracy: 100.0%, 2 cols × 28 rows) -> Section 1507.3.6
+2025-11-16 00:04:44,373 - Page 403: Extracted 1507.2.8.2 (accuracy: 100.0%, 2 cols × 51 rows) -> Section 1507.3.6
+2025-11-16 00:04:44,373 - Page 403: Extracted 403.3 (accuracy: 98.3%, 4 cols × 13 rows) -> Section 1507.3.6
+2025-11-16 00:04:44,820 - Page 404: Extracted 1507.3.7 (accuracy: 85.1%, 7 cols × 19 rows) -> Section 1507.3.6
+2025-11-16 00:04:45,305 - Page 405: Extracted 1507.4.3(1) (accuracy: 100.0%, 3 cols × 13 rows) -> Section 1507.4.3
+2025-11-16 00:04:45,971 - Page 406: Extracted 1507.4.3(2). (accuracy: 100.0%, 2 cols × 92 rows) -> Section 1507.8.1.1
+2025-11-16 00:04:46,421 - Page 407: Extracted 1507.8 (accuracy: 100.0%, 5 cols × 12 rows) -> Section 1507.8.6
+2025-11-16 00:04:46,421 - Page 407: Extracted 1507.8.7. (accuracy: 100.0%, 5 cols × 1 rows) -> Section 1507.8.6
+2025-11-16 00:04:46,918 - Page 408: Extracted 1507.8.7 (accuracy: 97.7%, 7 cols × 7 rows) -> Section 1507.9.6
+2025-11-16 00:04:46,918 - Page 408: Extracted 1507.9.6 (accuracy: 100.0%, 5 cols × 9 rows) -> Section 1507.9.6
+2025-11-16 00:04:47,352 - Page 409: Extracted 1507.9.8 (accuracy: 100.0%, 4 cols × 13 rows) -> Section 1507.11.2
+2025-11-16 00:04:47,352 - Page 409: Extracted 1507.10.2 (accuracy: 100.0%, 5 cols × 9 rows) -> Section 1507.11.2
+2025-11-16 00:04:47,831 - Page 410: Extracted 1507.12.2 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1507.16.8
+2025-11-16 00:04:48,296 - Page 411: Extracted 1509.2 (accuracy: 100.0%, 3 cols × 6 rows) -> Section 1509.2
+2025-11-16 00:04:48,978 - Page 412: Extracted 705.5_1 (accuracy: 100.0%, 3 cols × 66 rows) -> Section 1511.3.2
+2025-11-16 00:04:48,978 - Page 412: Extracted 412.2 (accuracy: 100.0%, 2 cols × 16 rows) -> Section 1511.3.2
+2025-11-16 00:04:49,026 - Page 416: Detected Chapter 16 - STRUCTURAL DESIGN
+2025-11-16 00:04:49,691 - Page 418: Extracted 1604.3 (accuracy: 99.9%, 4 cols × 16 rows) -> Section 1604.3.7
+2025-11-16 00:04:49,691 - Page 418: Extracted 418.2 (accuracy: 55.6%, 5 cols × 27 rows) -> Section 1604.3.7
+2025-11-16 00:04:49,691 - Page 418: Extracted 418.3 (accuracy: 98.3%, 2 cols × 39 rows) -> Section 1604.3.7
+2025-11-16 00:04:50,119 - Page 420: Extracted 1604.5 (accuracy: 100.0%, 4 cols × 8 rows) -> Section 1604.9
+2025-11-16 00:04:50,558 - Page 423: Extracted 1607.1 (accuracy: 96.9%, 7 cols × 25 rows) -> Section 1607.1
+2025-11-16 00:04:50,936 - Page 424: Extracted 1607.1_1 (accuracy: 99.3%, 9 cols × 17 rows) -> Section 1607.1
+2025-11-16 00:04:51,359 - Page 425: Extracted 1607.1_2 (accuracy: 97.9%, 9 cols × 24 rows) -> Section 1607.1
+2025-11-16 00:04:51,809 - Page 427: Extracted 1607.12.1 (accuracy: 100.0%, 4 cols × 4 rows) -> Section 1607.12.2
+2025-11-16 00:04:52,500 - Page 428: Extracted 1607.1_3 (accuracy: 100.0%, 2 cols × 28 rows) -> Section 1607.14.4.1
+2025-11-16 00:04:52,500 - Page 428: Extracted 428.2 (accuracy: 100.0%, 2 cols × 56 rows) -> Section 1607.14.4.1
+2025-11-16 00:04:52,500 - Page 428: Extracted 428.3 (accuracy: 100.0%, 3 cols × 41 rows) -> Section 1607.14.4.1
+2025-11-16 00:04:53,172 - Page 429: Extracted 1607.1_4 (accuracy: 100.0%, 2 cols × 102 rows) -> Section 1607.16.1
+2025-11-16 00:04:53,823 - Page 430: Extracted 1607.1_5 (accuracy: 100.0%, 2 cols × 83 rows) -> Section 1609.1
+2025-11-16 00:04:54,497 - Page 431: Extracted 1608.2 (accuracy: 99.5%, 3 cols × 64 rows) -> Section 1609.2
+2025-11-16 00:04:54,497 - Page 431: Extracted 431.2 (accuracy: 100.0%, 2 cols × 17 rows) -> Section 1609.2
+2025-11-16 00:04:54,497 - Page 431: Extracted 431.3 (accuracy: 100.0%, 2 cols × 82 rows) -> Section 1609.2
+2025-11-16 00:04:54,497 - Page 431: Extracted 431.4 (accuracy: 100.0%, 2 cols × 15 rows) -> Section 1609.2
+2025-11-16 00:04:54,970 - Page 432: Extracted 1609.2 (accuracy: 99.5%, 6 cols × 7 rows) -> Section 1609.2.3
+2025-11-16 00:04:55,870 - Page 433: Extracted 7.2-7 (accuracy: 78.7%, 4 cols × 9 rows) -> Section 1609.2.3
+2025-11-16 00:04:57,933 - Page 447: Extracted 1609.3.1 (accuracy: 100.0%, 2 cols × 65 rows) -> Section 1609.5.2
+2025-11-16 00:04:58,838 - Page 449: Extracted 1610.1 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 1611.3
+2025-11-16 00:05:00,422 - Page 456: Extracted 1613.2.5(1) (accuracy: 100.0%, 2 cols × 13 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,423 - Page 456: Extracted 456.2 (accuracy: 99.4%, 3 cols × 46 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,423 - Page 456: Extracted 456.3 (accuracy: 100.0%, 2 cols × 92 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,840 - Page 457: Extracted 1613.2.3(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,840 - Page 457: Extracted 1613.2.3(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,840 - Page 457: Extracted 1613.2.5(1)_1 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:00,840 - Page 457: Extracted 1613.2.5(2) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1613.2.5.2
+2025-11-16 00:05:02,552 - Page 472: Detected Chapter 17 - SPECIAL INSPECTIONS AND TESTS
+2025-11-16 00:05:03,060 - Page 476: Extracted 1705.2.3 (accuracy: 99.9%, 6 cols × 3 rows) -> Section 1705.5.1
+2025-11-16 00:05:03,496 - Page 477: Extracted 1705.3 (accuracy: 100.0%, 6 cols × 34 rows) -> Section 1705.5.1
+2025-11-16 00:05:03,939 - Page 478: Extracted 1705.6 (accuracy: 95.1%, 7 cols × 7 rows) -> Section 1705.9
+2025-11-16 00:05:03,939 - Page 478: Extracted 1705.5.3 (accuracy: 100.0%, 4 cols × 7 rows) -> Section 1705.9
+2025-11-16 00:05:04,409 - Page 479: Extracted 1705.8 (accuracy: 96.1%, 4 cols × 8 rows) -> Section 1705.13
+2025-11-16 00:05:04,409 - Page 479: Extracted 1705.7 (accuracy: 98.0%, 5 cols × 7 rows) -> Section 1705.13
+2025-11-16 00:05:04,913 - Page 481: Extracted 1705.13.7 (accuracy: 100.0%, 8 cols × 8 rows) -> Section 1705.13.8
+2025-11-16 00:05:05,004 - Page 488: Detected Chapter 18 - SOILS AND FOUNDATIONS
+2025-11-16 00:05:05,593 - Page 493: Extracted 1806.2. (accuracy: 99.0%, 7 cols × 7 rows) -> Section 1807.1.2
+2025-11-16 00:05:06,818 - Page 494: Extracted 1807.1.6.3(2) (accuracy: 100.0%, 2 cols × 85 rows) -> Section 1807.1.6.3
+2025-11-16 00:05:07,285 - Page 495: Extracted 1807.1.6.2 (accuracy: 99.0%, 15 cols × 13 rows) -> Section 1807.1.6.3
+2025-11-16 00:05:07,735 - Page 496: Extracted 1807.1.6.3(1) (accuracy: 96.9%, 8 cols × 7 rows) -> Section 1807.2.4
+2025-11-16 00:05:08,165 - Page 497: Extracted 1807.1.6.3(2)_1 (accuracy: 99.2%, 7 cols × 11 rows) -> Section 1807.3.2.1
+2025-11-16 00:05:08,564 - Page 498: Extracted 1807.1.6.3(3) (accuracy: 99.2%, 8 cols × 11 rows) -> Section 1807.3.2.3
+2025-11-16 00:05:09,010 - Page 499: Extracted 1807.1.6.3(4) (accuracy: 98.4%, 8 cols × 11 rows) -> Section 1808.2
+2025-11-16 00:05:09,470 - Page 501: Extracted 1809.7 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 1808.8
+2025-11-16 00:05:09,923 - Page 502: Extracted 1808.8.2 (accuracy: 100.0%, 3 cols × 6 rows) -> Section 1808.9
+2025-11-16 00:05:10,427 - Page 503: Extracted 1809.7_1 (accuracy: 100.0%, 5 cols × 2 rows) -> Section 1809.10
+2025-11-16 00:05:10,965 - Page 507: Extracted 1810.3.2.6 (accuracy: 100.0%, 3 cols × 9 rows) -> Section 0.6
+2025-11-16 00:05:11,734 - Page 512: Extracted 18.10.6.4(g) (accuracy: 100.0%, 2 cols × 84 rows) -> Section 1810.3.9.6
+2025-11-16 00:05:11,794 - Page 516: Detected Chapter 19 - CONCRETE
+2025-11-16 00:05:11,845 - Page 522: Detected Chapter 20 - ALUMINUM
+2025-11-16 00:05:11,859 - Page 524: Detected Chapter 21 - MASONRY
+2025-11-16 00:05:12,330 - Page 525: Extracted 2103.2.3 (accuracy: 100.0%, 5 cols × 7 rows) -> Section 2104.1.2
+2025-11-16 00:05:12,850 - Page 527: Extracted 2109.2.3.1 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 2109.2.4.7
+2025-11-16 00:05:13,584 - Page 535: Extracted 2113.16(1) (accuracy: 100.0%, 2 cols × 31 rows) -> Section 2113.18
+2025-11-16 00:05:14,028 - Page 536: Extracted 2114.4 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2114.5
+2025-11-16 00:05:14,042 - Page 538: Detected Chapter 22 - STEEL
+2025-11-16 00:05:14,714 - Page 539: Extracted 15.4-1. (accuracy: 100.0%, 2 cols × 15 rows) -> Section 2207.2
+2025-11-16 00:05:14,714 - Page 539: Extracted 12.2-1 (accuracy: 94.7%, 2 cols × 21 rows) -> Section 2207.2
+2025-11-16 00:05:14,714 - Page 539: Extracted 539.3 (accuracy: 98.2%, 3 cols × 29 rows) -> Section 2207.2
+2025-11-16 00:05:14,752 - Page 542: Detected Chapter 23 - WOOD
+2025-11-16 00:05:16,469 - Page 552: Extracted 2304.6.1 (accuracy: 97.3%, 12 cols × 12 rows) -> Section 2304.8.2
+2025-11-16 00:05:16,469 - Page 552: Extracted 2304.8(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2304.8.2
+2025-11-16 00:05:16,897 - Page 553: Extracted 2304.8(2) (accuracy: 98.5%, 6 cols × 4 rows) -> Section 2304.8.2
+2025-11-16 00:05:17,309 - Page 554: Extracted 2304.8(4) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2304.9.2.2
+2025-11-16 00:05:17,309 - Page 554: Extracted 2304.8(5) (accuracy: 100.0%, 6 cols × 5 rows) -> Section 2304.9.2.2
+2025-11-16 00:05:17,778 - Page 555: Extracted 2304.9.3.2 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 2304.9.3.2
+2025-11-16 00:05:18,205 - Page 557: Extracted 2304.10.2 (accuracy: 100.0%, 5 cols × 24 rows) -> Section 2304.10.5
+2025-11-16 00:05:18,628 - Page 558: Extracted 2304.10.2_1 (accuracy: 100.0%, 5 cols × 26 rows) -> Section 2304.10.5
+2025-11-16 00:05:19,046 - Page 559: Extracted 2304.10.2_2 (accuracy: 100.0%, 5 cols × 26 rows) -> Section 2304.10.5
+2025-11-16 00:05:19,459 - Page 560: Extracted 2304.10.2_3 (accuracy: 98.1%, 6 cols × 28 rows) -> Section 2304.10.5
+2025-11-16 00:05:19,897 - Page 561: Extracted 2304.10.2_4 (accuracy: 92.8%, 7 cols × 3 rows) -> Section 2304.11
+2025-11-16 00:05:20,368 - Page 562: Extracted 2304.11 (accuracy: 92.6%, 11 cols × 9 rows) -> Section 2304.11.3.1
+2025-11-16 00:05:20,889 - Page 565: Extracted 2305.2(1) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2305.2
+2025-11-16 00:05:20,889 - Page 565: Extracted 2305.2(2) (accuracy: 99.4%, 7 cols × 6 rows) -> Section 2305.2
+2025-11-16 00:05:20,889 - Page 565: Extracted 565.3 (accuracy: 100.0%, 3 cols × 3 rows) -> Section 2305.2
+2025-11-16 00:05:21,330 - Page 566: Extracted 2306.1 (accuracy: 97.3%, 4 cols × 39 rows) -> Section 2306.1.3
+2025-11-16 00:05:21,820 - Page 567: Extracted 2306.1.4 (accuracy: 99.6%, 4 cols × 21 rows) -> Section 2308.2
+2025-11-16 00:05:22,300 - Page 568: Extracted 2306.2(1) (accuracy: 98.1%, 12 cols × 17 rows) -> Section 2308.2
+2025-11-16 00:05:22,697 - Page 569: Extracted 2306.2(2) (accuracy: 100.0%, 10 cols × 16 rows) -> Section 2308.2
+2025-11-16 00:05:23,183 - Page 571: Extracted 2306.3(1) (accuracy: 96.8%, 15 cols × 9 rows) -> Section 2308.2
+2025-11-16 00:05:23,183 - Page 571: Extracted 2306.3(2) (accuracy: 91.0%, 7 cols × 5 rows) -> Section 2308.2
+2025-11-16 00:05:23,620 - Page 572: Extracted 2308.2.1 (accuracy: 100.0%, 7 cols × 16 rows) -> Section 2308.2.2
+2025-11-16 00:05:23,620 - Page 572: Extracted 2306.3(3) (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2308.2.2
+2025-11-16 00:05:24,317 - Page 573: Extracted 2308.4.2.1(1) (accuracy: 100.0%, 2 cols × 96 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:26,781 - Page 574: Extracted 2308.4.1.1(1) (accuracy: 100.0%, 4 cols × 8 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:28,011 - Page 575: Extracted 2308.4.1.1(1)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:28,376 - Page 576: Extracted 2308.4.1.1(2) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:29,028 - Page 577: Extracted 2308.4.2.1(1)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:29,617 - Page 578: Extracted 2308.4.2.1(1)_2 (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:30,170 - Page 579: Extracted 2308.4.2.1(2) (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:30,795 - Page 580: Extracted 2308.4.2.1(2)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2308.4.1.1
+2025-11-16 00:05:31,256 - Page 583: Extracted 2308.5.1 (accuracy: 99.7%, 6 cols × 3 rows) -> Section 2308.5.4
+2025-11-16 00:05:31,768 - Page 585: Extracted 2308.6.1 (accuracy: 100.0%, 5 cols × 2 rows) -> Section 2308.6.4
+2025-11-16 00:05:32,960 - Page 586: Extracted 2308.6.1_1 (accuracy: 96.0%, 5 cols × 122 rows) -> Section 2308.6.4
+2025-11-16 00:05:33,353 - Page 587: Extracted 2308.6.1_2 (accuracy: 96.3%, 14 cols × 30 rows) -> Section 2308.6.4
+2025-11-16 00:05:33,802 - Page 588: Extracted 2308.6.3(1) (accuracy: 99.0%, 12 cols × 34 rows) -> Section 2308.6.4
+2025-11-16 00:05:34,171 - Page 589: Extracted 2308.6.3(2) (accuracy: 100.0%, 4 cols × 2 rows) -> Section 2308.6.4
+2025-11-16 00:05:34,171 - Page 589: Extracted 2308.6.3(3) (accuracy: 95.6%, 8 cols × 5 rows) -> Section 2308.6.4
+2025-11-16 00:05:34,171 - Page 589: Extracted 2308.6.3(4) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2308.6.4
+2025-11-16 00:05:34,645 - Page 590: Extracted 2308.6.3(5) (accuracy: 98.8%, 8 cols × 9 rows) -> Section 2308.6.5.1
+2025-11-16 00:05:35,120 - Page 593: Extracted 2304.10.2_5 (accuracy: 100.0%, 2 cols × 2 rows) -> Section 2308.6.7.2
+2025-11-16 00:05:35,895 - Page 597: Extracted 2308.7.2(1) (accuracy: 100.0%, 2 cols × 81 rows) -> Section 2308.7.6.1
+2025-11-16 00:05:36,360 - Page 598: Extracted 2308.7.5 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 2308.8
+2025-11-16 00:05:36,826 - Page 600: Extracted 2308.7.1(1) (accuracy: 100.0%, 4 cols × 6 rows) -> Section 2309.1
+2025-11-16 00:05:37,282 - Page 601: Extracted 2308.7.1(1)_1 (accuracy: 100.0%, 5 cols × 6 rows) -> Section 2309.1
+2025-11-16 00:05:37,735 - Page 602: Extracted 2308.7.1(2) (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:38,169 - Page 603: Extracted 2308.7.1(2)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:38,885 - Page 604: Extracted 2308.7.2(1)_1 (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:39,628 - Page 605: Extracted 2308.7.2(1)_2 (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:40,331 - Page 606: Extracted 2308.7.2(2) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:41,038 - Page 607: Extracted 2308.7.2(2)_1 (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:41,756 - Page 608: Extracted 2308.7.2(3) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:42,516 - Page 609: Extracted 2308.7.2(3)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:43,211 - Page 610: Extracted 2308.7.2(4) (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:43,905 - Page 611: Extracted 2308.7.2(4)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:44,607 - Page 612: Extracted 2308.7.2(5) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:45,360 - Page 613: Extracted 2308.7.2(5)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:46,054 - Page 614: Extracted 2308.7.2(6) (accuracy: 100.0%, 5 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:46,499 - Page 615: Extracted 2308.7.2(6)_1 (accuracy: 100.0%, 4 cols × 5 rows) -> Section 2309.1
+2025-11-16 00:05:46,942 - Page 616: Extracted 2308.7.3.1 (accuracy: 99.9%, 7 cols × 14 rows) -> Section 2309.1
+2025-11-16 00:05:47,303 - Page 617: Extracted 2308.7.3.1(1) (accuracy: 100.0%, 7 cols × 29 rows) -> Section 2309.1
+2025-11-16 00:05:47,671 - Page 618: Extracted 2308.7.12 (accuracy: 100.0%, 8 cols × 23 rows) -> Section 2309.1
+2025-11-16 00:05:47,687 - Page 620: Detected Chapter 24 - GLASS AND GLAZING
+2025-11-16 00:05:48,190 - Page 624: Extracted 2406.2(1) (accuracy: 100.0%, 9 cols × 2 rows) -> Section 2406.4
+2025-11-16 00:05:48,190 - Page 624: Extracted 2406.2(2) (accuracy: 100.0%, 6 cols × 2 rows) -> Section 2406.4
+2025-11-16 00:05:48,232 - Page 628: Detected Chapter 25 - GYPSUM BOARD, GYPSUM PANEL PRODUCTS AND PLASTER
+2025-11-16 00:05:48,696 - Page 629: Extracted 2506.2 (accuracy: 100.0%, 3 cols × 5 rows) -> Section 2508.2.1
+2025-11-16 00:05:49,155 - Page 630: Extracted 2508.6. (accuracy: 100.0%, 3 cols × 2 rows) -> Section 2508.2.1
+2025-11-16 00:05:49,156 - Page 630: Extracted 2507.2_1 (accuracy: 100.0%, 6 cols × 3 rows) -> Section 2508.2.1
+2025-11-16 00:05:49,626 - Page 631: Extracted 2509.2 (accuracy: 100.0%, 3 cols × 3 rows) -> Section 2510.6
+2025-11-16 00:05:50,103 - Page 632: Extracted 2511.1.1 (accuracy: 100.0%, 4 cols × 4 rows) -> Section 2512.1.2
+2025-11-16 00:05:50,735 - Page 633: Extracted 2512.6 (accuracy: 100.0%, 2 cols × 79 rows) -> Section 2513.6
+2025-11-16 00:05:50,753 - Page 636: Detected Chapter 26 - PLASTIC
+2025-11-16 00:05:51,394 - Page 645: Extracted 2607.4 (accuracy: 100.0%, 7 cols × 8 rows) -> Section 2608.1
+2025-11-16 00:05:51,859 - Page 646: Extracted 2609.4 (accuracy: 100.0%, 4 cols × 2 rows) -> Section 2610.2
+2025-11-16 00:05:51,904 - Page 650: Detected Chapter 27 - ELECTRICAL
+2025-11-16 00:05:51,922 - Page 652: Detected Chapter 28 - MECHANICAL SYSTEMS
+2025-11-16 00:05:51,935 - Page 654: Detected Chapter 29 - PLUMBING SYSTEMS
+2025-11-16 00:05:52,000 - Page 660: Detected Chapter 30 - ELEVATORS AND CONVEYING SYSTEMS
+2025-11-16 00:05:52,452 - Page 660: Extracted 3001.3 (accuracy: 100.0%, 3 cols × 3 rows) -> Section 3001.3
+2025-11-16 00:05:52,567 - Page 668: Detected Chapter 31 - SPECIAL CONSTRUCTION
+2025-11-16 00:05:53,057 - Page 676: Extracted 3115.8.5.3 (accuracy: 98.0%, 8 cols × 11 rows) -> Section 3115.8.5.3
+2025-11-16 00:05:53,079 - Page 680: Detected Chapter 32 - ENCROACHMENTS INTO THE PUBLIC RIGHT-OF-WAY
+2025-11-16 00:05:53,093 - Page 682: Detected Chapter 33 - SAFEGUARDS DURING CONSTRUCTION
+2025-11-16 00:05:53,549 - Page 683: Extracted 3306.1 (accuracy: 100.0%, 3 cols × 3 rows) -> Section 3306.6
+2025-11-16 00:05:53,593 - Page 688: Detected Chapter 34 - DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER.
+2025-11-16 00:05:53,603 - Page 690: Detected Chapter 35 - REFERENCED STANDARDS
+2025-11-16 00:05:54,156 - Page 690: Table hint detected but extraction failed (check table format)
+2025-11-16 00:05:54,682 - Page 691: Extracted 3001.3_1 (accuracy: 76.9%, 4 cols × 53 rows) -> Section 25
+2025-11-16 00:05:55,249 - Page 693: Extracted 2308.7.5_1 (accuracy: 83.3%, 3 cols × 36 rows) -> Section 1801
+2025-11-16 00:05:55,754 - Page 694: Extracted 3001.3_2 (accuracy: 89.2%, 3 cols × 50 rows) -> Section 100
+2025-11-16 00:05:56,358 - Page 695: Extracted 1507.4.3(1)_1 (accuracy: 69.4%, 3 cols × 56 rows) -> Section 100
+2025-11-16 00:05:56,951 - Page 696: Table hint detected but extraction failed (check table format)
+2025-11-16 00:05:57,504 - Page 697: Table hint detected but extraction failed (check table format)
+2025-11-16 00:05:58,093 - Page 698: Extracted 1508.2 (accuracy: 81.1%, 3 cols × 56 rows) -> Section 100
+2025-11-16 00:05:58,630 - Page 699: Table hint detected but extraction failed (check table format)
+2025-11-16 00:05:59,213 - Page 700: Extracted 2506.2_1 (accuracy: 79.3%, 3 cols × 56 rows) -> Section 100
+2025-11-16 00:05:59,795 - Page 701: Extracted 1507.10.2_1 (accuracy: 79.7%, 3 cols × 56 rows) -> Section 100
+2025-11-16 00:06:00,344 - Page 702: Table hint detected but extraction failed (check table format)
+2025-11-16 00:06:00,934 - Page 703: Extracted 1507.1.1(1)_1 (accuracy: 75.1%, 3 cols × 57 rows) -> Section 100
+2025-11-16 00:06:01,711 - Page 706: Extracted 2506.2_2 (accuracy: 74.3%, 3 cols × 49 rows) -> Section 513
+2025-11-16 00:06:02,727 - Page 707: Extracted 1507.9.6_1 (accuracy: 79.6%, 4 cols × 49 rows) -> Section 19465
+2025-11-16 00:06:03,305 - Page 708: Extracted 3001.3_3 (accuracy: 77.5%, 3 cols × 32 rows) -> Section 1300
+2025-11-16 00:06:03,836 - Page 709: Extracted 415.6.5 (accuracy: 85.1%, 4 cols × 52 rows) -> Section 500
+2025-11-16 00:06:04,394 - Page 710: Table hint detected but extraction failed (check table format)
+2025-11-16 00:06:04,955 - Page 711: Table hint detected but extraction failed (check table format)
+2025-11-16 00:06:05,505 - Page 712: Extracted 3001.3_4 (accuracy: 93.7%, 2 cols × 50 rows) -> Section 1
+2025-11-16 00:06:06,050 - Page 713: Extracted 716.1(1)_1 (accuracy: 62.2%, 3 cols × 56 rows) -> Section 1
+2025-11-16 00:06:06,803 - Page 716: Extracted 721.1(2)_9 (accuracy: 85.8%, 3 cols × 23 rows) -> Section 105
+2025-11-16 00:06:07,375 - Page 717: Extracted 716.1(1)_2 (accuracy: 72.3%, 4 cols × 56 rows) -> Section 333
+2025-11-16 00:06:07,912 - Page 719: Extracted 1504.2_1 (accuracy: 76.6%, 3 cols × 27 rows) -> Section 18
+2025-11-16 00:06:08,337 - Page 722: Extracted A102.1 (accuracy: 100.0%, 5 cols × 2 rows) -> Section 942
+2025-11-16 00:06:08,948 - Page 726: Extracted C102.1. (accuracy: 93.5%, 3 cols × 25 rows) -> Section 942
+2025-11-16 00:06:08,948 - Page 726: Extracted C102.1 (accuracy: 82.9%, 4 cols × 12 rows) -> Section 942
+2025-11-16 00:06:09,304 - Page 730: Extracted D106.1 (accuracy: 100.0%, 4 cols × 9 rows) -> Section 942
+2025-11-16 00:06:09,771 - Page 733: Extracted E106.2 (accuracy: 100.0%, 3 cols × 2 rows) -> Section 942
+2025-11-16 00:06:10,215 - Page 736: Extracted E111.1 (accuracy: 100.0%, 6 cols × 5 rows) -> Section 942
+2025-11-16 00:06:10,664 - Page 746: Extracted G115.1 (accuracy: 100.0%, 4 cols × 8 rows) -> Section 942
+2025-11-16 00:06:11,167 - Page 751: Extracted H115.1(1) (accuracy: 100.0%, 4 cols × 2 rows) -> Section 942
+2025-11-16 00:06:11,167 - Page 751: Extracted H115.1(2) (accuracy: 100.0%, 4 cols × 5 rows) -> Section 942
+2025-11-16 00:06:11,665 - Page 757: Extracted J111.1 (accuracy: 100.0%, 6 cols × 1 rows) -> Section 5
+2025-11-16 00:06:12,078 - Page 764: Extracted M102.1 (accuracy: 100.0%, 4 cols × 3 rows) -> Section 5

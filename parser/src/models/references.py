@@ -51,14 +51,14 @@ class ExternalDocumentReference(Reference):
 
 
 class References(BaseModel):
-    """Collection of all references in a section."""
+    """Collection of text references in a section (not actual extracted data)."""
     internal_sections: list[InternalSectionReference] = Field(
         default_factory=list,
-        description="Internal section references"
+        description="Internal section references (e.g., 'see Section 307.1')"
     )
-    tables: list[TableReference] = Field(
+    table: list[str] = Field(
         default_factory=list,
-        description="Table references"
+        description="Table IDs/references mentioned in text (e.g., ['307.1(1)', '307.1(2)'])"
     )
     external_documents: list[ExternalDocumentReference] = Field(
         default_factory=list,
