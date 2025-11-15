@@ -177,9 +177,17 @@ class ReferenceExtractor:
         Args:
             section: Section object to process (mutates in place)
         """
-        # Extract from main text
+        existing_refs = section.references
         if section.text:
-            section.references = self.extract_references(section.text)
+            new_refs = self.extract_references(section.text)
+        else:
+            new_refs = References()
+        # Preserve any pre-attached references (e.g., tables extracted via Camelot)
+        new_refs.internal_sections = existing_refs.internal_sections + new_refs.internal_sections
+        new_refs.tables = existing_refs.tables + new_refs.tables
+        new_refs.figures = existing_refs.figures + new_refs.figures
+        new_refs.external_documents = existing_refs.external_documents + new_refs.external_documents
+        section.references = new_refs
         
         # Also extract from numbered items
         for item in section.numbered_items:
