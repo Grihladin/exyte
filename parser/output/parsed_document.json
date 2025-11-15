@@ -1,0 +1,2852 @@
+{
+  "title": "2021 International Building Code",
+  "version": "2021",
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "title": "SCOPE AND ADMINISTRATION",
+      "user_notes": "About this chapter: Chapter 1 establishes the limits of applicability of the code and describes how the code is to be applied and enforced. Chapter 1 is in two parts: Part 1—Scope and Application (Sections 101–102) and Part 2—Administration and Enforcement (Sections 103– 116). Section 101 identifies which buildings and structures come under its purview and references other I-Codes as applicable. Standards and codes are scoped to the extent referenced (see Section 102.4). This code is intended to be adopted as a legally enforceable document and it cannot be effective without adequate provisions for its admin- istration and enforcement. The provisions of Chapter 1 establish the authority and duties of the code official appointed by the authority having jurisdiction and also establish the rights and privileges of the design professional, contractor and property owner. Chapter 1 is largely concerned with maintaining “due process of law” in enforcing the building performance criteria contained in the body of the code. Code development reminder: Code change proposals to this chapter will be considered by the Administrative Code Development Committee during the 2022 (Group B) Code Development Cycle.",
+      "parts": [
+        {
+          "part_number": 1,
+          "title": "SCOPE AND APPLICATION",
+          "sections": [
+            {
+              "section_number": "101.1",
+              "prefix": "A",
+              "title": "Title",
+              "text": "These regulations shall be known as the Building Code of [NAME OF JURISDICTION], hereinafter referred to as “this code.”",
+              "depth": 1,
+              "numbered_items": [],
+              "subsections": [
+                {
+                  "section_number": "101.2",
+                  "prefix": "A",
+                  "title": "Scope",
+                  "text": "The provisions of this code shall apply to the construction, alteration, relocation, enlargement, replacement, repair, equipment, use and occupancy, loca- tion, maintenance, removal and demolition of every building or structure or any appurtenances connected or attached to such buildings or structures. Exception: Detached one- and two-family dwellings and townhouses not more than three stories above grade plane in height with a separate means of egress, and their accessory structures not more than three stories above grade plane in height, shall comply with this code or the International Residential Code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "101.2.1",
+                      "prefix": "A",
+                      "title": "Appendices",
+                      "text": "Provisions in the appendices shall not apply unless specifically adopted.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "32"
+                  }
+                },
+                {
+                  "section_number": "101.3",
+                  "prefix": "A",
+                  "title": "Purpose",
+                  "text": "The purpose of this code is to establish the minimum requirements to provide a reasonable level of safety, health and general welfare through structural strength, means of egress, stability, sanitation, light and ventilation, energy conservation, and for providing a reason- able level of life safety and property protection from the hazards of fire, explosion or dangerous conditions, and to provide a reasonable level of safety to fire fighters and emer- gency responders during emergency operations.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "32"
+                  }
+                },
+                {
+                  "section_number": "101.4",
+                  "prefix": "A",
+                  "title": "Referenced codes",
+                  "text": "The other codes specified in Sections 101.4.1 through 101.4.7 and referenced elsewhere in this code shall be considered to be part of the requirements of this code to the prescribed extent of each such reference.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "101.4.1",
+                      "prefix": "A",
+                      "title": "Gas",
+                      "text": "The provisions of the International Fuel Gas Code shall apply to the installation of gas piping from the point of delivery, gas appliances and related accessories as covered in this code. These requirements apply to gas piping systems extending from the point of delivery to the inlet connections of appliances and the installation and operation of residential and commercial gas appliances and related accessories.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.2",
+                      "prefix": "A",
+                      "title": "Mechanical",
+                      "text": "The provisions of the Interna- tional Mechanical Code shall apply to the installation, alterations, repairs and replacement of mechanical systems, including equipment, appliances, fixtures, fittings and appurtenances, including ventilating, heating, cooling, air-conditioning and refrigeration systems, incin- erators and other energy-related systems.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.3",
+                      "prefix": "A",
+                      "title": "Plumbing",
+                      "text": "The provisions of the Interna- tional Plumbing Code shall apply to the installation, alteration, repair and replacement of plumbing systems, including equipment, appliances, fixtures, fittings and appurtenances, and where connected to a water or sewage system and all aspects of a medical gas system. The provisions of the International Private Sewage Disposal Code shall apply to private sewage disposal systems.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.4",
+                      "prefix": "A",
+                      "title": "Property maintenance",
+                      "text": "The provisions of the International Property Maintenance Code shall apply to existing structures and premises; equipment and facili- ties; light, ventilation, space heating, sanitation, life and fire safety hazards; responsibilities of owners, operators and occupants; and occupancy of existing premises and structures.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.5",
+                      "prefix": "A",
+                      "title": "Fire prevention",
+                      "text": "The provisions of the Inter- national Fire Code shall apply to matters affecting or relating to structures, processes and premises from the hazard of fire and explosion arising from the storage, handling or use of structures, materials or devices; from conditions hazardous to life, property or public welfare in the occupancy of structures or premises; and from the construction, extension, repair, alteration or removal of fire suppression, automatic sprinkler systems and alarm systems or fire hazards in the structure or on the premises from occupancy or operation.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.6",
+                      "prefix": "A",
+                      "title": "Energy",
+                      "text": "The provisions of the International Energy Conservation Code shall apply to all matters on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "32"
+                      }
+                    },
+                    {
+                      "section_number": "101.4.7",
+                      "prefix": "A",
+                      "title": "Existing buildings",
+                      "text": "The provisions of the International Existing Building Code shall apply to matters governing the repair, alteration, change of occu- pancy, addition to and relocation of existing buildings. APPLICABILITY",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "33"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "32"
+                  }
+                },
+                {
+                  "section_number": "102.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "Where there is a conflict between a general requirement and a specific requirement, the specific requirement shall be applicable. Where, in any specific case, different sections of this code specify different materials, methods of construction or other requirements, the most restrictive shall govern.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "102.2",
+                  "prefix": "A",
+                  "title": "Other laws",
+                  "text": "The provisions of this code shall not be deemed to nullify any provisions of local, state or federal law.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "102.3",
+                  "prefix": "A",
+                  "title": "Application of references",
+                  "text": "References to chapter or section numbers, or to provisions not specifically identi- fied by number, shall be construed to refer to such chapter, section or provision of this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "102.4",
+                  "prefix": "A",
+                  "title": "Referenced codes and standards",
+                  "text": "The codes and standards referenced in this code shall be considered to be part of the requirements of this code to the prescribed extent of each such reference and as further regulated in Sections 102.4.1 and 102.4.2.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "102.4.1",
+                      "prefix": "A",
+                      "title": "Conflicts",
+                      "text": "Where conflicts occur between provisions of this code and referenced codes and stan- dards, the provisions of this code shall apply. [A] 102.4.2 Provisions in referenced codes and stan- dards. Where the extent of the reference to a referenced code or standard includes subject matter that is within the scope of this code or the International Codes specified in tional Codes specified in Section 101.4, as applicable, shall take precedence over the provisions in the refer- enced code or standard.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "33"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "102.5",
+                  "prefix": "A",
+                  "title": "Partial invalidity",
+                  "text": "In the event that any part or provision of this code is held to be illegal or void, this shall not have the effect of making void or illegal any of the other parts or provisions.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "102.6",
+                  "prefix": "A",
+                  "title": "Existing structures",
+                  "text": "The legal occupancy of any structure existing on the date of adoption of this code shall be permitted to continue without change, except as otherwise specifically provided in this code, the International Existing Building Code, the International Property Maintenance Code or the International Fire Code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "102.6.1",
+                      "prefix": "A",
+                      "title": "Buildings not previously occupied",
+                      "text": "A build- ing or portion of a building that has not been previously occupied or used for its intended purpose in accordance with the laws in existence at the time of its completion shall comply with the provisions of this code or the Inter- national Residential Code, as applicable, for new construction or with any current permit for such occupancy.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "33"
+                      }
+                    },
+                    {
+                      "section_number": "102.6.2",
+                      "prefix": "A",
+                      "title": "Buildings previously occupied",
+                      "text": "The legal occupancy of any building existing on the date of adop- tion of this code shall be permitted to continue without change, except as otherwise specifically provided in this code, the International Fire Code or International Prop- erty Maintenance Code, or as is deemed necessary by the building official for the general safety and welfare of the occupants and the public.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "33"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                }
+              ],
+              "references": {
+                "internal_sections": [],
+                "tables": [],
+                "external_documents": [],
+                "figures": []
+              },
+              "metadata": {
+                "has_table": false,
+                "has_figure": false,
+                "table_count": 0,
+                "figure_count": 0,
+                "page_number": "32"
+              }
+            }
+          ]
+        },
+        {
+          "part_number": 2,
+          "title": "ADMINISTRATION AND ENFORCEMENT",
+          "sections": [
+            {
+              "section_number": "103.1",
+              "prefix": "A",
+              "title": "Creation of enforcement agency",
+              "text": "The [INSERT NAME OF DEPARTMENT] is hereby created and the official in charge thereof shall be known as the building official. The function of the agency shall be the implementation, adminis- tration and enforcement of the provisions of this code.",
+              "depth": 1,
+              "numbered_items": [],
+              "subsections": [
+                {
+                  "section_number": "103.2",
+                  "prefix": "A",
+                  "title": "Appointment",
+                  "text": "The building official shall be appointed by the chief appointing authority of the jurisdiction.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "103.3",
+                  "prefix": "A",
+                  "title": "Deputies",
+                  "text": "In accordance with the prescribed procedures of this jurisdiction and with the concurrence of the appointing authority, the building official shall have the authority to appoint a deputy building official, other related technical officers, inspectors and other employees. Such employees shall have powers as delegated by the building official. DUTIES AND POWERS OF BUILDING OFFICIAL",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "104.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "The building official is hereby autho- rized and directed to enforce the provisions of this code. The building official shall have the authority to render interpreta- tions of this code and to adopt policies and procedures in order to clarify the application of its provisions. Such inter- pretations, policies and procedures shall be in compliance with the intent and purpose of this code. Such policies and procedures shall not have the effect of waiving requirements specifically provided for in this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "104.2",
+                  "prefix": "A",
+                  "title": "Applications and permits",
+                  "text": "The building official shall receive applications, review construction documents and issue permits for the erection, and alteration, demolition and moving of buildings and structures, inspect the premises for which such permits have been issued and enforce compli- ance with the provisions of this code. [A] 104.2.1 Determination of substantially improved or substantially damaged existing buildings and struc- tures in flood hazard areas. For applications for reconstruction, rehabilitation, repair, alteration, addition or other improvement of existing buildings or structures located in flood hazard areas, the building official shall determine if the proposed work constitutes substantial improvement or repair of substantial damage. Where the building official determines that the proposed work constitutes substantial improvement or repair of substan- on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "33"
+                  }
+                },
+                {
+                  "section_number": "104.3",
+                  "prefix": "A",
+                  "title": "Notices and orders",
+                  "text": "The building official shall issue necessary notices or orders to ensure compliance with this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.4",
+                  "prefix": "A",
+                  "title": "Inspections",
+                  "text": "The building official shall make the required inspections, or the building official shall have the authority to accept reports of inspection by approved agen- cies or individuals. Reports of such inspections shall be in writing and be certified by a responsible officer of such approved agency or by the responsible individual. The build- ing official is authorized to engage such expert opinion as deemed necessary to report on unusual technical issues that arise, subject to the approval of the appointing authority.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.5",
+                  "prefix": "A",
+                  "title": "Identification",
+                  "text": "The building official shall carry proper identification when inspecting structures or premises in the performance of duties under this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.6",
+                  "prefix": "A",
+                  "title": "Right of entry",
+                  "text": "Where it is necessary to make an inspection to enforce the provisions of this code, or where the building official has reasonable cause to believe that there exists in a structure or on a premises a condition that is contrary to or in violation of this code that makes the struc- ture or premises unsafe, dangerous or hazardous, the building official is authorized to enter the structure or prem- ises at reasonable times to inspect or to perform the duties imposed by this code, provided that if such structure or premises be occupied that credentials be presented to the occupant and entry requested. If such structure or premises is unoccupied, the building official shall first make a reason- able effort to locate the owner or other person having charge or control of the structure or premises and request entry. If entry is refused, the building official shall have recourse to the remedies provided by law to secure entry.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.7",
+                  "prefix": "A",
+                  "title": "Department records",
+                  "text": "The building official shall keep official records of applications received, permits and certificates issued, fees collected, reports of inspections, and notices and orders issued. Such records shall be retained in the official records for the period required for retention of public records.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.8",
+                  "prefix": "A",
+                  "title": "Liability",
+                  "text": "The building official, member of the board of appeals or employee charged with the enforcement of this code, while acting for the jurisdiction in good faith and without malice in the discharge of the duties required by this code or other pertinent law or ordinance, shall not thereby be civilly or criminally rendered liable personally and is hereby relieved from personal liability for any damage accruing to persons or property as a result of any act or by reason of an act or omission in the discharge of official duties.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "104.8.1",
+                      "prefix": "A",
+                      "title": "Legal defense",
+                      "text": "Any suit or criminal complaint instituted against an officer or employee because of an act performed by that officer or employee in the lawful discharge of duties and under the provisions of this code shall be defended by legal representatives of the jurisdiction until the final termination of the proceed- ings. The building official or any subordinate shall not be liable for cost in any action, suit or proceeding that is instituted in pursuance of the provisions of this code.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "34"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.9",
+                  "prefix": "A",
+                  "title": "Approved materials and equipment",
+                  "text": "Materials, equipment and devices approved by the building official shall be constructed and installed in accordance with such approval.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "104.9.1",
+                      "prefix": "A",
+                      "title": "Used materials and equipment",
+                      "text": "Materials that are reused shall comply with the requirements of this code for new materials. Used equipment and devices shall not be reused unless approved by the building official.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "34"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "104.10",
+                  "prefix": "A",
+                  "title": "Modifications",
+                  "text": "Where there are practical diffi- culties involved in carrying out the provisions of this code, the building official shall have the authority to grant modifi- cations for individual cases, upon application of the owner or the owner’s authorized agent, provided that the building offi- cial shall first find that special individual reason makes the strict letter of this code impractical, the modification is in compliance with the intent and purpose of this code and that such modification does not lessen health, accessibility, life and fire safety or structural requirements. The details of action granting modifications shall be recorded and entered in the files of the department of building safety.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "104.10.1",
+                      "prefix": "A",
+                      "title": "Flood hazard areas",
+                      "text": "The building official shall not grant modifications to any provision required in flood hazard areas as established by Section 1612.3 unless a determination has been made that: 1. A showing of good and sufficient cause that the unique characteristics of the size, configuration or topography of the site render the elevation stan- dards of Section 1612 inappropriate. 2. A determination that failure to grant the variance would result in exceptional hardship by rendering the lot undevelopable. 3. A determination that the granting of a variance will not result in increased flood heights, addi- tional threats to public safety, extraordinary public expense, cause fraud on or victimization of the public, or conflict with existing laws or ordinances. 4. A determination that the variance is the minimum necessary to afford relief, considering the flood hazard. 5. Submission to the applicant of written notice spec- ifying the difference between the design flood elevation and the elevation to which the building is to be built, stating that the cost of flood insur- ance will be commensurate with the increased risk resulting from the reduced floor elevation, and stating that construction below the design flood elevation increases risks to life and property. [A] 104.11 Alternative materials, design and methods of construction and equipment. The provisions of this code are not intended to prevent the installation of any material or to prohibit any design or method of construction not specifi- cally prescribed by this code, provided that any such alternative has been approved. An alternative material, design or method of construction shall be approved where on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "34"
+                      }
+                    },
+                    {
+                      "section_number": "104.11.1",
+                      "prefix": "A",
+                      "title": "Research reports",
+                      "text": "Supporting data, where necessary to assist in the approval of materials or assem- blies not specifically provided for in this code, shall consist of valid research reports from approved sources.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "35"
+                      }
+                    },
+                    {
+                      "section_number": "104.11.2",
+                      "prefix": "A",
+                      "title": "Tests",
+                      "text": "Whenever there is insufficient evidence of compliance with the provisions of this code, or evidence that a material or method does not conform to the requirements of this code, or in order to substantiate claims for alternative materials or methods, the building official shall have the authority to require tests as evidence of compliance to be made without expense to the jurisdiction. Test methods shall be as specified in this code or by other recognized test standards. In the absence of recognized and accepted test methods, the building official shall approve the testing procedures. Tests shall be performed by an approved agency. Reports of such tests shall be retained by the building official for the period required for retention of public records. PERMITS",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "35"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "34"
+                  }
+                },
+                {
+                  "section_number": "105.1",
+                  "prefix": "A",
+                  "title": "Required",
+                  "text": "Any owner or owner’s authorized agent who intends to construct, enlarge, alter, repair, move, demolish or change the occupancy of a building or structure, or to erect, install, enlarge, alter, repair, remove, convert or replace any electrical, gas, mechanical or plumbing system, the installation of which is regulated by this code, or to cause any such work to be performed, shall first make application to the building official and obtain the required permit.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "105.1.1",
+                      "prefix": "A",
+                      "title": "Annual permit",
+                      "text": "Instead of an individual permit for each alteration to an already approved electri- cal, gas, mechanical or plumbing installation, the building official is authorized to issue an annual permit upon appli- cation therefor to any person, firm or corporation regularly employing one or more qualified tradespersons in the building, structure or on the premises owned or operated by the applicant for the permit.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "35"
+                      }
+                    },
+                    {
+                      "section_number": "105.1.2",
+                      "prefix": "A",
+                      "title": "Annual permit records",
+                      "text": "The person to whom an annual permit is issued shall keep a detailed record of alterations made under such annual permit. The building official shall have access to such records at all times or such records shall be filed with the building offi- cial as designated.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "35"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "35"
+                  }
+                },
+                {
+                  "section_number": "105.2",
+                  "prefix": "A",
+                  "title": "Work exempt from permit",
+                  "text": "Exemptions from permit requirements of this code shall not be deemed to grant authorization for any work to be done in any manner in violation of the provisions of this code or any other laws or ordinances of this jurisdiction. Permits shall not be required for the following: Building: tool and storage sheds, playhouses and similar uses, provided that the floor area is not greater than 120 square feet (11 m2). in height measured from the bottom of the footing to the top of the wall, unless supporting a surcharge or impounding Class I, II or IIIA liquids. capacity is not greater than 5,000 gallons (18 925 L) and the ratio of height to diameter or width is not greater than 2:1. (762 mm) above adjacent grade, and not over any basement or story below and are not part of an accessible route. counter tops and similar finish work. stage sets and scenery. Group R-3 occupancy that are less than 24 inches (610 mm) deep, are not greater than 5,000 gallons (18 925 L) and are installed entirely above ground. agricultural purposes, not including service systems. sory to detached one- and two-family dwellings. cies, supported by an exterior wall that do not project more than 54 inches (1372 mm) from the exterior wall and do not require additional support. counters and partitions not over 5 feet 9 inches (1753 mm) in height. on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [
+                    {
+                      "number": 1,
+                      "text": "One-story detached accessory structures used as"
+                    },
+                    {
+                      "number": 2,
+                      "text": "Fences not over 7 feet (2134 mm) high."
+                    },
+                    {
+                      "number": 3,
+                      "text": "Oil derricks."
+                    },
+                    {
+                      "number": 4,
+                      "text": "Retaining walls that are not over 4 feet (1219 mm)"
+                    },
+                    {
+                      "number": 5,
+                      "text": "Water tanks supported directly on grade if the"
+                    },
+                    {
+                      "number": 6,
+                      "text": "Sidewalks and driveways not more than 30 inches"
+                    },
+                    {
+                      "number": 7,
+                      "text": "Painting, papering, tiling, carpeting, cabinets,"
+                    },
+                    {
+                      "number": 8,
+                      "text": "Temporary motion picture, television and theater"
+                    },
+                    {
+                      "number": 9,
+                      "text": "Prefabricated swimming pools accessory to a"
+                    },
+                    {
+                      "number": 10,
+                      "text": "Shade cloth structures constructed for nursery or"
+                    },
+                    {
+                      "number": 11,
+                      "text": "Swings and other playground equipment acces-"
+                    },
+                    {
+                      "number": 12,
+                      "text": "Window awnings in Group R-3 and U occupan-"
+                    },
+                    {
+                      "number": 13,
+                      "text": "Nonfixed and movable fixtures, cases, racks,"
+                    }
+                  ],
+                  "subsections": [
+                    {
+                      "section_number": "105.2.1",
+                      "prefix": "A",
+                      "title": "Emergency repairs",
+                      "text": "Where equipment replacements and repairs must be performed in an emer- gency situation, the permit application shall be submitted within the next working business day to the building official.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "36"
+                      }
+                    },
+                    {
+                      "section_number": "105.2.2",
+                      "prefix": "A",
+                      "title": "Public service agencies",
+                      "text": "A permit shall not be required for the installation, alteration or repair of generation, transmission, distribution or metering or other related equipment that is under the ownership and control of public service agencies by established right.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "36"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "35"
+                  }
+                },
+                {
+                  "section_number": "105.3",
+                  "prefix": "A",
+                  "title": "Application for permit",
+                  "text": "To obtain a permit, the applicant shall first file an application therefor in writing on a form furnished by the department of building safety for that purpose. Such application shall: 1. Identify and describe the work to be covered by the permit for which application is made. 2. Describe the land on which the proposed work is to be done by legal description, street address or similar description that will readily identify and definitely locate the proposed building or work. 3. Indicate the use and occupancy for which the proposed work is intended. 4. Be accompanied by construction documents and other information as required in Section 107. 5. State the valuation of the proposed work. 6. Be signed by the applicant, or the applicant’s autho- rized agent. 7. Give such other data and information as required by the building official.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "105.3.1",
+                      "prefix": "A",
+                      "title": "Action on application",
+                      "text": "The building official shall examine or cause to be examined applications for permits and amendments thereto within a reasonable time after filing. If the application or the construction docu- ments do not conform to the requirements of pertinent laws, the building official shall reject such application in writing, stating the reasons therefor. If the building offi- cial is satisfied that the proposed work conforms to the requirements of this code and laws and ordinances appli- cable thereto, the building official shall issue a permit therefor as soon as practicable.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "36"
+                      }
+                    },
+                    {
+                      "section_number": "105.3.2",
+                      "prefix": "A",
+                      "title": "Time limitation of application",
+                      "text": "An applica- tion for a permit for any proposed work shall be deemed to have been abandoned 180 days after the date of filing, unless such application has been pursued in good faith or a permit has been issued; except that the building official is authorized to grant one or more extensions of time for additional periods not exceeding 90 days each. The exten- sion shall be requested in writing and justifiable cause demonstrated.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "36"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "36"
+                  }
+                },
+                {
+                  "section_number": "105.4",
+                  "prefix": "A",
+                  "title": "Validity of permit",
+                  "text": "The issuance or granting of a permit shall not be construed to be a permit for, or an approval of, any violation of any of the provisions of this code or of any other ordinance of the jurisdiction. Permits presuming to give authority to violate or cancel the provi- sions of this code or other ordinances of the jurisdiction shall not be valid. The issuance of a permit based on construction documents and other data shall not prevent the building offi- cial from requiring the correction of errors in the construction documents and other data. The building official is authorized to prevent occupancy or use of a structure where in violation of this code or of any other ordinances of this jurisdiction.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "36"
+                  }
+                },
+                {
+                  "section_number": "105.5",
+                  "prefix": "A",
+                  "title": "Expiration",
+                  "text": "Every permit issued shall become invalid unless the work on the site authorized by such permit on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "36"
+                  }
+                },
+                {
+                  "section_number": "105.6",
+                  "prefix": "A",
+                  "title": "Suspension or revocation",
+                  "text": "The building official is authorized to suspend or revoke a permit issued under the provisions of this code wherever the permit is issued in error or on the basis of incorrect, inaccurate or incomplete infor- mation, or in violation of any ordinance or regulation or any of the provisions of this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "105.7",
+                  "prefix": "A",
+                  "title": "Placement of permit",
+                  "text": "The building permit or copy shall be kept on the site of the work until the comple- tion of the project. FLOOR AND ROOF DESIGN LOADS",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "106.1",
+                  "prefix": "A",
+                  "title": "Live loads posted",
+                  "text": "In commercial or industrial buildings, for each floor or portion thereof designed for live loads exceeding 50 psf (2.40 kN/m2), such design live loads shall be conspicuously posted by the owner or the owner’s authorized agent in that part of each story in which they apply, using durable signs. It shall be unlawful to remove or deface such notices.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "106.2",
+                  "prefix": "A",
+                  "title": "Issuance of certificate of occupancy",
+                  "text": "A certifi- cate of occupancy required by Section 111 shall not be issued until the floor load signs, required by Section 106.1, have been installed.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "106.3",
+                  "prefix": "A",
+                  "title": "Restrictions on loading",
+                  "text": "It shall be unlawful to place, or cause or permit to be placed, on any floor or roof of a building, structure or portion thereof, a load greater than is permitted by this code. CONSTRUCTION DOCUMENTS",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "107.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "Submittal documents consisting of construction documents, statement of special inspections, geotechnical report and other data shall be submitted in two or more sets, or in a digital format where allowed by the building official, with each permit application. The construc- tion documents shall be prepared by a registered design professional where required by the statutes of the jurisdic- tion in which the project is to be constructed. Where special conditions exist, the building official is authorized to require additional construction documents to be prepared by a regis- tered design professional. Exception: The building official is authorized to waive the submission of construction documents and other data not required to be prepared by a registered design profes- sional if it is found that the nature of the work applied for is such that review of construction documents is not necessary to obtain compliance with this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "107.2",
+                  "prefix": "A",
+                  "title": "Construction documents",
+                  "text": "Construction docu- ments shall be in accordance with Sections 107.2.1 through 107.2.8.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "107.2.1",
+                      "prefix": "A",
+                      "title": "Information on construction documents",
+                      "text": "Construction documents shall be dimensioned and drawn on suitable material. Electronic media documents are permitted to be submitted where approved by the building official. Construction documents shall be of sufficient clarity to indicate the location, nature and extent of the work proposed and show in detail that it will conform to the provisions of this code and relevant laws, ordinances, rules and regulations, as determined by the building official.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "37"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.2",
+                      "prefix": "A",
+                      "title": "Fire protection system shop drawings",
+                      "text": "Shop drawings for the fire protection systems shall be submitted to indicate conformance to this code and the construction documents and shall be approved prior to the start of system installation. Shop drawings shall contain all information as required by the referenced installation standards in Chapter 9.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "37"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.3",
+                      "prefix": "A",
+                      "title": "Means of egress",
+                      "text": "The construction docu- ments shall show in sufficient detail the location, construction, size and character of all portions of the means of egress including the path of the exit discharge to the public way in compliance with the provisions of this code. In other than occupancies in Groups R-2, R-3, and I-1, the construction documents shall designate the number of occupants to be accommodated on every floor, and in all rooms and spaces.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "37"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.4",
+                      "prefix": "A",
+                      "title": "Exterior wall envelope",
+                      "text": "Construction docu- ments for all buildings shall describe the exterior wall envelope in sufficient detail to determine compliance with this code. The construction documents shall provide details of the exterior wall envelope as required, including flashing, intersections with dissimilar materials, corners, end details, control joints, intersections at roof, eaves or parapets, means of drainage, water-resistive barrier and details around openings. The construction documents shall include manufac- turer’s installation instructions that provide supporting documentation that the proposed penetration and opening details described in the construction documents maintain the weather resistance of the exterior wall envelope. The supporting documentation shall fully describe the exterior wall system that was tested, where applicable, as well as the test procedure used. [A] 107.2.5 Exterior balconies and elevated walking surfaces. Where balconies or other elevated walking surfaces have weather-exposed surfaces, and the struc- tural framing is protected by an impervious moisture barrier, the construction documents shall include details for all elements of the impervious moisture barrier system. The construction documents shall include manu- facturer’s installation instructions.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "37"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.6",
+                      "prefix": "A",
+                      "title": "Site plan",
+                      "text": "The construction documents submitted with the application for permit shall be accom- panied by a site plan showing to scale the size and location of new construction and existing structures on on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [
+                        {
+                          "section_number": "107.2.6.1",
+                          "prefix": "A",
+                          "title": "Design flood elevations",
+                          "text": "Where design flood elevations are not specified, they shall be estab- lished in accordance with Section 1612.3.1.",
+                          "depth": 3,
+                          "numbered_items": [],
+                          "subsections": [],
+                          "references": {
+                            "internal_sections": [],
+                            "tables": [],
+                            "external_documents": [],
+                            "figures": []
+                          },
+                          "metadata": {
+                            "has_table": false,
+                            "has_figure": false,
+                            "table_count": 0,
+                            "figure_count": 0,
+                            "page_number": "38"
+                          }
+                        }
+                      ],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "37"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.7",
+                      "prefix": "A",
+                      "title": "Structural information",
+                      "text": "The construction documents shall provide the information specified in",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    },
+                    {
+                      "section_number": "107.2.8",
+                      "prefix": null,
+                      "title": "Relocatable buildings. Construction documents",
+                      "text": "for relocatable buildings shall comply with Section 3112.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "37"
+                  }
+                },
+                {
+                  "section_number": "107.3",
+                  "prefix": "A",
+                  "title": "Examination of documents",
+                  "text": "The building official shall examine or cause to be examined the accompanying submittal documents and shall ascertain by such examina- tions whether the construction indicated and described is in accordance with the requirements of this code and other pertinent laws or ordinances.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "107.3.1",
+                      "prefix": "A",
+                      "title": "Approval of construction documents",
+                      "text": "When the building official issues a permit, the construc- tion documents shall be approved, in writing or by stamp, as “Reviewed for Code Compliance.” One set of construction documents so reviewed shall be retained by the building official. The other set shall be returned to the applicant, shall be kept at the site of work and shall be open to inspection by the building official or a duly autho- rized representative.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    },
+                    {
+                      "section_number": "107.3.2",
+                      "prefix": "A",
+                      "title": "Previous approvals",
+                      "text": "This code shall not require changes in the construction documents, construc- tion or designated occupancy of a structure for which a lawful permit has been heretofore issued or otherwise lawfully authorized, and the construction of which has been pursued in good faith within 180 days after the effective date of this code and has not been abandoned.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    },
+                    {
+                      "section_number": "107.3.3",
+                      "prefix": "A",
+                      "title": "Phased approval",
+                      "text": "The building official is authorized to issue a permit for the construction of foun- dations or any other part of a building or structure before the construction documents for the whole building or structure have been submitted, provided that adequate information and detailed statements have been filed complying with pertinent requirements of this code. The holder of such permit for the foundation or other parts of a building or structure shall proceed at the holder’s own risk with the building operation and without assurance that a permit for the entire structure will be granted.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    },
+                    {
+                      "section_number": "107.3.4",
+                      "prefix": "A",
+                      "title": "Design professional in responsible charge",
+                      "text": "Where it is required that documents be prepared by a registered design professional, the building official shall be authorized to require the owner or the owner’s autho- rized agent to engage and designate on the building permit application a registered design professional who shall act as the registered design professional in responsi- ble charge. If the circumstances require, the owner or the owner’s authorized agent shall designate a substitute registered design professional in responsible charge who shall perform the duties required of the original registered design professional in responsible charge. The building official shall be notified in writing by the owner or the owner’s authorized agent if the registered design profes- sional in responsible charge is changed or is unable to continue to perform the duties. The registered design professional in responsible charge shall be responsible for reviewing and coordinat- ing submittal documents prepared by others, including phased and deferred submittal items, for compatibility with the design of the building.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [
+                        {
+                          "section_number": "107.3.4.1",
+                          "prefix": "A",
+                          "title": "Deferred submittals",
+                          "text": "Deferral of any submittal items shall have the prior approval of the building official. The registered design professional in responsible charge shall list the deferred submittals on the construction documents for review by the building official. Documents for deferred submittal items shall be submitted to the registered design professional in responsible charge who shall review them and forward them to the building official with a notation indicating that the deferred submittal documents have been reviewed and found to be in general conformance to the design of the building. The deferred submittal items shall not be installed until the deferred submittal documents have been approved by the building official.",
+                          "depth": 3,
+                          "numbered_items": [],
+                          "subsections": [],
+                          "references": {
+                            "internal_sections": [],
+                            "tables": [],
+                            "external_documents": [],
+                            "figures": []
+                          },
+                          "metadata": {
+                            "has_table": false,
+                            "has_figure": false,
+                            "table_count": 0,
+                            "figure_count": 0,
+                            "page_number": "38"
+                          }
+                        }
+                      ],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "38"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "107.4",
+                  "prefix": "A",
+                  "title": "Amended construction documents",
+                  "text": "Work shall be installed in accordance with the approved construction documents, and any changes made during construction that are not in compliance with the approved construction docu- ments shall be resubmitted for approval as an amended set of construction documents.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "107.5",
+                  "prefix": "A",
+                  "title": "Retention of construction documents",
+                  "text": "One set of approved construction documents shall be retained by the building official for a period of not less than 180 days from date of completion of the permitted work, or as required by state or local laws. TEMPORARY STRUCTURES AND USES",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "108.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "The building official is authorized to issue a permit for temporary structures and temporary uses. Such permits shall be limited as to time of service, but shall not be permitted for more than 180 days. The building offi- cial is authorized to grant extensions for demonstrated cause.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "108.2",
+                  "prefix": "A",
+                  "title": "Conformance",
+                  "text": "Temporary structures and uses shall comply with the requirements in Section 3103.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "108.3",
+                  "prefix": "A",
+                  "title": "Temporary power",
+                  "text": "The building official is autho- rized to give permission to temporarily supply and use power in part of an electric installation before such installation has on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "38"
+                  }
+                },
+                {
+                  "section_number": "108.4",
+                  "prefix": "A",
+                  "title": "Termination of approval",
+                  "text": "The building official is authorized to terminate such permit for a temporary structure or use and to order the temporary structure or use to be discontinued. FEES",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.1",
+                  "prefix": "A",
+                  "title": "Payment of fees",
+                  "text": "A permit shall not be valid until the fees prescribed by law have been paid, nor shall an amendment to a permit be released until the additional fee, if any, has been paid.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.2",
+                  "prefix": "A",
+                  "title": "Schedule of permit fees",
+                  "text": "Where a permit is required, a fee for each permit shall be paid as required, in accordance with the schedule as established by the applica- ble governing authority.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.3",
+                  "prefix": "A",
+                  "title": "Permit valuations",
+                  "text": "The applicant for a permit shall provide an estimated permit value at time of applica- tion. Permit valuations shall reflect the total value of work, including materials and labor, for which the permit is being issued, such as electrical, gas, mechanical, plumbing equip- ment and permanent systems. If, in the opinion of the building official, the valuation is underestimated on the application, the permit shall be denied, unless the applicant can show detailed estimates to meet the approval of the building official. Final building permit valuation shall be set by the building official.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.4",
+                  "prefix": "A",
+                  "title": "Work commencing before permit issuance",
+                  "text": "Any person who commences any work before obtaining the necessary permits shall be subject to a fee established by the building official that shall be in addition to the required permit fees.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.5",
+                  "prefix": "A",
+                  "title": "Related fees",
+                  "text": "The payment of the fee for the construction, alteration, removal or demolition for work done in connection to or concurrently with the work autho- rized by a building permit shall not relieve the applicant or holder of the permit from the payment of other fees that are prescribed by law.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "109.6",
+                  "prefix": "A",
+                  "title": "Refunds",
+                  "text": "The building official is authorized to establish a refund policy. INSPECTIONS",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "110.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "Construction or work for which a permit is required shall be subject to inspection by the building offi- cial and such construction or work shall remain visible and able to be accessed for inspection purposes until approved. Approval as a result of an inspection shall not be construed to be an approval of a violation of the provisions of this code or of other ordinances of the jurisdiction. Inspections presuming to give authority to violate or cancel the provi- sions of this code or of other ordinances of the jurisdiction shall not be valid. It shall be the duty of the owner or the owner’s authorized agent to cause the work to remain visible and able to be accessed for inspection purposes. Neither the building official nor the jurisdiction shall be liable for expense entailed in the removal or replacement of any mate- rial required to allow inspection.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "110.2",
+                  "prefix": "A",
+                  "title": "Preliminary inspection",
+                  "text": "Before issuing a permit, the building official is authorized to examine or cause to be examined buildings, structures and sites for which an appli- cation has been filed.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "110.3",
+                  "prefix": "A",
+                  "title": "Required inspections",
+                  "text": "The building official, upon notification, shall make the inspections set forth in Sections 110.3.1 through 110.3.12.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [
+                    {
+                      "section_number": "110.3.1",
+                      "prefix": "A",
+                      "title": "Footing and foundation inspection",
+                      "text": "Footing and foundation inspections shall be made after excava- tions for footings are complete and any required reinforcing steel is in place. For concrete foundations, any required forms shall be in place prior to inspection. Mate- rials for the foundation shall be on the job, except where concrete is ready mixed in accordance with ASTM C94, the concrete need not be on the job.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "39"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.2",
+                      "prefix": "A",
+                      "title": "Concrete slab and under-floor inspection",
+                      "text": "Concrete slab and under-floor inspections shall be made after in-slab or under-floor reinforcing steel and building service equipment, conduit, piping accessories and other ancillary equipment items are in place, but before any concrete is placed or floor sheathing installed, including the subfloor.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "39"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.3",
+                      "prefix": "A",
+                      "title": "Lowest floor elevation",
+                      "text": "In flood hazard areas, upon placement of the lowest floor, including the basement, and prior to further vertical construction, the elevation certification required in Section 1612.4 or the International Residential Code, as applicable, shall be submitted to the building official.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "39"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.4",
+                      "prefix": "A",
+                      "title": "Frame inspection",
+                      "text": "Framing inspections shall be made after the roof deck or sheathing, all framing, fire- blocking and bracing are in place and pipes, chimneys and vents to be concealed are complete and the rough electri- cal, plumbing, heating wires, pipes and ducts are approved. [A] 110.3.5 Types IV-A, IV-B and IV-C connection protection inspection. In buildings of Types IV-A, IV-B and IV-C construction, where connection fire-resistance ratings are provided by wood cover calculated to meet the requirements of Section 2304.10.1, inspection of the wood cover shall be made after the cover is installed, but before any other coverings or finishes are installed. [A] 110.3.6 Lath, gypsum board and gypsum panel product inspection. Lath, gypsum board and gypsum panel product inspections shall be made after lathing, gypsum board and gypsum panel products, interior and exterior, are in place, but before any plastering is applied or gypsum board and gypsum panel product joints and fasteners are taped and finished. Exception: Gypsum board and gypsum panel products that are not part of a fire-resistance-rated assembly or a shear assembly. on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "39"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.8",
+                      "prefix": "A",
+                      "title": "Fire- and smoke-resistant penetrations",
+                      "text": "Protection of joints and penetrations in fire-resistance- rated assemblies, smoke barriers and smoke partitions shall not be concealed from view until inspected and approved.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "40"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.9",
+                      "prefix": "A",
+                      "title": "Energy efficiency inspections",
+                      "text": "Inspections shall be made to determine compliance with Chapter 13 and shall include, but not be limited to, inspections for: envelope insulation R- and U-values, fenestration U-value, duct system R-value, and HVAC and water-heating equip- ment efficiency.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "40"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.10",
+                      "prefix": "A",
+                      "title": "Other inspections",
+                      "text": "In addition to the inspections specified in Sections 110.3.1 through 110.3.9, the building official is authorized to make or require other inspections of any construction work to ascertain compli- ance with the provisions of this code and other laws that are enforced by the department of building safety.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "40"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.11",
+                      "prefix": "A",
+                      "title": "Special inspections",
+                      "text": "For special inspec- tions, see Chapter 17.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "40"
+                      }
+                    },
+                    {
+                      "section_number": "110.3.12",
+                      "prefix": "A",
+                      "title": "Final inspection",
+                      "text": "The final inspection shall be made after all work required by the building permit is completed.",
+                      "depth": 2,
+                      "numbered_items": [],
+                      "subsections": [
+                        {
+                          "section_number": "110.3.12.1",
+                          "prefix": "A",
+                          "title": "Flood hazard documentation",
+                          "text": "If located in a flood hazard area, documentation of the elevation of the lowest floor as required in Section 1612.4 shall be submitted to the building official prior to the final inspection.",
+                          "depth": 3,
+                          "numbered_items": [],
+                          "subsections": [],
+                          "references": {
+                            "internal_sections": [],
+                            "tables": [],
+                            "external_documents": [],
+                            "figures": []
+                          },
+                          "metadata": {
+                            "has_table": false,
+                            "has_figure": false,
+                            "table_count": 0,
+                            "figure_count": 0,
+                            "page_number": "40"
+                          }
+                        }
+                      ],
+                      "references": {
+                        "internal_sections": [],
+                        "tables": [],
+                        "external_documents": [],
+                        "figures": []
+                      },
+                      "metadata": {
+                        "has_table": false,
+                        "has_figure": false,
+                        "table_count": 0,
+                        "figure_count": 0,
+                        "page_number": "40"
+                      }
+                    }
+                  ],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "39"
+                  }
+                },
+                {
+                  "section_number": "110.4",
+                  "prefix": "A",
+                  "title": "Inspection agencies",
+                  "text": "The building official is authorized to accept reports of approved inspection agen- cies, provided that such agencies satisfy the requirements as to qualifications and reliability.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "110.5",
+                  "prefix": "A",
+                  "title": "Inspection requests",
+                  "text": "It shall be the duty of the holder of the building permit or their duly authorized agent to notify the building official when work is ready for inspec- tion. It shall be the duty of the permit holder to provide access to and means for inspections of such work that are required by this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "110.6",
+                  "prefix": "A",
+                  "title": "Approval required",
+                  "text": "Work shall not be done beyond the point indicated in each successive inspection without first obtaining the approval of the building official. The building official, upon notification, shall make the requested inspections and shall either indicate the portion of the construction that is satisfactory as completed, or notify the permit holder or the permit holder’s agent wherein the same fails to comply with this code. Any portions that do not comply shall be corrected and such portion shall not be covered or concealed until authorized by the building official. CERTIFICATE OF OCCUPANCY",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "111.1",
+                  "prefix": "A",
+                  "title": "Change of occupancy",
+                  "text": "A building or structure shall not be used or occupied in whole or in part, and a change of occupancy of a building or structure or portion thereof shall not be made, until the building official has issued a certificate of occupancy therefor as provided herein. Issuance of a certificate of occupancy shall not be construed as an approval of a violation of the provisions of this code or of other ordinances of the jurisdiction. Certificates presum- ing to give authority to violate or cancel the provisions of this code or other ordinances of the jurisdiction shall not be valid. Exception: Certificates of occupancy are not required for work exempt from permits in accordance with Section 105.2.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "111.2",
+                  "prefix": "A",
+                  "title": "Certificate issued",
+                  "text": "After the building official inspects the building or structure and does not find violations of the provisions of this code or other laws that are enforced by the department, the building official shall issue a certifi- cate of occupancy that contains the following: authorized agent. which the certificate is issued. ture has been inspected for compliance with the requirements of this code. issued. provisions of Chapter 3. whether the sprinkler system is required. ing permit.",
+                  "depth": 1,
+                  "numbered_items": [
+                    {
+                      "number": 1,
+                      "text": "The permit number."
+                    },
+                    {
+                      "number": 2,
+                      "text": "The address of the structure."
+                    },
+                    {
+                      "number": 3,
+                      "text": "The name and address of the owner or the owner’s"
+                    },
+                    {
+                      "number": 4,
+                      "text": "A description of that portion of the structure for"
+                    },
+                    {
+                      "number": 5,
+                      "text": "A statement that the described portion of the struc-"
+                    },
+                    {
+                      "number": 6,
+                      "text": "The name of the building official."
+                    },
+                    {
+                      "number": 7,
+                      "text": "The edition of the code under which the permit was"
+                    },
+                    {
+                      "number": 8,
+                      "text": "The use and occupancy, in accordance with the"
+                    },
+                    {
+                      "number": 9,
+                      "text": "The type of construction as defined in Chapter 6."
+                    },
+                    {
+                      "number": 10,
+                      "text": "The design occupant load."
+                    },
+                    {
+                      "number": 11,
+                      "text": "Where an automatic sprinkler system is provided,"
+                    },
+                    {
+                      "number": 12,
+                      "text": "Any special stipulations and conditions of the build-"
+                    }
+                  ],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "111.3",
+                  "prefix": "A",
+                  "title": "Temporary occupancy",
+                  "text": "The building official is authorized to issue a temporary certificate of occupancy before the completion of the entire work covered by the permit, provided that such portion or portions shall be occu- pied safely. The building official shall set a time period during which the temporary certificate of occupancy is valid.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "111.4",
+                  "prefix": "A",
+                  "title": "Revocation",
+                  "text": "The building official is authorized to suspend or revoke a certificate of occupancy or completion issued under the provisions of this code, in writing, wherever the certificate is issued in error, or on the basis of incorrect information supplied, or where it is determined that the building or structure or portion thereof is in violation of the provisions of this code or other ordinance of the jurisdiction. on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "40"
+                  }
+                },
+                {
+                  "section_number": "112.1",
+                  "prefix": "A",
+                  "title": "Connection of service utilities",
+                  "text": "A person shall not make connections from a utility, a source of energy, fuel, or power, or a water system or sewer system to any building or system that is regulated by this code for which a permit is required, until approved by the building official.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "112.2",
+                  "prefix": "A",
+                  "title": "Temporary connection",
+                  "text": "The building official shall have the authority to authorize the temporary connec- tion of the building or system to the utility, the source of energy, fuel, or power, or the water system or sewer system for the purpose of testing systems or for use under a tempo- rary approval.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "112.3",
+                  "prefix": "A",
+                  "title": "Authority to disconnect service utilities",
+                  "text": "The building official shall have the authority to authorize discon- nection of utility service to the building, structure or system regulated by this code and the referenced codes and stan- dards in case of emergency where necessary to eliminate an immediate hazard to life or property or where such utility connection has been made without the approval required by serving utility, and wherever possible the owner or the owner’s authorized agent and occupant of the building, structure or service system of the decision to disconnect prior to taking such action. If not notified prior to discon- necting, the owner or the owner’s authorized agent or occupant of the building, structure or service system shall be notified in writing, as soon as practical thereafter. MEANS OF APPEALS",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "113.1",
+                  "prefix": "A",
+                  "title": "General",
+                  "text": "In order to hear and decide appeals of orders, decisions or determinations made by the building official relative to the application and interpretation of this code, there shall be and is hereby created a board of appeals. The board of appeals shall be appointed by the applicable governing authority and shall hold office at its pleasure. The board shall adopt rules of procedure for conducting its busi- ness and shall render all decisions and findings in writing to the appellant with a duplicate copy to the building official.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "113.2",
+                  "prefix": "A",
+                  "title": "Limitations on authority",
+                  "text": "An application for appeal shall be based on a claim that the true intent of this code or the rules legally adopted thereunder have been incor- rectly interpreted, the provisions of this code do not fully apply or an equivalent or better form of construction is proposed. The board shall not have authority to waive requirements of this code or interpret the administration of this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "113.3",
+                  "prefix": "A",
+                  "title": "Qualifications",
+                  "text": "The board of appeals shall consist of members who are qualified by experience and training to pass on matters pertaining to building construction and are not employees of the jurisdiction.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "113.4",
+                  "prefix": "A",
+                  "title": "Administration",
+                  "text": "The building official shall take immediate action in accordance with the decision of the board. VIOLATIONS",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "114.1",
+                  "prefix": "A",
+                  "title": "Unlawful acts",
+                  "text": "It shall be unlawful for any person, firm or corporation to erect, construct, alter, extend, repair, move, remove, demolish or occupy any building, structure or equipment regulated by this code, or cause same to be done, in conflict with or in violation of any of the provisions of this code.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "114.2",
+                  "prefix": "A",
+                  "title": "Notice of violation",
+                  "text": "The building official is autho- rized to serve a notice of violation or order on the person responsible for the erection, construction, alteration, exten- sion, repair, moving, removal, demolition or occupancy of a building or structure in violation of the provisions of this code, or in violation of a permit or certificate issued under the provisions of this code. Such order shall direct the discontinuance of the illegal action or condition and the abatement of the violation.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "114.3",
+                  "prefix": "A",
+                  "title": "Prosecution of violation",
+                  "text": "If the notice of violation is not complied with promptly, the building official is autho- rized to request the legal counsel of the jurisdiction to institute the appropriate proceeding at law or in equity to restrain, correct or abate such violation, or to require the removal or termination of the unlawful occupancy of the building or structure in violation of the provisions of this code or of the order or direction made pursuant thereto.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "114.4",
+                  "prefix": "A",
+                  "title": "Violation penalties",
+                  "text": "Any person who violates a provision of this code or fails to comply with any of the requirements thereof or who erects, constructs, alters or repairs a building or structure in violation of the approved construction documents or directive of the building official, or of a permit or certificate issued under the provisions of this code, shall be subject to penalties as prescribed by law. STOP WORK ORDER",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "115.1",
+                  "prefix": "A",
+                  "title": "Authority",
+                  "text": "Where the building official finds any work regulated by this code being performed in a manner contrary to the provisions of this code or in a dangerous or unsafe manner, the building official is authorized to issue a stop work order.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "115.2",
+                  "prefix": "A",
+                  "title": "Issuance",
+                  "text": "The stop work order shall be in writing and shall be given to the owner of the property, the owner’s authorized agent or the person performing the work. Upon issuance of a stop work order, the cited work shall immedi- ately cease. The stop work order shall state the reason for the order and the conditions under which the cited work is authorized to resume.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "115.3",
+                  "prefix": "A",
+                  "title": "Emergencies",
+                  "text": "Where an emergency exists, the building official shall not be required to give a written notice prior to stopping the work.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "115.4",
+                  "prefix": "A",
+                  "title": "Failure to comply",
+                  "text": "Any person who shall continue any work after having been served with a stop work order, except such work as that person is directed to perform to remove a violation or unsafe condition, shall be subject to fines established by the authority having jurisdiction. on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "41"
+                  }
+                },
+                {
+                  "section_number": "116.1",
+                  "prefix": "A",
+                  "title": "Unsafe conditions",
+                  "text": "Structures or existing equip- ment that are or hereafter become unsafe, insanitary or deficient because of inadequate means of egress facilities, inadequate light and ventilation, or that constitute a fire hazard, or are otherwise dangerous to human life or the public welfare, or that involve illegal or improper occupancy or inadequate maintenance, shall be deemed an unsafe condition. Unsafe structures shall be taken down and removed or made safe, as the building official deems neces- sary and as provided for in this section. A vacant structure that is not secured against unauthorized entry shall be deemed unsafe.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "42"
+                  }
+                },
+                {
+                  "section_number": "116.2",
+                  "prefix": "A",
+                  "title": "Record",
+                  "text": "The building official shall cause a report to be filed on an unsafe condition. The report shall state the occupancy of the structure and the nature of the unsafe condition.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "42"
+                  }
+                },
+                {
+                  "section_number": "116.3",
+                  "prefix": "A",
+                  "title": "Notice",
+                  "text": "If an unsafe condition is found, the build- ing official shall serve on the owner of the structure, or the owner’s authorized agent, a written notice that describes the condition deemed unsafe and specifies the required repairs or improvements to be made to abate the unsafe condition, or that requires the unsafe structure to be demolished within a stipulated time. Such notice shall require the person thus notified to declare immediately to the building official acceptance or rejection of the terms of the order.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "42"
+                  }
+                },
+                {
+                  "section_number": "116.4",
+                  "prefix": "A",
+                  "title": "Method of service",
+                  "text": "Such notice shall be deemed properly served where a copy thereof is served in accordance with one of the following methods: 1. A copy is delivered to the owner personally. 2. A copy is sent by certified or registered mail addressed to the owner at the last known address with the return receipt requested. 3. A copy is delivered in any other manner as prescribed by local law. If the certified or registered letter is returned showing that the letter was not delivered, a copy thereof shall be posted in a conspicuous place in or about the structure affected by such notice. Service of such notice in the foregoing manner on the owner’s authorized agent shall constitute service of notice on the owner.",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "42"
+                  }
+                },
+                {
+                  "section_number": "116.5",
+                  "prefix": "A",
+                  "title": "Restoration or abatement",
+                  "text": "Where the structure or equipment determined to be unsafe by the building official is restored to a safe condition, the owner, the owner’s autho- rized agent, operator or occupant of a structure, premises or equipment deemed unsafe by the building official shall abate or cause to be abated or corrected such unsafe conditions either by repair, rehabilitation, demolition or other approved corrective action. To the extent that repairs, alterations or additions are made or a change of occupancy occurs during the restoration of the structure, such repairs, alterations, additions and change of occupancy shall comply with the requirements of the International Existing Building Code. on Oct 14, 2021 06:19 AM (PDT) pursuant to License Agreement with ICC.  No further reproduction, no further reproductions by any third party, or distribution authorized.  Single user only, copying and networking prohibited. ANY UNAUTHORIZED REPRODUCTION OR DISTRIBUTION IS A VIOLATION OF THE FEDERAL COPYRIGHT ACT AND THE LICENSE AGREEMENT, AND SUBJECT TO CIVIL AND CRIMINAL PENALTIES THEREUNDER. 101167924",
+                  "depth": 1,
+                  "numbered_items": [],
+                  "subsections": [],
+                  "references": {
+                    "internal_sections": [],
+                    "tables": [],
+                    "external_documents": [],
+                    "figures": []
+                  },
+                  "metadata": {
+                    "has_table": false,
+                    "has_figure": false,
+                    "table_count": 0,
+                    "figure_count": 0,
+                    "page_number": "42"
+                  }
+                }
+              ],
+              "references": {
+                "internal_sections": [],
+                "tables": [],
+                "external_documents": [],
+                "figures": []
+              },
+              "metadata": {
+                "has_table": false,
+                "has_figure": false,
+                "table_count": 0,
+                "figure_count": 0,
+                "page_number": "33"
+              }
+            }
+          ]
+        }
+      ],
+      "sections": []
+    }
+  ]
+}
