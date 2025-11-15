@@ -32,43 +32,20 @@ class Section(BaseModel):
         default_factory=list,
         description="Numbered list items"
     )
-    subsections: list['Section'] = Field(
-        default_factory=list,
-        description="Nested subsections"
-    )
     references: References = Field(
         default_factory=References,
         description="References found in section"
     )
     metadata: Optional[Metadata] = Field(None, description="Section metadata")
 
-
-# Enable forward references for recursive model
-Section.model_rebuild()
-
-
-class Part(BaseModel):
-    """Part within a chapter (e.g., PART 1—SCOPE AND APPLICATION)."""
-    part_number: int = Field(..., description="Part number")
-    title: str = Field(..., description="Part title")
-    sections: list[Section] = Field(
-        default_factory=list,
-        description="Sections within this part"
-    )
-
-
 class Chapter(BaseModel):
     """Chapter within the document."""
     chapter_number: int = Field(..., description="Chapter number")
     title: str = Field(..., description="Chapter title")
     user_notes: Optional[str] = Field(None, description="User notes/introduction text for the chapter")
-    parts: list[Part] = Field(
-        default_factory=list,
-        description="Parts within the chapter"
-    )
     sections: list[Section] = Field(
         default_factory=list,
-        description="Top-level sections in chapter (sections not in a part)"
+        description="Sections belonging to the chapter"
     )
 
 

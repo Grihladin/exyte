@@ -10,6 +10,13 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 IMAGES_DIR = OUTPUT_DIR / "images"
 JSON_OUTPUT_FILE = OUTPUT_DIR / "parsed_document.json"
 
+# Default PDF parsing settings
+DEFAULT_PDF_PATH = PROJECT_ROOT.parent / "2021_International_Building_Code.pdf"
+DEFAULT_START_PAGE_NUMBER = 32  # Human-friendly numbering
+DEFAULT_END_PAGE_NUMBER = 769
+DEFAULT_START_PAGE_INDEX = DEFAULT_START_PAGE_NUMBER - 1  # Zero-based for extractor
+DEFAULT_PAGE_COUNT = DEFAULT_END_PAGE_NUMBER - DEFAULT_START_PAGE_NUMBER + 1
+
 # Ensure output directories exist
 OUTPUT_DIR.mkdir(exist_ok=True)
 IMAGES_DIR.mkdir(exist_ok=True)

@@ -297,6 +297,50 @@ class PDFExtractor:
         except Exception as e:
             logger.error(f"Failed to extract text blocks from page {page_num + 1}: {e}")
             raise
+
+    def extract_page_lines_with_fonts(self, page_num: int) -> list[dict]:
+        """Extract line-level text with basic font information."""
+        if not self.doc:
+            raise ValueError("Document not open")
+        if page_num < 0 or page_num >= len(self.doc):
+            raise ValueError(f"Invalid page number: {page_num}")
+        try:
+            page = self.doc[page_num]
+            blocks = page.get_text("dict").get("blocks", [])
+            lines_info: list[dict] = []
+            for block in blocks:
+                if block.get("type") != 0:
+                    continue
+                for line in block.get("lines", []):
+                    spans = line.get("spans", [])
+                    if not spans:
+                        continue
+                    line_text = ''.join(span.get("text", "") for span in spans).strip()
+                    if not line_text:
+                        continue
+                    sizes = [span.get("size") for span in spans if span.get("size")]
+                    if not sizes:
+                        continue
+                    max_size = max(sizes)
+                    dominant_span = max(
+                        spans,
+                        key=lambda span: len(span.get("text", "").strip()),
+                    )
+                    is_bold = any(
+                        (span.get("flags", 0) & 2) or
+                        ("Bold" in span.get("font", "") or "Black" in span.get("font", ""))
+                        for span in spans
+                    )
+                    lines_info.append({
+                        "text": line_text,
+                        "max_size": float(max_size),
+                        "font": dominant_span.get("font"),
+                        "is_bold": is_bold,
+                    })
+            return lines_info
+        except Exception as e:
+            logger.error(f"Failed to extract line features from page {page_num + 1}: {e}")
+            raise
     
     def extract_all_text(self, start_page: int = 0, end_page: Optional[int] = None) -> str:
         """Extract text from all pages or a range of pages.

@@ -190,6 +190,4 @@ class ReferenceExtractor:
             section.references.figures.extend(item_refs.figures)
             section.references.external_documents.extend(item_refs.external_documents)
         
-        # Recursively process subsections
-        for subsection in section.subsections:
-            self.extract_and_attach_references(subsection)
+        # No subsections to process; sections are flat

@@ -2,9 +2,10 @@
 
 import logging
 import re
+import statistics
 from typing import Optional
 
-from ..models import Chapter, Section, NumberedItem, Part
+from ..models import Chapter, Section, NumberedItem
 from ..utils.patterns import PATTERNS
 from ..utils.formatters import extract_section_depth, clean_text
 
@@ -18,12 +19,18 @@ class StructureParser:
     def __init__(self):
         """Initialize structure parser."""
         self.current_chapter: Optional[Chapter] = None
-        self.current_part: Optional[Part] = None
-        self.sections_stack: list[Section] = []
         self.user_notes_buffer: list[str] = []
         self.in_user_notes: bool = False
         
-    def parse_text_to_structure(self, text: str, page_num: int) -> tuple[list[Chapter], list[Section]]:
+    def parse_text_to_structure(
+        self,
+        text: str,
+        page_num: int,
+        *,
+        lines: Optional[list[str]] = None,
+        line_features: Optional[dict[int, dict]] = None,
+        font_stats: Optional[dict[str, float]] = None,
+    ) -> tuple[list[Chapter], list[Section]]:
         """Parse text content into chapters and sections.
         
         Args:
@@ -33,7 +40,8 @@ class StructureParser:
         Returns:
             Tuple of (chapters found, orphan sections)
         """
-        lines = text.split('\n')
+        if lines is None:
+            lines = text.split('\n')
         chapters = []
         orphan_sections = []
         current_section = None
@@ -66,7 +74,6 @@ class StructureParser:
                 chapter = Chapter(chapter_number=chapter_num, title=title)
                 chapters.append(chapter)
                 self.current_chapter = chapter
-                self.current_part = None
                 current_section = None
                 
                 logger.info(f"Found chapter {chapter_num}: {title}")
@@ -97,7 +104,7 @@ class StructureParser:
             
             # Check for part header
             part_match = PATTERNS['part'].match(line)
-            if part_match:
+            if part_match and self._is_confident_part_heading(line_idx, line_features, font_stats):
                 # Save previous section
                 if current_section and current_text_buffer:
                     current_section.text = ' '.join(current_text_buffer)
@@ -123,12 +130,7 @@ class StructureParser:
                         # Skip the next line since we've consumed it
                         lines[line_idx + 1] = ''  # Mark as processed
                 
-                part = Part(part_number=part_num, title=part_title)
                 if self.current_chapter:
-                    self.current_chapter.parts.append(part)
-                    self.current_part = part
-                    # Clear sections stack when switching parts
-                    self.sections_stack = []
                     logger.info(f"Found part {part_num}: {part_title}")
                 current_section = None
                 continue
@@ -152,7 +154,8 @@ class StructureParser:
                 
                 prefix = prefix_section_match.group(1)
                 section_num = prefix_section_match.group(2)
-                title = prefix_section_match.group(3).strip()
+                raw_title = prefix_section_match.group(3).strip()
+                title, inline_text = self._extract_title_and_inline_text(raw_title)
                 
                 section = self._create_section(section_num, title, prefix, page_num)
                 current_section = section
@@ -163,12 +166,8 @@ class StructureParser:
                 else:
                     orphan_sections.append(section)
                 
-                # Extract any remaining text after the title on the same line
-                # The pattern captures up to and including the period, so we need to get text after it
-                match_end = prefix_section_match.end()
-                remaining_text = line[match_end:].strip()
-                if remaining_text:
-                    current_text_buffer.append(remaining_text)
+                if inline_text:
+                    current_text_buffer.append(inline_text)
                 
                 logger.debug(f"Found section [{prefix}] {section_num}: {title}")
                 continue
@@ -182,7 +181,8 @@ class StructureParser:
                     current_text_buffer = []
                 
                 section_num = section_match.group(1)
-                title = section_match.group(2).strip()
+                raw_title = section_match.group(2).strip()
+                title, inline_text = self._extract_title_and_inline_text(raw_title)
                 
                 section = self._create_section(section_num, title, None, page_num)
                 current_section = section
@@ -193,11 +193,8 @@ class StructureParser:
                 else:
                     orphan_sections.append(section)
                 
-                # Extract any remaining text after the title on the same line
-                match_end = section_match.end()
-                remaining_text = line[match_end:].strip()
-                if remaining_text:
-                    current_text_buffer.append(remaining_text)
+                if inline_text:
+                    current_text_buffer.append(inline_text)
                 
                 logger.debug(f"Found section {section_num}: {title}")
                 continue
@@ -313,12 +310,30 @@ class StructureParser:
         if len(title) > 200:
             return False
         
+        # Require the first significant token to look like a heading (start with uppercase letter)
+        first_token = title.split()[0] if title.split() else ""
+        first_token = first_token.lstrip('(["')
+        if not first_token or not first_token[0].isupper():
+            return False
+        
         # Title often has uppercase words
         uppercase_words = sum(1 for word in title.split() if word.isupper() or word[0].isupper())
         if uppercase_words < len(title.split()) * 0.3:  # At least 30% capitalized
             return False
         
         return True
+    
+    def _extract_title_and_inline_text(self, text: str) -> tuple[str, str]:
+        """Split section line into title and inline body text."""
+        normalized = text.strip()
+        if not normalized:
+            return "", ""
+        split_match = re.search(r'\.\s+(?=[A-Z\[])', normalized)
+        if split_match:
+            title = normalized[:split_match.start()].strip()
+            inline_text = normalized[split_match.end():].strip()
+            return clean_text(title.rstrip('.')), inline_text
+        return clean_text(normalized.rstrip('.')), ""
     
     def _create_section(
         self, 
@@ -366,63 +381,99 @@ class StructureParser:
             section: Section to add
             chapter: Current chapter
         """
-        depth = section.depth
-        
-        # Determine where to add the section
-        target_sections_list = None
-        if self.current_part:
-            # If we have a current part, add to part's sections
-            target_sections_list = self.current_part.sections
-        else:
-            # Otherwise add to chapter's sections
-            target_sections_list = chapter.sections
-        
-        if depth == 0:
-            # Top-level section - add directly to target
-            target_sections_list.append(section)
-            self.sections_stack = [section]
-        else:
-            # Find parent section
-            # Walk back through stack to find parent (depth - 1)
-            parent_depth = depth - 1
-            
-            # Trim stack to parent level
-            while len(self.sections_stack) > parent_depth + 1:
-                self.sections_stack.pop()
-            
-            if self.sections_stack and len(self.sections_stack) > parent_depth:
-                parent = self.sections_stack[parent_depth]
-                parent.subsections.append(section)
-                
-                # Update stack
-                if len(self.sections_stack) > depth:
-                    self.sections_stack[depth] = section
-                else:
-                    self.sections_stack.append(section)
-            else:
-                # No valid parent found, add to target
-                logger.warning(
-                    f"Section {section.section_number} (depth {depth}) has no parent, "
-                    f"adding to {'part' if self.current_part else 'chapter'}"
-                )
-                target_sections_list.append(section)
-                self.sections_stack = [section]
-    
+        chapter.sections.append(section)
+
+    def _normalize_line_text(self, text: str) -> str:
+        """Normalize line text for comparisons."""
+        return re.sub(r'\s+', ' ', text.strip())
+
+    def _align_line_features(self, lines: list[str], features: list[dict]) -> dict[int, dict]:
+        """Align extracted line features with filtered text lines."""
+        lookup: dict[int, dict] = {}
+        feature_idx = 0
+        total_features = len(features)
+        for line_idx, line in enumerate(lines):
+            normalized_line = self._normalize_line_text(line)
+            if not normalized_line:
+                continue
+            while feature_idx < total_features:
+                feature = features[feature_idx]
+                feature_idx += 1
+                normalized_feature = self._normalize_line_text(feature.get('text', ''))
+                if not normalized_feature:
+                    continue
+                if normalized_feature == normalized_line:
+                    lookup[line_idx] = feature
+                    break
+        return lookup
+
+    def _compute_font_stats(self, features: list[dict]) -> dict[str, float]:
+        """Compute basic statistics about font sizes on a page."""
+        sizes = [feature.get('max_size') for feature in features if feature.get('max_size')]
+        if not sizes:
+            return {}
+        median_size = statistics.median(sizes)
+        avg_size = sum(sizes) / len(sizes)
+        max_size = max(sizes)
+        return {
+            'median': float(median_size),
+            'average': float(avg_size),
+            'max': float(max_size),
+        }
+
+    def _is_confident_part_heading(
+        self,
+        line_idx: int,
+        line_features: Optional[dict[int, dict]],
+        font_stats: Optional[dict[str, float]],
+    ) -> bool:
+        """Determine if a PART line is likely a heading using font cues when available."""
+        if not line_features or line_idx not in line_features:
+            return True
+        info = line_features[line_idx]
+        font_size = info.get('max_size') or info.get('size')
+        if font_size is None:
+            return True
+        median_size = (font_stats or {}).get('median', 0.0)
+        max_size = (font_stats or {}).get('max', 0.0)
+        # Treat as heading if noticeably larger or bold compared to body text
+        if font_size >= max(12.0, median_size + 1.0):
+            return True
+        if max_size and font_size >= max_size * 0.9:
+            return True
+        if info.get('is_bold') and font_size >= median_size:
+            return True
+        return False
+
     def parse_page_structure(
         self, 
         page_text: str, 
-        page_num: int
+        page_num: int,
+        line_features: Optional[list[dict]] = None
     ) -> tuple[list[Chapter], list[Section]]:
         """Parse a single page for structure.
         
         Args:
             page_text: Text content of page
             page_num: Page number (1-indexed)
+            line_features: Optional line appearance information per line
             
         Returns:
             Tuple of (chapters, sections) found on this page
         """
-        return self.parse_text_to_structure(page_text, page_num)
+        lines = page_text.split('\n')
+        font_lookup: Optional[dict[int, dict]] = None
+        font_stats: Optional[dict[str, float]] = None
+        if line_features:
+            font_lookup = self._align_line_features(lines, line_features)
+            font_stats = self._compute_font_stats(line_features)
+        return self.parse_text_to_structure(
+            page_text,
+            page_num,
+            lines=lines,
+            line_features=font_lookup,
+            font_stats=font_stats,
+        )
     
     def merge_chapters(self, existing: list[Chapter], new: list[Chapter]) -> list[Chapter]:
         """Merge new chapters with existing ones.
@@ -447,19 +498,6 @@ class StructureParser:
                     # Update user notes if new chapter has them
                     if new_chapter.user_notes and not existing_chapter.user_notes:
                         existing_chapter.user_notes = new_chapter.user_notes
-                    
-                    # Merge parts
-                    for new_part in new_chapter.parts:
-                        # Check if part already exists
-                        part_found = False
-                        for existing_part in existing_chapter.parts:
-                            if existing_part.part_number == new_part.part_number:
-                                # Merge sections in part
-                                existing_part.sections.extend(new_part.sections)
-                                part_found = True
-                                break
-                        if not part_found:
-                            existing_chapter.parts.append(new_part)
                     
                     # Merge standalone sections (not in parts)
                     existing_chapter.sections.extend(new_chapter.sections)

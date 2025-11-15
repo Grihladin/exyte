@@ -4,7 +4,14 @@ import logging
 import sys
 from pathlib import Path
 
-from src.config import LOG_LEVEL, LOG_FORMAT, JSON_OUTPUT_FILE
+from src.config import (
+    LOG_LEVEL,
+    LOG_FORMAT,
+    JSON_OUTPUT_FILE,
+    DEFAULT_PDF_PATH,
+    DEFAULT_START_PAGE_INDEX,
+    DEFAULT_PAGE_COUNT,
+)
 from src.parsers import PDFExtractor, StructureParser, ReferenceExtractor, MetadataCollector
 from src.models import Document
 
@@ -20,12 +27,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
+def test_structure_parsing(pdf_path: str, num_pages: int = 10, start_page: int = 0) -> None:
     """Test PDF structure parsing on sample pages.
     
     Args:
         pdf_path: Path to PDF file
         num_pages: Number of pages to parse (default: 10)
+        start_page: Zero-based page index to start parsing from
     """
     logger.info("=" * 80)
     logger.info("Phase 2: Structure Parsing Testing")
@@ -43,21 +51,36 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
             logger.info(f"PDF loaded successfully: {total_pages} pages")
             
             # Limit to available pages
-            pages_to_parse = min(num_pages, total_pages)
-            logger.info(f"Parsing first {pages_to_parse} pages for structure...")
+            if start_page >= total_pages:
+                logger.error(
+                    f"Start page ({start_page + 1}) is beyond total pages ({total_pages})."
+                )
+                return
+            pages_to_parse = min(num_pages, total_pages - start_page)
+            start_display = start_page + 1
+            end_display = start_display + pages_to_parse - 1
+            logger.info(
+                f"Parsing {pages_to_parse} page(s) for structure (pages {start_display}-{end_display})..."
+            )
             
             all_chapters = []
             all_orphan_sections = []
             
             # Parse pages for structure
-            for page_num in range(pages_to_parse):
+            for page_offset in range(pages_to_parse):
+                page_num = start_page + page_offset
                 logger.info(f"\n--- Processing Page {page_num + 1} ---")
                 
                 # Extract text
                 text = extractor.extract_page_text(page_num)
+                line_features = extractor.extract_page_lines_with_fonts(page_num)
                 
                 # Parse structure
-                chapters, orphan_sections = structure_parser.parse_page_structure(text, page_num + 1)
+                chapters, orphan_sections = structure_parser.parse_page_structure(
+                    text,
+                    page_num + 1,
+                    line_features=line_features,
+                )
                 
                 if chapters:
                     logger.info(f"Found {len(chapters)} chapter(s)")
@@ -77,12 +100,6 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
                     for ch in all_chapters:
                         if ch.chapter_number == structure_parser.current_chapter.chapter_number:
                             structure_parser.current_chapter = ch
-                            # Also update current_part reference
-                            if structure_parser.current_part:
-                                for part in ch.parts:
-                                    if part.part_number == structure_parser.current_part.part_number:
-                                        structure_parser.current_part = part
-                                        break
                             break
                 
                 all_orphan_sections.extend(orphan_sections)
@@ -102,7 +119,6 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
                 # Check if this chapter has actual content
                 has_content = (
                     bool(chapter.sections) or 
-                    bool(chapter.parts) or 
                     bool(chapter.user_notes)
                 )
                 
@@ -111,39 +127,18 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
                     existing = seen_chapters[chapter_key]
                     if has_content:
                         # If existing has no content, replace it
-                        if not (existing.sections or existing.parts or existing.user_notes):
+                        if not (existing.sections or existing.user_notes):
                             seen_chapters[chapter_key] = chapter
                         else:
                             # Both have content, merge them
                             if chapter.user_notes and not existing.user_notes:
                                 existing.user_notes = chapter.user_notes
-                            
-                            # Merge parts by part_number
-                            for new_part in chapter.parts:
-                                part_found = False
-                                for existing_part in existing.parts:
-                                    if existing_part.part_number == new_part.part_number:
-                                        # Merge sections and update title if new one is longer
-                                        existing_part.sections.extend(new_part.sections)
-                                        if len(new_part.title) > len(existing_part.title):
-                                            existing_part.title = new_part.title
-                                        part_found = True
-                                        break
-                                if not part_found:
-                                    existing.parts.append(new_part)
-                            
                             existing.sections.extend(chapter.sections)
                 else:
                     # New chapter
                     if has_content:
                         seen_chapters[chapter_key] = chapter
                         cleaned_chapters.append(chapter)
-            
-            # Clean up empty parts within each chapter
-            for chapter in cleaned_chapters:
-                # Filter out parts with no sections
-                chapter.parts = [part for part in chapter.parts if part.sections]
-                logger.debug(f"Chapter {chapter.chapter_number} has {len(chapter.parts)} parts with content")
             
             all_chapters = cleaned_chapters
             logger.info(f"Cleaned up chapters: {len(all_chapters)} unique chapters with content")
@@ -162,7 +157,6 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
                     metadata_collector.collect_section_metadata(section)
                     
                     # Log section info
-                    total_subsections = len(section.subsections)
                     ref_count = (
                         len(section.references.internal_sections) +
                         len(section.references.tables) +
@@ -172,7 +166,7 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
                     
                     logger.info(
                         f"    Section {section.section_number}: {section.title[:50]}... "
-                        f"(depth={section.depth}, subsections={total_subsections}, refs={ref_count})"
+                        f"(depth={section.depth}, refs={ref_count})"
                     )
             
             # Create document model
@@ -209,12 +203,13 @@ def test_structure_parsing(pdf_path: str, num_pages: int = 10) -> None:
         sys.exit(1)
 
 
-def test_pdf_extraction(pdf_path: str, num_pages: int = 5) -> None:
+def test_pdf_extraction(pdf_path: str, num_pages: int = 5, start_page: int = 0) -> None:
     """Test PDF extraction on sample pages (Phase 1).
     
     Args:
         pdf_path: Path to PDF file
         num_pages: Number of pages to extract (default: 5)
+        start_page: Zero-based page index to start extraction from
     """
     logger.info("=" * 80)
     logger.info("Phase 1: Core PDF Extraction Testing")
@@ -227,11 +222,21 @@ def test_pdf_extraction(pdf_path: str, num_pages: int = 5) -> None:
             logger.info(f"PDF loaded successfully: {total_pages} pages")
             
             # Limit to available pages
-            pages_to_extract = min(num_pages, total_pages)
-            logger.info(f"Extracting first {pages_to_extract} pages...")
+            if start_page >= total_pages:
+                logger.error(
+                    f"Start page ({start_page + 1}) is beyond total pages ({total_pages})."
+                )
+                return
+            pages_to_extract = min(num_pages, total_pages - start_page)
+            start_display = start_page + 1
+            end_display = start_display + pages_to_extract - 1
+            logger.info(
+                f"Extracting {pages_to_extract} page(s) (pages {start_display}-{end_display})..."
+            )
             
             # Extract text from sample pages
-            for page_num in range(pages_to_extract):
+            for page_offset in range(pages_to_extract):
+                page_num = start_page + page_offset
                 logger.info(f"\n--- Page {page_num + 1} ---")
                 
                 # Extract plain text
@@ -286,27 +291,62 @@ def test_pdf_extraction(pdf_path: str, num_pages: int = 5) -> None:
 
 def main() -> None:
     """Main function."""
-    if len(sys.argv) < 2:
-        logger.error("Usage: python -m src.main <path_to_pdf> [num_pages] [--phase1]")
-        logger.error("Example: python -m src.main 2021_IBC.pdf 10")
-        logger.error("         python -m src.main 2021_IBC.pdf 5 --phase1  (test Phase 1 only)")
-        sys.exit(1)
-    
-    pdf_path = sys.argv[1]
-    num_pages = 10  # Default for Phase 2
+    args = sys.argv[1:]
+    pdf_path: str | Path = DEFAULT_PDF_PATH
+    num_pages = DEFAULT_PAGE_COUNT
+    start_page = DEFAULT_START_PAGE_INDEX
     phase1_only = False
     
-    # Parse arguments
-    for arg in sys.argv[2:]:
+    # Allow overriding defaults via CLI
+    processed_args = list(args)
+    if processed_args and not processed_args[0].startswith('-') and not processed_args[0].isdigit():
+        pdf_path = processed_args.pop(0)
+    elif not processed_args and not DEFAULT_PDF_PATH.exists():
+        logger.error(
+            "Default PDF not found at %s and no path argument was provided.",
+            DEFAULT_PDF_PATH,
+        )
+        sys.exit(1)
+    
+    for arg in processed_args:
         if arg == "--phase1":
             phase1_only = True
+        elif arg.startswith("--start="):
+            value = arg.split("=", 1)[1]
+            try:
+                page_number = int(value)
+                if page_number < 1:
+                    raise ValueError
+                start_page = page_number - 1
+            except ValueError:
+                logger.error(f"Invalid --start value '{value}'. Must be a positive integer.")
+                sys.exit(1)
         elif arg.isdigit():
             num_pages = int(arg)
+        else:
+            logger.error(f"Unrecognized argument: {arg}")
+            logger.error(
+                "Usage: python -m src.main [pdf_path] [num_pages] [--start=<page>] [--phase1]"
+            )
+            sys.exit(1)
+    
+    pdf_path = Path(pdf_path)
+    if not pdf_path.exists():
+        logger.error(f"PDF not found: {pdf_path}")
+        sys.exit(1)
+    
+    logger.info(
+        "Using PDF: %s (pages %d-%d, total %d pages to parse)",
+        pdf_path,
+        start_page + 1,
+        start_page + num_pages,
+        num_pages,
+    )
     
     if phase1_only:
-        test_pdf_extraction(pdf_path, num_pages)
+        test_pdf_extraction(pdf_path, num_pages, start_page)
     else:
-        test_structure_parsing(pdf_path, num_pages)
+        test_structure_parsing(pdf_path, num_pages, start_page)
 
 
 if __name__ == "__main__":

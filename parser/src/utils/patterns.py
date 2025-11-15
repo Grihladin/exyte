@@ -24,7 +24,7 @@ PREFIX_SECTION_PATTERN: Pattern = re.compile(
     r'^\[([A-Z]+)\]\s+(\d+(?:\.\d+)*)\s+(.+?)\.\s*'
 )
 SECTION_PATTERN: Pattern = re.compile(
-    r'^(\d+(?:\.\d+)*)\s+(.+?)\.?\s*$'
+    r'^(\d+(?:\.\d+)*)\s+(.+)$'
 )
 
 # Numbered list items

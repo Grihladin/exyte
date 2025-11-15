@@ -3,7 +3,6 @@
 from .document import (
     Document,
     Chapter,
-    Part,
     Section,
     NumberedItem,
     Metadata,
@@ -22,7 +21,6 @@ from .references import (
 __all__ = [
     "Document",
     "Chapter",
-    "Part",
     "Section",
     "NumberedItem",
     "Metadata",
