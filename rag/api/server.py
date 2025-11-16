@@ -11,7 +11,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from rag.api.routes import query, search, sections, librechat
+from rag.api.routes import openai_compat, query, search, sections
 from rag.config import settings
 from rag.database.connection import close_pool, get_pool
 
@@ -23,10 +23,12 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Manage application lifecycle events."""
     # Startup
     logger.info("Starting RAG API server")
-    logger.info(f"Database: {settings.postgres_host}:{settings.postgres_port}/{settings.postgres_db}")
+    logger.info(
+        f"Database: {settings.postgres_host}:{settings.postgres_port}/{settings.postgres_db}"
+    )
     logger.info(f"Embedding model: {settings.embedding_model}")
     logger.info(f"Chat model: {settings.chat_model}")
-    
+
     # Initialize connection pool
     try:
         pool = get_pool()
@@ -34,9 +36,9 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     except Exception as e:
         logger.error(f"Failed to initialize database pool: {e}")
         raise
-    
+
     yield
-    
+
     # Shutdown
     logger.info("Shutting down RAG API server")
     close_pool()
@@ -45,7 +47,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 def create_app() -> FastAPI:
     """Create and configure the FastAPI application.
-    
+
     Returns:
         Configured FastAPI application instance with all routes,
         middleware, and error handlers registered.
@@ -53,12 +55,11 @@ def create_app() -> FastAPI:
     app = FastAPI(
         title="Building Code RAG API",
         version="0.2.0",
-        description="Retrieval-Augmented Generation API for building code queries. "
-                    "Compatible with LibreChat custom endpoints.",
+        description="Retrieval-Augmented Generation API for building code queries.",
         lifespan=lifespan,
     )
-    
-    # CORS middleware for LibreChat compatibility
+
+    # CORS middleware
     app.add_middleware(
         CORSMiddleware,
         allow_origins=settings.api_cors_origins,
@@ -66,7 +67,7 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    
+
     # Request timing middleware
     @app.middleware("http")
     async def add_process_time_header(request: Request, call_next):
@@ -75,7 +76,7 @@ def create_app() -> FastAPI:
         process_time = time.time() - start_time
         response.headers["X-Process-Time"] = str(process_time)
         return response
-    
+
     # Global exception handler
     @app.exception_handler(Exception)
     async def global_exception_handler(request: Request, exc: Exception):
@@ -84,10 +85,14 @@ def create_app() -> FastAPI:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             content={
                 "error": "Internal server error",
-                "message": str(exc) if settings.model_config.get("debug") else "An unexpected error occurred"
-            }
+                "message": (
+                    str(exc)
+                    if settings.model_config.get("debug")
+                    else "An unexpected error occurred"
+                ),
+            },
         )
-    
+
     # Health check endpoint
     @app.get("/health", tags=["system"])
     async def health_check():
@@ -95,9 +100,9 @@ def create_app() -> FastAPI:
         return {
             "status": "healthy",
             "database": "connected" if get_pool() else "disconnected",
-            "openai_configured": settings.is_openai_configured
+            "openai_configured": settings.is_openai_configured,
         }
-    
+
     # Root endpoint
     @app.get("/", tags=["system"])
     async def root():
@@ -110,17 +115,18 @@ def create_app() -> FastAPI:
                 "query": "/query",
                 "search": "/search",
                 "sections": "/sections",
-                "librechat": "/v1/chat/completions",
-                "health": "/health"
-            }
+                "chat": "/v1/chat/completions",
+                "models": "/v1/models",
+                "health": "/health",
+            },
         }
-    
+
     # Include routers
+    app.include_router(openai_compat.router)  # OpenAI-compatible for NextChat
     app.include_router(query.router)
     app.include_router(search.router)
     app.include_router(sections.router)
-    app.include_router(librechat.router)  # LibreChat compatibility
-    
+
     return app
 
 

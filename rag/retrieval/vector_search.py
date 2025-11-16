@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 class VectorSearcher:
     """
     Semantic search using pgvector for efficient similarity queries.
-    
+
     This searcher converts queries to embeddings and performs cosine similarity
     search against stored section embeddings using PostgreSQL's pgvector extension.
     """
@@ -25,7 +25,7 @@ class VectorSearcher:
     def __init__(self, embedder: Embedder) -> None:
         """
         Initialize vector searcher.
-        
+
         Args:
             embedder: Embedder instance for generating query embeddings
         """
@@ -34,50 +34,48 @@ class VectorSearcher:
     def search(self, query: str, top_k: int = 5) -> List[SectionResult]:
         """
         Perform semantic vector similarity search.
-        
+
         Args:
             query: User query string
             top_k: Number of most similar sections to return
-            
+
         Returns:
             List of SectionResult objects ranked by cosine similarity
         """
         if not query.strip():
             logger.warning("Empty query provided to vector search")
             return []
-        
+
         try:
             # Generate query embedding
             embeddings = self.embedder.embed([query])
             if not embeddings:
                 logger.error("Failed to generate embedding for query")
                 return []
-            
+
             query_embedding = Vector(embeddings[0])
-            
+
             # Perform similarity search
             return self._similarity_search(query_embedding, top_k)
-            
+
         except Exception as e:
             logger.error(f"Error in vector search: {e}", exc_info=True)
             return []
 
     def _similarity_search(
-        self,
-        query_embedding: Vector,
-        top_k: int
+        self, query_embedding: Vector, top_k: int
     ) -> List[SectionResult]:
         """
         Execute similarity search against database.
-        
+
         Uses cosine distance operator (<=> ) for efficient similarity search.
         Smaller distances indicate higher similarity; we convert to similarity
         score using (1 - distance).
-        
+
         Args:
             query_embedding: Query vector
             top_k: Number of results to return
-            
+
         Returns:
             List of matching sections with similarity scores
         """
@@ -110,7 +108,7 @@ class VectorSearcher:
                     rows = cur.fetchall()
 
             logger.debug(f"Vector search returned {len(rows)} results")
-            
+
             return [
                 SectionResult(
                     id=row[0],

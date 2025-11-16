@@ -11,27 +11,23 @@ from pydantic import BaseModel, Field, field_validator
 # Query Endpoint Models
 # ============================================================================
 
+
 class QueryOptionsModel(BaseModel):
     """Options for customizing query behavior."""
-    
+
     max_sections: Optional[int] = Field(
-        default=None,
-        ge=1,
-        le=50,
-        description="Maximum number of sections to retrieve"
+        default=None, ge=1, le=50, description="Maximum number of sections to retrieve"
     )
     include_tables: bool = Field(
-        default=True,
-        description="Include table references in results"
+        default=True, description="Include table references in results"
     )
     include_figures: bool = Field(
-        default=True,
-        description="Include figure references in results"
+        default=True, description="Include figure references in results"
     )
     search_type: str = Field(
         default="hybrid",
         pattern="^(hybrid|vector)$",
-        description="Search strategy: 'hybrid' or 'vector'"
+        description="Search strategy: 'hybrid' or 'vector'",
     )
 
     @field_validator("search_type")
@@ -45,16 +41,12 @@ class QueryOptionsModel(BaseModel):
 
 class QueryRequest(BaseModel):
     """Request model for query endpoint."""
-    
+
     query: str = Field(
-        ...,
-        min_length=1,
-        max_length=2000,
-        description="User query string"
+        ..., min_length=1, max_length=2000, description="User query string"
     )
     options: Optional[QueryOptionsModel] = Field(
-        default=None,
-        description="Optional query configuration"
+        default=None, description="Optional query configuration"
     )
 
     @field_validator("query")
@@ -68,7 +60,7 @@ class QueryRequest(BaseModel):
 
 class CitationModel(BaseModel):
     """Citation information for a source."""
-    
+
     section_number: str
     title: str
     chapter: Optional[int] = None
@@ -77,7 +69,7 @@ class CitationModel(BaseModel):
 
 class SectionSummaryModel(BaseModel):
     """Summary of a section result."""
-    
+
     id: int
     section_number: str
     title: str
@@ -92,7 +84,7 @@ class SectionSummaryModel(BaseModel):
 
 class QueryResultModel(BaseModel):
     """Complete query result with answer and context."""
-    
+
     query: str
     answer: str
     citations: List[CitationModel] = Field(default_factory=list)
@@ -105,9 +97,10 @@ class QueryResultModel(BaseModel):
 # Search Endpoint Models
 # ============================================================================
 
+
 class SearchResultModel(BaseModel):
     """Search result for a single section."""
-    
+
     section_number: str
     title: str
     text: str = Field(..., max_length=10000)
@@ -119,7 +112,7 @@ class SearchResultModel(BaseModel):
 
 class SearchResponse(BaseModel):
     """Search response with results."""
-    
+
     query: str
     results: List[SearchResultModel] = Field(default_factory=list)
     count: int = Field(..., ge=0)
@@ -138,9 +131,10 @@ class SearchResponse(BaseModel):
 # Section Detail Models
 # ============================================================================
 
+
 class SectionDetailModel(BaseModel):
     """Detailed section information with relationships."""
-    
+
     section: SectionSummaryModel
     parent: Optional[SectionSummaryModel] = None
     children: List[SectionSummaryModel] = Field(default_factory=list)

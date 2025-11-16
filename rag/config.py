@@ -20,7 +20,7 @@ load_dotenv(dotenv_path=_env_path, override=False)
 
 class Settings(BaseSettings):
     """Strongly-typed configuration for the RAG system.
-    
+
     All settings can be configured via environment variables.
     Defaults are provided for development, but production deployments
     should explicitly set all required values.
@@ -32,118 +32,81 @@ class Settings(BaseSettings):
     database_url: str = Field(
         default="",
         description="Full PostgreSQL connection string. If not provided, "
-        "constructed from individual postgres_* fields."
+        "constructed from individual postgres_* fields.",
     )
     postgres_host: str = Field(
-        default="localhost",
-        description="PostgreSQL server hostname"
+        default="localhost", description="PostgreSQL server hostname"
     )
     postgres_port: int = Field(
-        default=55432,
-        ge=1,
-        le=65535,
-        description="PostgreSQL server port"
+        default=55432, ge=1, le=65535, description="PostgreSQL server port"
     )
     postgres_user: str = Field(
-        default="rag_user",
-        min_length=1,
-        description="PostgreSQL username"
+        default="rag_user", min_length=1, description="PostgreSQL username"
     )
     postgres_password: str = Field(
-        default="rag_password",
-        min_length=1,
-        description="PostgreSQL password"
+        default="rag_password", min_length=1, description="PostgreSQL password"
     )
     postgres_db: str = Field(
-        default="building_codes",
-        min_length=1,
-        description="PostgreSQL database name"
+        default="building_codes", min_length=1, description="PostgreSQL database name"
     )
 
     # ========================================================================
     # LLM Configuration
     # ========================================================================
     openai_api_key: Optional[str] = Field(
-        default=None,
-        description="OpenAI API key for embeddings and chat completions"
+        default=None, description="OpenAI API key for embeddings and chat completions"
     )
     embedding_model: str = Field(
-        default="text-embedding-3-small",
-        description="OpenAI embedding model name"
+        default="text-embedding-3-small", description="OpenAI embedding model name"
     )
     chat_model: str = Field(
-        default="gpt-4o",
-        description="OpenAI chat model for answer generation"
+        default="gpt-4o", description="OpenAI chat model for answer generation"
     )
     temperature: float = Field(
-        default=0.1,
-        ge=0.0,
-        le=2.0,
-        description="LLM temperature for answer generation"
+        default=0.1, ge=0.0, le=2.0, description="LLM temperature for answer generation"
     )
 
     # ========================================================================
     # Retrieval Configuration
     # ========================================================================
     top_k_sections: int = Field(
-        default=5,
-        ge=1,
-        le=50,
-        description="Default number of sections to retrieve"
+        default=5, ge=1, le=50, description="Default number of sections to retrieve"
     )
     hybrid_search_weight: float = Field(
         default=0.7,
         ge=0.0,
         le=1.0,
-        description="Weight for vector search in hybrid search (0-1)"
+        description="Weight for vector search in hybrid search (0-1)",
     )
 
     # ========================================================================
     # Workflow Configuration
     # ========================================================================
     max_iterations: int = Field(
-        default=5,
-        ge=1,
-        le=20,
-        description="Maximum LangGraph workflow iterations"
+        default=5, ge=1, le=20, description="Maximum LangGraph workflow iterations"
     )
 
     # ========================================================================
     # Telemetry Configuration (Weights & Biases)
     # ========================================================================
     wandb_enabled: bool = Field(
-        default=False,
-        description="Enable Weights & Biases logging"
+        default=False, description="Enable Weights & Biases logging"
     )
-    wandb_project: Optional[str] = Field(
-        default=None,
-        description="W&B project name"
-    )
+    wandb_project: Optional[str] = Field(default=None, description="W&B project name")
     wandb_entity: Optional[str] = Field(
-        default=None,
-        description="W&B entity/team name"
+        default=None, description="W&B entity/team name"
     )
     wandb_run_name: Optional[str] = Field(
-        default=None,
-        description="W&B run name (auto-generated if not provided)"
+        default=None, description="W&B run name (auto-generated if not provided)"
     )
 
     # ========================================================================
     # API Configuration
     # ========================================================================
-    api_host: str = Field(
-        default="0.0.0.0",
-        description="API server host"
-    )
-    api_port: int = Field(
-        default=8000,
-        ge=1,
-        le=65535,
-        description="API server port"
-    )
+    api_host: str = Field(default="0.0.0.0", description="API server host")
+    api_port: int = Field(default=8000, ge=1, le=65535, description="API server port")
     api_cors_origins: list[str] = Field(
-        default=["*"],
-        description="CORS allowed origins"
+        default=["*"], description="CORS allowed origins"
     )
 
     model_config = {
@@ -173,7 +136,6 @@ class Settings(BaseSettings):
             )
             logger.debug("Constructed database_url from individual postgres settings")
 
-
     @property
     def is_openai_configured(self) -> bool:
         """Check if OpenAI API key is configured."""
@@ -188,7 +150,7 @@ class Settings(BaseSettings):
 @lru_cache(maxsize=1)
 def get_settings() -> Settings:
     """Return a cached singleton settings instance.
-    
+
     This function is cached to ensure only one Settings instance exists,
     preventing multiple environment variable reads and database URL constructions.
     """

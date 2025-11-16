@@ -21,27 +21,31 @@ router = APIRouter(prefix="/v1", tags=["librechat"])
 # OpenAI-Compatible Request/Response Models
 # ============================================================================
 
+
 class ChatMessage(BaseModel):
     """OpenAI chat message format."""
+
     role: Literal["system", "user", "assistant"]
     content: str
 
 
 class ChatCompletionRequest(BaseModel):
     """OpenAI chat completion request format."""
+
     model: str
     messages: List[ChatMessage]
     temperature: Optional[float] = Field(default=0.7, ge=0.0, le=2.0)
     max_tokens: Optional[int] = Field(default=None, ge=1)
     stream: bool = False
     top_p: Optional[float] = Field(default=1.0, ge=0.0, le=1.0)
-    
+
     # RAG-specific options (optional, can be passed in metadata)
     rag_options: Optional[Dict[str, Any]] = Field(default_factory=dict)
 
 
 class ChatCompletionChoice(BaseModel):
     """OpenAI choice format."""
+
     index: int
     message: ChatMessage
     finish_reason: str
@@ -49,6 +53,7 @@ class ChatCompletionChoice(BaseModel):
 
 class ChatCompletionUsage(BaseModel):
     """Token usage information."""
+
     prompt_tokens: int
     completion_tokens: int
     total_tokens: int
@@ -56,6 +61,7 @@ class ChatCompletionUsage(BaseModel):
 
 class ChatCompletionResponse(BaseModel):
     """OpenAI chat completion response format."""
+
     id: str
     object: str = "chat.completion"
     created: int
@@ -66,6 +72,7 @@ class ChatCompletionResponse(BaseModel):
 
 class ChatCompletionChunk(BaseModel):
     """OpenAI streaming chunk format."""
+
     id: str
     object: str = "chat.completion.chunk"
     created: int
@@ -77,14 +84,15 @@ class ChatCompletionChunk(BaseModel):
 # Endpoints
 # ============================================================================
 
+
 @router.post("/chat/completions", response_model=ChatCompletionResponse)
 async def chat_completions(request: ChatCompletionRequest):
     """
     OpenAI-compatible chat completions endpoint for LibreChat integration.
-    
+
     This endpoint accepts standard OpenAI chat format and returns RAG-enhanced
     responses using the building code knowledge base.
-    
+
     Example LibreChat configuration in librechat.yaml:
     ```yaml
     endpoints:
@@ -100,42 +108,68 @@ async def chat_completions(request: ChatCompletionRequest):
     ```
     """
     try:
+        # Log the incoming request for debugging
+        logger.info(f"=== LibreChat Request ===")
+        logger.info(f"Model: {request.model}")
+        logger.info(f"Messages count: {len(request.messages)}")
+        logger.info(f"Stream: {request.stream}")
+        logger.info(f"Temperature: {request.temperature}")
+        if request.messages:
+            logger.info(
+                f"First message: {request.messages[0].role}: {request.messages[0].content[:100]}"
+            )
+            logger.info(
+                f"Last message: {request.messages[-1].role}: {request.messages[-1].content[:100]}"
+            )
+
         # Extract the user query from messages
         query = _extract_query_from_messages(request.messages)
         if not query:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail="No user message found in request"
+                detail="No user message found in request",
             )
-        
+
         # Run the RAG workflow
         workflow = build_workflow()
         state = {
             "query": query,
             "options": request.rag_options,
         }
-        
+
         logger.info(f"Processing LibreChat query: {query[:100]}...")
         output = workflow.invoke(state)
         result = output.get("result")
-        
+
         if not result:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail="Workflow did not return a result"
+                detail="Workflow did not return a result",
             )
-        
+
         # Format response in OpenAI format
         answer = result.get("answer", "I couldn't find relevant information.")
         citations = result.get("citations", [])
-        
+
+        # Log for debugging
+        logger.info(f"Answer length: {len(answer)}, Citations: {len(citations)}")
+
+        # Ensure answer is not empty
+        if not answer or not answer.strip():
+            logger.warning("Empty answer generated, using fallback")
+            answer = "I apologize, but I couldn't generate a response. Please try rephrasing your question."
+
         # Add citations to the answer
         formatted_answer = _format_answer_with_citations(answer, citations)
-        
+
+        # Log the final formatted answer
+        logger.info(f"Formatted answer length: {len(formatted_answer)} chars")
+        logger.debug(f"First 200 chars: {formatted_answer[:200]}")
+
         # Estimate token usage (rough approximation)
         prompt_tokens = sum(len(msg.content.split()) for msg in request.messages) * 2
         completion_tokens = len(formatted_answer.split()) * 2
-        
+
         response = ChatCompletionResponse(
             id=f"chatcmpl-{int(time.time())}",
             created=int(time.time()),
@@ -143,29 +177,26 @@ async def chat_completions(request: ChatCompletionRequest):
             choices=[
                 ChatCompletionChoice(
                     index=0,
-                    message=ChatMessage(
-                        role="assistant",
-                        content=formatted_answer
-                    ),
-                    finish_reason="stop"
+                    message=ChatMessage(role="assistant", content=formatted_answer),
+                    finish_reason="stop",
                 )
             ],
             usage=ChatCompletionUsage(
                 prompt_tokens=prompt_tokens,
                 completion_tokens=completion_tokens,
-                total_tokens=prompt_tokens + completion_tokens
-            )
+                total_tokens=prompt_tokens + completion_tokens,
+            ),
         )
-        
+
         return response
-        
+
     except HTTPException:
         raise
     except Exception as e:
         logger.error(f"Error in chat_completions: {e}", exc_info=True)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Internal server error: {str(e)}"
+            detail=f"Internal server error: {str(e)}",
         )
 
 
@@ -173,7 +204,7 @@ async def chat_completions(request: ChatCompletionRequest):
 async def list_models():
     """
     List available models (LibreChat compatibility).
-    
+
     Returns a single model representing the RAG system.
     """
     return {
@@ -188,7 +219,7 @@ async def list_models():
                 "root": "building-code-rag",
                 "parent": None,
             }
-        ]
+        ],
     }
 
 
@@ -196,10 +227,11 @@ async def list_models():
 # Helper Functions
 # ============================================================================
 
+
 def _extract_query_from_messages(messages: List[ChatMessage]) -> str:
     """
     Extract the user query from chat messages.
-    
+
     Takes the last user message as the query. System messages are ignored
     for query extraction but could be used for additional context in the future.
     """
@@ -212,25 +244,25 @@ def _extract_query_from_messages(messages: List[ChatMessage]) -> str:
 def _format_answer_with_citations(answer: str, citations: List[Dict[str, Any]]) -> str:
     """
     Format the answer with citations in a readable format.
-    
+
     Appends citations at the end of the answer in a structured format
     that LibreChat can display nicely.
     """
     if not citations:
         return answer
-    
+
     formatted = answer + "\n\n**Sources:**\n"
     for i, citation in enumerate(citations, 1):
         section_num = citation.get("section_number", "N/A")
         title = citation.get("title", "Unknown")
         chapter = citation.get("chapter", "N/A")
         page = citation.get("page", "N/A")
-        
+
         formatted += f"\n{i}. Section {section_num}: {title}"
         if chapter != "N/A":
             formatted += f" (Chapter {chapter}"
             if page != "N/A":
                 formatted += f", Page {page}"
             formatted += ")"
-    
+
     return formatted

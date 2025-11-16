@@ -12,7 +12,12 @@ from langchain_openai import ChatOpenAI
 from rag.config import settings
 from rag.graph.state import QueryState
 from rag.ingestion.embedder import OpenAIEmbedder
-from rag.retrieval import ContextBuilder, HybridSearcher, ReferenceResolver, VectorSearcher
+from rag.retrieval import (
+    ContextBuilder,
+    HybridSearcher,
+    ReferenceResolver,
+    VectorSearcher,
+)
 from rag.retrieval.types import SectionResult
 from rag.utils.telemetry import log_event
 
@@ -22,6 +27,7 @@ logger = logging.getLogger(__name__)
 # --------------------------------------------------------------------------- #
 # Dependency singletons (cached for performance)
 # --------------------------------------------------------------------------- #
+
 
 @lru_cache(maxsize=1)
 def get_embedder() -> OpenAIEmbedder:
@@ -63,7 +69,7 @@ def get_chat_model() -> ChatOpenAI | None:
     if not settings.is_openai_configured:
         logger.warning("OpenAI API key not configured - using fallback answers")
         return None
-    
+
     try:
         return ChatOpenAI(
             model=settings.chat_model,
@@ -79,10 +85,11 @@ def get_chat_model() -> ChatOpenAI | None:
 # Node implementations
 # --------------------------------------------------------------------------- #
 
+
 def analyze_query(state: QueryState) -> QueryState:
     """
     Analyze query to determine type and search strategy.
-    
+
     Query types:
     - comparison: Questions comparing multiple things
     - procedure: How-to questions needing step-by-step answers
@@ -90,7 +97,7 @@ def analyze_query(state: QueryState) -> QueryState:
     """
     query = state["query"]
     lower = query.lower()
-    
+
     # Determine query type
     if any(word in lower for word in ("difference", "compare", "vs", "versus")):
         query_type = "comparison"
@@ -104,18 +111,17 @@ def analyze_query(state: QueryState) -> QueryState:
     search_strategy = options.get("search_type") or "hybrid"
 
     logger.info(f"Query analysis: type={query_type}, strategy={search_strategy}")
-    
+
     new_state: QueryState = {
         **state,
         "query_type": query_type,
         "search_strategy": search_strategy,
     }
-    
-    log_event("analyze_query", {
-        "query_type": query_type,
-        "search_strategy": search_strategy
-    })
-    
+
+    log_event(
+        "analyze_query", {"query_type": query_type, "search_strategy": search_strategy}
+    )
+
     return new_state
 
 
@@ -134,7 +140,11 @@ def retrieve_sections(state: QueryState) -> QueryState:
     logger.info("Retrieved %s sections using %s strategy", len(results), strategy)
     log_event(
         "retrieve_sections",
-        {"count": len(results), "strategy": 0 if strategy == "vector" else 1, "top_k": top_k},
+        {
+            "count": len(results),
+            "strategy": 0 if strategy == "vector" else 1,
+            "top_k": top_k,
+        },
     )
     return {
         **state,
@@ -166,7 +176,11 @@ def resolve_references(state: QueryState) -> QueryState:
     )
     log_event(
         "resolve_references",
-        {"section_refs": len(bundle.sections), "table_refs": len(bundle.tables), "figure_refs": len(bundle.figures)},
+        {
+            "section_refs": len(bundle.sections),
+            "table_refs": len(bundle.tables),
+            "figure_refs": len(bundle.figures),
+        },
     )
     return {**state, "references": references}
 
@@ -197,7 +211,15 @@ def build_context(state: QueryState) -> QueryState:
 def generate_answer(state: QueryState) -> QueryState:
     sections = state.get("context_sections") or state.get("retrieved_sections") or []
     if not sections:
-        return {**state, "answer": "No relevant sections were found.", "citations": []}
+        fallback_answer = (
+            "I apologize, but I couldn't find any relevant information in the building code database "
+            "to answer your question. This might be because:\n"
+            "1. The database hasn't been populated with building code documents yet\n"
+            "2. Your question is outside the scope of the available building codes\n"
+            "3. The search terms didn't match any indexed sections\n\n"
+            "Please try rephrasing your question or contact the administrator if the database needs to be populated."
+        )
+        return {**state, "answer": fallback_answer, "citations": []}
 
     context_chunks = []
     citations = []
@@ -232,13 +254,19 @@ def generate_answer(state: QueryState) -> QueryState:
             response = model.invoke(prompt)
             answer = response.content if hasattr(response, "content") else str(response)
         except Exception as exc:  # pragma: no cover - depends on LLM availability
-            logger.warning("Chat model failed (%s); falling back to extractive answer.", exc)
+            logger.warning(
+                "Chat model failed (%s); falling back to extractive answer.", exc
+            )
             answer = build_extractive_answer(sections)
     else:
         answer = build_extractive_answer(sections)
     log_event(
         "generate_answer",
-        {"context_sections": len(sections), "citations": len(citations), "used_llm": 1 if model else 0},
+        {
+            "context_sections": len(sections),
+            "citations": len(citations),
+            "used_llm": 1 if model else 0,
+        },
     )
     return {
         **state,
@@ -258,18 +286,34 @@ def format_response(state: QueryState) -> QueryState:
         "metadata": state.get("metadata", {}),
         "sections": [section_to_dict(section) for section in sections],
         "context": {
-            "parents": [section_to_dict(section) for section in state.get("parent_sections") or []],
-            "children": [section_to_dict(section) for section in state.get("child_sections") or []],
+            "parents": [
+                section_to_dict(section)
+                for section in state.get("parent_sections") or []
+            ],
+            "children": [
+                section_to_dict(section)
+                for section in state.get("child_sections") or []
+            ],
             "references": {
-                "sections": [section_to_dict(section) for section in references.get("sections", [])],
-                "tables": [table_to_dict(table) for table in references.get("tables", [])],
-                "figures": [figure_to_dict(figure) for figure in references.get("figures", [])],
+                "sections": [
+                    section_to_dict(section)
+                    for section in references.get("sections", [])
+                ],
+                "tables": [
+                    table_to_dict(table) for table in references.get("tables", [])
+                ],
+                "figures": [
+                    figure_to_dict(figure) for figure in references.get("figures", [])
+                ],
             },
         },
     }
     log_event(
         "format_response",
-        {"citations": len(result.get("citations", [])), "sections": len(result.get("sections", []))},
+        {
+            "citations": len(result.get("citations", [])),
+            "sections": len(result.get("sections", [])),
+        },
     )
     return {"result": result}
 

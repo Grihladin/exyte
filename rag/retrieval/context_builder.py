@@ -14,24 +14,21 @@ logger = logging.getLogger(__name__)
 class ContextBuilder:
     """
     Build enriched context by fetching parent and child sections.
-    
+
     For better RAG results, this builder expands retrieved sections with:
     - Parent sections: Provide broader context and hierarchical information
     - Child sections: Provide detailed breakdowns and specifications
-    
+
     This hierarchical expansion helps the LLM understand the structure
     and relationships between different parts of the building code.
     """
 
     def __init__(
-        self,
-        *,
-        include_parents: bool = True,
-        include_children: bool = True
+        self, *, include_parents: bool = True, include_children: bool = True
     ) -> None:
         """
         Initialize context builder.
-        
+
         Args:
             include_parents: Whether to fetch parent sections
             include_children: Whether to fetch child sections
@@ -40,15 +37,14 @@ class ContextBuilder:
         self.include_children = include_children
 
     def build(
-        self,
-        sections: Sequence[SectionResult]
+        self, sections: Sequence[SectionResult]
     ) -> Dict[str, List[SectionResult]]:
         """
         Build enriched context from base sections.
-        
+
         Args:
             sections: Base sections from retrieval
-            
+
         Returns:
             Dictionary with keys:
             - "sections": Original sections
@@ -86,31 +82,29 @@ class ContextBuilder:
                 "parents": list(parents.values()),
                 "children": list(children.values()),
             }
-            
+
         except Exception as e:
             logger.error(f"Error building context: {e}", exc_info=True)
             # Return base sections even if context expansion fails
             return {"sections": base, "parents": [], "children": []}
 
     def _fetch_sections(
-        self,
-        conn,
-        section_ids: Iterable[int]
+        self, conn, section_ids: Iterable[int]
     ) -> Dict[int, SectionResult]:
         """
         Fetch specific sections by ID.
-        
+
         Args:
             conn: Database connection
             section_ids: IDs of sections to fetch
-            
+
         Returns:
             Dictionary mapping section ID to SectionResult
         """
         ids = [section_id for section_id in section_ids if section_id]
         if not ids:
             return {}
-        
+
         try:
             with conn.cursor() as cur:
                 cur.execute(
@@ -156,24 +150,20 @@ class ContextBuilder:
             logger.error(f"Error fetching sections: {e}", exc_info=True)
             return {}
 
-    def _fetch_children(
-        self,
-        conn,
-        parent_ids: Set[int]
-    ) -> Dict[int, SectionResult]:
+    def _fetch_children(self, conn, parent_ids: Set[int]) -> Dict[int, SectionResult]:
         """
         Fetch child sections for given parent IDs.
-        
+
         Args:
             conn: Database connection
             parent_ids: IDs of parent sections
-            
+
         Returns:
             Dictionary mapping child section ID to SectionResult
         """
         if not parent_ids:
             return {}
-        
+
         try:
             with conn.cursor() as cur:
                 cur.execute(

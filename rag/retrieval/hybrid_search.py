@@ -17,12 +17,12 @@ logger = logging.getLogger(__name__)
 class HybridSearcher:
     """
     Hybrid search combining semantic vector search with keyword-based full-text search.
-    
+
     This searcher implements a two-stage retrieval strategy:
     1. Vector search: Semantic similarity using embeddings
     2. Keyword search: Full-text search using PostgreSQL's tsquery
     3. Fusion: Combines results using Reciprocal Rank Fusion (RRF)
-    
+
     The hybrid approach provides better recall and relevance by leveraging
     both semantic understanding and exact keyword matching.
     """
@@ -30,7 +30,7 @@ class HybridSearcher:
     def __init__(self, embedder: Embedder, *, fts_multiplier: int = 2) -> None:
         """
         Initialize hybrid searcher.
-        
+
         Args:
             embedder: Embedder instance for vector search
             fts_multiplier: Multiplier for keyword search results (retrieves
@@ -42,11 +42,11 @@ class HybridSearcher:
     def search(self, query: str, top_k: int = 5) -> List[SectionResult]:
         """
         Perform hybrid search combining vector and keyword approaches.
-        
+
         Args:
             query: User query string
             top_k: Number of results to return
-            
+
         Returns:
             List of SectionResult objects ranked by hybrid relevance score
         """
@@ -58,10 +58,9 @@ class HybridSearcher:
             # Perform both search strategies
             vector_results = self.vector_searcher.search(query, top_k=top_k)
             keyword_results = self._keyword_search(
-                query, 
-                top_k=top_k * self.fts_multiplier
+                query, top_k=top_k * self.fts_multiplier
             )
-            
+
             logger.debug(
                 f"Hybrid search: {len(vector_results)} vector results, "
                 f"{len(keyword_results)} keyword results"
@@ -75,7 +74,7 @@ class HybridSearcher:
 
             # Combine results using RRF
             return self._fuse_results(vector_results, keyword_results, top_k)
-            
+
         except Exception as e:
             logger.error(f"Error in hybrid search: {e}", exc_info=True)
             # Fallback to vector search only
@@ -84,11 +83,11 @@ class HybridSearcher:
     def _keyword_search(self, query: str, top_k: int) -> List[SectionResult]:
         """
         Perform PostgreSQL full-text search using tsquery.
-        
+
         Args:
             query: Search query
             top_k: Maximum number of results
-            
+
         Returns:
             List of matching sections ranked by ts_rank
         """
@@ -149,15 +148,15 @@ class HybridSearcher:
     ) -> List[SectionResult]:
         """
         Fuse vector and keyword results using Reciprocal Rank Fusion.
-        
+
         RRF gives higher scores to documents that appear in multiple result lists
         and at higher ranks, providing a robust combination strategy.
-        
+
         Args:
             vector_results: Results from vector search
             keyword_results: Results from keyword search
             top_k: Number of final results to return
-            
+
         Returns:
             Fused and re-ranked results
         """
@@ -167,16 +166,16 @@ class HybridSearcher:
             combined_map.setdefault(result.id, result)
 
         # Calculate fusion scores
-        fusion_scores = reciprocal_rank_fusion([
-            [(result.id, result.score) for result in vector_results],
-            [(result.id, result.score) for result in keyword_results],
-        ])
+        fusion_scores = reciprocal_rank_fusion(
+            [
+                [(result.id, result.score) for result in vector_results],
+                [(result.id, result.score) for result in keyword_results],
+            ]
+        )
 
         # Rank and return
         ranked_ids = sorted(
-            fusion_scores.items(), 
-            key=lambda item: item[1], 
-            reverse=True
+            fusion_scores.items(), key=lambda item: item[1], reverse=True
         )
-        
+
         return [combined_map[item_id] for item_id, _ in ranked_ids[:top_k]]

@@ -21,14 +21,14 @@ _pool: ConnectionPool | None = None
 def get_pool() -> ConnectionPool:
     """
     Get or create a singleton psycopg connection pool.
-    
+
     The pool maintains connections to PostgreSQL and reuses them
     for better performance. Connection pool size is configurable
     via environment variables.
-    
+
     Returns:
         ConnectionPool: Configured connection pool instance
-        
+
     Raises:
         psycopg.OperationalError: If unable to connect to database
     """
@@ -45,7 +45,7 @@ def get_pool() -> ConnectionPool:
                 max_size=10,
                 kwargs={
                     "connect_timeout": 10,
-                    "options": "-c statement_timeout=30000"  # 30 second statement timeout
+                    "options": "-c statement_timeout=30000",  # 30 second statement timeout
                 },
                 open=True,
             )
@@ -60,13 +60,13 @@ def get_pool() -> ConnectionPool:
 def get_sync_connection() -> Iterator[psycopg.Connection]:
     """
     Provide a managed synchronous database connection with pgvector support.
-    
+
     This context manager automatically:
     - Gets a connection from the pool
     - Registers pgvector types
     - Returns the connection to the pool when done
     - Handles errors and ensures cleanup
-    
+
     Usage:
         ```python
         with get_sync_connection() as conn:
@@ -74,38 +74,38 @@ def get_sync_connection() -> Iterator[psycopg.Connection]:
                 cur.execute("SELECT * FROM sections LIMIT 10")
                 results = cur.fetchall()
         ```
-    
+
     Yields:
         psycopg.Connection: Active database connection with pgvector registered
-        
+
     Raises:
         psycopg.OperationalError: If connection fails
         psycopg.DatabaseError: For other database errors
     """
     pool = get_pool()
     connection = None
-    
+
     try:
         connection = pool.getconn()
         register_vector(connection)
         yield connection
-        
+
     except psycopg.OperationalError as e:
         logger.error(f"Database operational error: {e}")
         raise
-        
+
     except psycopg.DatabaseError as e:
         logger.error(f"Database error: {e}")
         if connection:
             connection.rollback()
         raise
-        
+
     except Exception as e:
         logger.error(f"Unexpected error in database connection: {e}")
         if connection:
             connection.rollback()
         raise
-        
+
     finally:
         if connection:
             pool.putconn(connection)
@@ -114,7 +114,7 @@ def get_sync_connection() -> Iterator[psycopg.Connection]:
 def test_connection() -> bool:
     """
     Test database connectivity.
-    
+
     Returns:
         bool: True if connection successful, False otherwise
     """
@@ -132,7 +132,7 @@ def test_connection() -> bool:
 def close_pool() -> None:
     """
     Close the connection pool and clean up resources.
-    
+
     Should be called during application shutdown.
     """
     global _pool
