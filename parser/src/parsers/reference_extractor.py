@@ -168,7 +168,7 @@ class ReferenceExtractor:
         # Preserve any pre-attached references and merge with new ones
         new_refs.internal_sections = existing_refs.internal_sections + new_refs.internal_sections
         new_refs.table = existing_refs.table  # Preserve table IDs added during extraction
-        new_refs.figures = existing_refs.figures + new_refs.figures
+        new_refs.figures = existing_refs.figures  # Preserve figure IDs added during extraction
         new_refs.external_documents = existing_refs.external_documents + new_refs.external_documents
         section.references = new_refs
         
@@ -177,5 +177,6 @@ class ReferenceExtractor:
             item_refs = self.extract_references(item.text)
             # Merge with section references
             section.references.internal_sections.extend(item_refs.internal_sections)
-            section.references.figures.extend(item_refs.figures)
+            # Note: figures are now list[str] (IDs), not FigureReference objects
+            # Don't merge text figure references here - only actual extracted figures matter
             section.references.external_documents.extend(item_refs.external_documents)

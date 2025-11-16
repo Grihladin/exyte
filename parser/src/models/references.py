@@ -64,7 +64,7 @@ class References(BaseModel):
         default_factory=list,
         description="External document references"
     )
-    figures: list[FigureReference] = Field(
+    figures: list[str] = Field(
         default_factory=list,
-        description="Figure references"
+        description="Figure IDs mentioned or extracted in section (e.g., ['figure_705.7'])"
     )

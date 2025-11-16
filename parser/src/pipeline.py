@@ -3,21 +3,24 @@
 from __future__ import annotations
 
 import logging
-import re
 from pathlib import Path
 
-from src.config import (
-    JSON_OUTPUT_FILE,
-    OUTPUT_DIR,
-)
+from src.config import JSON_OUTPUT_FILE, OUTPUT_DIR, IMAGES_DIR
+from src.models import Chapter, Document, Section, TableData
 from src.parsers import (
-    PDFExtractor,
-    StructureParser,
-    ReferenceExtractor,
     MetadataCollector,
+    PDFExtractor,
+    ReferenceExtractor,
+    StructureParser,
     TableExtractor,
 )
-from src.models import Document, TableReference, Position, TableData, Chapter, Section
+from src.parsers.figure_extractor import FigureExtractor
+from src.pipeline_helpers import (
+    attach_figures_to_sections,
+    attach_tables_to_sections,
+    page_has_table_hint,
+)
+from src.utils.figures import extract_figure_labels
 from .pipeline_pdf import run_pdf_phase
 from tqdm.auto import tqdm
 
@@ -30,138 +33,6 @@ if not _events_logger.handlers:
 _events_logger.setLevel(logging.INFO)
 
 
-_TABLE_HINT_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*", 
-    re.IGNORECASE | re.MULTILINE
-)
-_TABLE_LABEL_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*", 
-    re.IGNORECASE | re.MULTILINE
-)
-
-# Footer patterns to ignore (copyright notices, etc.)
-_FOOTER_PATTERNS = [
-    re.compile(r"COPYRIGHT.*?TABLE", re.IGNORECASE | re.DOTALL),
-    re.compile(r"FEDERAL COPYRIGHT ACT.*?TABLE", re.IGNORECASE | re.DOTALL),
-    re.compile(r"LICENSE AGREEMENT.*?TABLE", re.IGNORECASE | re.DOTALL),
-]
-
-
-
-def _attach_tables_to_sections(
-    chapters: list[Chapter],
-    tables: list[TableData],
-    page_num: int,
-    page_text: str,
-    fallback_section: Section | None = None,
-    document_tables: dict[str, dict] = None,
-) -> None:
-    """
-    Extract tables and store them at document root level.
-    Add table IDs to section references.
-    """
-    if document_tables is None:
-        document_tables = {}
-    
-    sections_on_page = [section for chapter in chapters for section in chapter.sections]
-    if not sections_on_page and fallback_section is not None:
-        sections_on_page = [fallback_section]
-    if not sections_on_page:
-        _events_logger.warning(
-            "Page %d: Found %d table(s) but no sections to attach to",
-            page_num,
-            len(tables)
-        )
-        return
-    
-    # Extract table labels from page text, filtering out footer text
-    page_text_clean = page_text or ""
-    for footer_pattern in _FOOTER_PATTERNS:
-        page_text_clean = footer_pattern.sub("", page_text_clean)
-    
-    label_matches = list(_TABLE_LABEL_PATTERN.finditer(page_text_clean))
-    
-    for idx, table_data in enumerate(tables):
-        target_section = sections_on_page[min(idx, len(sections_on_page) - 1)]
-        label = f"{page_num}.{idx + 1}"  # Default: page.table_number
-        position = Position(start=0, end=0)
-        
-        if idx < len(label_matches):
-            match = label_matches[idx]
-            # Normalize: "TABLE 307.1(1)" -> "307.1(1)"
-            full_label = match.group(0).strip()
-            # Remove leading/trailing whitespace and "TABLE/Table/table" prefix (case-insensitive)
-            label = re.sub(r'^.*?TABLE\s+', '', full_label, flags=re.IGNORECASE)
-            position = Position(start=match.start(), end=match.end())
-        
-        # Make table key unique by appending index if duplicate
-        table_key = label
-        key_suffix = 1
-        while table_key in document_tables:
-            table_key = f"{label}_{key_suffix}"
-            key_suffix += 1
-        
-        # Store table data at document root level
-        table_dict = {
-            "headers": table_data.headers,
-            "rows": table_data.rows,
-            "page": table_data.page,
-            "accuracy": table_data.accuracy
-        }
-        document_tables[table_key] = table_dict
-        
-        # Add table ID to section references
-        if table_key not in target_section.references.table:
-            target_section.references.table.append(table_key)
-        
-        # Update section metadata
-        if target_section.metadata:
-            target_section.metadata.has_table = True
-            target_section.metadata.table_count = len(target_section.references.table)
-        
-        _events_logger.info(
-            "Page %d: Extracted %s (accuracy: %.1f%%, %d cols × %d rows) -> Section %s",
-            page_num,
-            table_key,
-            table_data.accuracy or 0,
-            len(table_data.headers),
-            len(table_data.rows),
-            target_section.section_number,
-        )
-
-
-def _page_has_table_hint(page_text: str) -> bool:
-    """Heuristic: detect obvious TABLE labels before invoking Camelot."""
-    if not page_text:
-        return False
-    
-    # Check if this is footer/copyright text (ignore these)
-    for footer_pattern in _FOOTER_PATTERNS:
-        if footer_pattern.search(page_text):
-            # Found footer pattern, but check if there are legitimate tables too
-            clean_text = footer_pattern.sub("", page_text)
-            if not _TABLE_HINT_PATTERN.search(clean_text):
-                return False  # Only footer mentions, no real tables
-    
-    # Look for legitimate table references (at start of line or after newline)
-    return bool(_TABLE_HINT_PATTERN.search(page_text))
-
-
-def _log_progress(current: int, total: int) -> None:
-    if total <= 0:
-        return
-    current = min(current, total)
-    fraction = current / total
-    bar_len = 30
-    filled = int(bar_len * fraction)
-    bar = "█" * filled + "-" * (bar_len - filled)
-    message = f"[{bar}] {current}/{total} pages ({fraction * 100:.1f}%)"
-    sys.stdout.write("\r" + message)
-    sys.stdout.flush()
-    if current == total:
-        sys.stdout.write("\n")
-
-
 def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -> None:
     """Parse document structure with progress bar and event logging."""
     structure_parser = StructureParser()
@@ -169,10 +40,13 @@ def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -
     metadata_collector = MetadataCollector()
     table_extractor = TableExtractor(pdf_path)
 
-    # Document-level tables storage
+    # Document-level tables and figures storage
     document_tables: dict[str, dict] = {}
+    document_figures: dict[str, dict] = {}
 
     with PDFExtractor(pdf_path) as extractor:
+        figure_extractor = FigureExtractor(extractor, IMAGES_DIR)
+        
         total_pages = extractor.get_page_count()
         if start_page >= total_pages:
             raise ValueError(
@@ -204,7 +78,7 @@ def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -
                         )
 
                 tables: list[TableData] = []
-                if _page_has_table_hint(text):
+                if page_has_table_hint(text):
                     _events_logger.debug("Page %d: Table hint detected, attempting extraction", page_num + 1)
                     tables = table_extractor.extract_tables(page_num + 1)
                     if not tables:
@@ -219,13 +93,31 @@ def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -
                             len(tables)
                         )
                 if tables:
-                    _attach_tables_to_sections(
+                    attach_tables_to_sections(
                         chapters,
                         tables,
                         page_num + 1,
                         text,
                         structure_parser.last_section,
                         document_tables,
+                        _events_logger,
+                    )
+                
+                # Extract figures from page with detected labels/captions
+                figure_labels = extract_figure_labels(text)
+                figures = figure_extractor.extract_figures_from_page(
+                    page_num,
+                    str(page_num + 1),
+                    figure_labels=figure_labels,
+                )
+                if figures:
+                    attach_figures_to_sections(
+                        chapters,
+                        figures,
+                        page_num + 1,
+                        structure_parser.last_section,
+                        document_figures,
+                        _events_logger,
                     )
 
                 all_chapters = structure_parser.merge_chapters(all_chapters, chapters)
@@ -270,7 +162,7 @@ def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -
         version=DOCUMENT_VERSION,
         chapters=all_chapters,
         tables=document_tables,
-        figures={},  # TODO: Add figure extraction later
+        figures=document_figures,
     )
     json_output = document.model_dump_json(indent=2)
     JSON_OUTPUT_FILE.write_text(json_output)
