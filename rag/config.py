@@ -36,6 +36,12 @@ class Settings(BaseSettings):
     max_iterations: int = Field(5, alias="MAX_ITERATIONS")
     temperature: float = Field(0.1, alias="TEMPERATURE")
 
+    # Telemetry (Weights & Biases)
+    wandb_enabled: bool = Field(False, alias="WANDB_ENABLED")
+    wandb_project: str | None = Field(default=None, alias="WANDB_PROJECT")
+    wandb_entity: str | None = Field(default=None, alias="WANDB_ENTITY")
+    wandb_run_name: str | None = Field(default=None, alias="WANDB_RUN_NAME")
+
     # pydantic BaseSettings populates fields from env variables (see Field(..., env="...") above)
     class Config:
         env_file = str(Path(__file__).resolve().parent.parent / ".env")

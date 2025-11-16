@@ -8,12 +8,16 @@ from typing import Dict, List, Protocol, Sequence
 
 try:
     from langchain_openai import OpenAIEmbeddings
-except Exception:  # pragma: no cover - optional dependency not installed during certain tests
+except (
+    Exception
+):  # pragma: no cover - optional dependency not installed during certain tests
     OpenAIEmbeddings = None  # type: ignore
 
 try:
     import openai as _openai
-except Exception:  # pragma: no cover - optional dependency not installed during certain tests
+except (
+    Exception
+):  # pragma: no cover - optional dependency not installed during certain tests
     _openai = None  # type: ignore
 
 
@@ -92,7 +96,9 @@ class OpenAIEmbedder:
                         embeddings = self._client.embed_documents(batch_texts)
                     else:
                         # fallback to the OpenAI SDK
-                        resp = self._client.Embeddings.create(model=self.model, input=batch_texts)
+                        resp = self._client.Embeddings.create(
+                            model=self.model, input=batch_texts
+                        )
                         embeddings = [item["embedding"] for item in resp.data]
                     for (idx, text), vector in zip(batch, embeddings):
                         self._cache[text] = vector
