@@ -1,4 +1,4 @@
-"""LangGraph node implementations."""
+"""LangGraph node implementations for RAG workflow."""
 
 from __future__ import annotations
 
@@ -10,84 +10,112 @@ from typing import Dict, Iterable, List
 from langchain_openai import ChatOpenAI
 
 from rag.config import settings
-from rag.graph.state import QueryOptions, QueryState
+from rag.graph.state import QueryState
 from rag.ingestion.embedder import OpenAIEmbedder
 from rag.retrieval import ContextBuilder, HybridSearcher, ReferenceResolver, VectorSearcher
-from rag.retrieval.types import ReferenceBundle, SectionResult
+from rag.retrieval.types import SectionResult
 from rag.utils.telemetry import log_event
 
 logger = logging.getLogger(__name__)
 
 
 # --------------------------------------------------------------------------- #
-# Dependency singletons
+# Dependency singletons (cached for performance)
 # --------------------------------------------------------------------------- #
+
 @lru_cache(maxsize=1)
 def get_embedder() -> OpenAIEmbedder:
+    """Get cached embedder instance."""
     return OpenAIEmbedder(
         model=settings.embedding_model,
         api_key=settings.openai_api_key,
-        allow_fallback=not bool(settings.openai_api_key),
+        allow_fallback=not settings.is_openai_configured,
     )
 
 
 @lru_cache(maxsize=1)
 def get_vector_searcher() -> VectorSearcher:
+    """Get cached vector searcher instance."""
     return VectorSearcher(get_embedder())
 
 
 @lru_cache(maxsize=1)
 def get_hybrid_searcher() -> HybridSearcher:
+    """Get cached hybrid searcher instance."""
     return HybridSearcher(get_embedder())
 
 
 @lru_cache(maxsize=1)
 def get_context_builder() -> ContextBuilder:
+    """Get cached context builder instance."""
     return ContextBuilder()
 
 
 @lru_cache(maxsize=1)
 def get_reference_resolver() -> ReferenceResolver:
+    """Get cached reference resolver instance."""
     return ReferenceResolver()
 
 
 @lru_cache(maxsize=1)
 def get_chat_model() -> ChatOpenAI | None:
-    if not settings.openai_api_key:
+    """Get cached LLM instance, or None if not configured."""
+    if not settings.is_openai_configured:
+        logger.warning("OpenAI API key not configured - using fallback answers")
         return None
+    
     try:
         return ChatOpenAI(
             model=settings.chat_model,
             temperature=settings.temperature,
             openai_api_key=settings.openai_api_key,
         )
-    except Exception as exc:  # pragma: no cover - depends on LLM availability
-        logger.warning("Failed to initialize ChatOpenAI: %s", exc)
+    except Exception as exc:
+        logger.error(f"Failed to initialize ChatOpenAI: {exc}", exc_info=True)
         return None
 
 
 # --------------------------------------------------------------------------- #
 # Node implementations
 # --------------------------------------------------------------------------- #
+
 def analyze_query(state: QueryState) -> QueryState:
+    """
+    Analyze query to determine type and search strategy.
+    
+    Query types:
+    - comparison: Questions comparing multiple things
+    - procedure: How-to questions needing step-by-step answers
+    - factual: Direct factual questions
+    """
     query = state["query"]
     lower = query.lower()
+    
+    # Determine query type
     if any(word in lower for word in ("difference", "compare", "vs", "versus")):
         query_type = "comparison"
-    elif any(word in lower for word in ("how", "procedure", "steps")):
+    elif any(word in lower for word in ("how", "procedure", "steps", "process")):
         query_type = "procedure"
     else:
         query_type = "factual"
 
+    # Determine search strategy
     options = state.get("options", {})
     search_strategy = options.get("search_type") or "hybrid"
 
+    logger.info(f"Query analysis: type={query_type}, strategy={search_strategy}")
+    
     new_state: QueryState = {
         **state,
         "query_type": query_type,
         "search_strategy": search_strategy,
     }
-    log_event("analyze_query", {"query_type": query_type, "search_strategy": search_strategy})
+    
+    log_event("analyze_query", {
+        "query_type": query_type,
+        "search_strategy": search_strategy
+    })
+    
     return new_state
 
 
