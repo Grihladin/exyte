@@ -8,5 +8,6 @@ wheels/
 *.md
 *.pdf
 *.json
+parser/output
 # Virtual environments
 .venv
