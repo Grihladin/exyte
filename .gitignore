@@ -11,3 +11,7 @@ wheels/
 parser/output
 # Virtual environments
 .venv
+.DS_Store
+.uv-cache/
+.vscode/
+.env

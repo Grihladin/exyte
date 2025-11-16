@@ -5,10 +5,22 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "black>=24.10.0",
     "camelot-py>=1.0.9",
+    "fastapi>=0.115.0",
+    "langchain-openai>=0.2.0",
+    "langchain-postgres>=0.0.16",
+    "langchain>=0.3.0",
+    "langgraph>=0.2.0",
+    "pgvector>=0.3.0",
+    "openai>=1.0.0",
+    "psycopg[binary]>=3.2.0",
     "pydantic>=2.12.4",
+    "python-dotenv>=1.0.0",
     "pymupdf>=1.26.6",
     "pypdf2>=3.0.1",
-    "tqdm>=4.67.1",
     "pytest>=8.3.0",
+    "ruff>=0.7.0",
+    "tqdm>=4.67.1",
+    "uvicorn>=0.32.0",
 ]
