@@ -121,7 +121,7 @@ async def chat_completions(request: ChatCompletionRequest):
             # Return streaming response
             async def generate_stream():
                 import json
-                
+
                 # Stream the answer word by word
                 words = answer.split()
                 for i, word in enumerate(words):
@@ -133,13 +133,16 @@ async def chat_completions(request: ChatCompletionRequest):
                         "choices": [
                             {
                                 "index": 0,
-                                "delta": {"content": word + (" " if i < len(words) - 1 else "")},
+                                "delta": {
+                                    "content": word
+                                    + (" " if i < len(words) - 1 else "")
+                                },
                                 "finish_reason": None if i < len(words) - 1 else "stop",
                             }
                         ],
                     }
                     yield f"data: {json.dumps(chunk)}\n\n"
-                
+
                 # Send final done message
                 yield "data: [DONE]\n\n"
 

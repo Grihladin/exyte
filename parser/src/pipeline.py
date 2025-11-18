@@ -5,7 +5,17 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-from src.config import JSON_OUTPUT_FILE, OUTPUT_DIR, IMAGES_DIR
+from src.config import (
+    JSON_OUTPUT_FILE,
+    OUTPUT_DIR,
+    IMAGES_DIR,
+    TABLE_IMAGES_DIR,
+    TABLE_REGIONS_FILE,
+    DEEPSEEK_OCR_ENABLED,
+    DEEPSEEK_OCR_MODEL,
+    DEEPSEEK_OCR_DEVICE,
+    DEEPSEEK_OCR_MAX_TOKENS,
+)
 from src.models import Chapter, Document, Section, TableData
 from src.parsers import (
     MetadataCollector,
@@ -21,6 +31,7 @@ from src.pipeline_helpers import (
     page_has_table_hint,
 )
 from src.utils.figures import extract_figure_labels
+from src.utils.deepseek_ocr import DeepSeekOCR
 from .pipeline_pdf import run_pdf_phase
 from tqdm.auto import tqdm
 
@@ -33,12 +44,41 @@ if not _events_logger.handlers:
 _events_logger.setLevel(logging.INFO)
 
 
-def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -> None:
+def run_structure_phase(
+    pdf_path: str | Path,
+    num_pages: int,
+    start_page: int,
+    enable_table_ocr: bool | None = None,
+) -> None:
     """Parse document structure with progress bar and event logging."""
     structure_parser = StructureParser()
     reference_extractor = ReferenceExtractor()
     metadata_collector = MetadataCollector()
-    table_extractor = TableExtractor(pdf_path)
+
+    if enable_table_ocr is None:
+        enable_table_ocr = DEEPSEEK_OCR_ENABLED
+
+    ocr_client: DeepSeekOCR | None = None
+    if enable_table_ocr:
+        try:
+            ocr_client = DeepSeekOCR(
+                model_name=DEEPSEEK_OCR_MODEL,
+                device=DEEPSEEK_OCR_DEVICE,
+                max_new_tokens=DEEPSEEK_OCR_MAX_TOKENS,
+            )
+        except Exception as exc:
+            _events_logger.error(
+                "Failed to initialize DeepSeek OCR (%s): %s",
+                DEEPSEEK_OCR_MODEL,
+                exc,
+            )
+
+    table_extractor = TableExtractor(
+        pdf_path,
+        TABLE_IMAGES_DIR,
+        TABLE_REGIONS_FILE,
+        ocr_client=ocr_client,
+    )
 
     # Document-level tables and figures storage
     document_tables: dict[str, dict] = {}
@@ -80,7 +120,11 @@ def run_structure_phase(pdf_path: str | Path, num_pages: int, start_page: int) -
                 tables: list[TableData] = []
                 if page_has_table_hint(text):
                     _events_logger.debug("Page %d: Table hint detected, attempting extraction", page_num + 1)
-                    tables = table_extractor.extract_tables(page_num + 1)
+                    tables = table_extractor.extract_tables(
+                        page_num + 1,
+                        pdf_extractor=extractor,
+                        page_text=text,
+                    )
                     if not tables:
                         _events_logger.warning(
                             "Page %d: Table hint detected but extraction failed (check table format)",

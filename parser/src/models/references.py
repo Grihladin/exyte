@@ -28,6 +28,13 @@ class TableData(BaseModel):
     rows: list[list[str]] = Field(default_factory=list, description="Table rows")
     page: int = Field(..., description="Page number where table is located")
     accuracy: Optional[float] = Field(None, description="Extraction accuracy score (0-100)")
+    image_path: Optional[str] = Field(
+        None, description="Relative path to the saved table snapshot image"
+    )
+    bbox: Optional[tuple[float, float, float, float]] = Field(
+        None,
+        description="Bounding box of the detected table (x0, y0, x1, y1 in PDF coords)",
+    )
 
 
 class TableReference(Reference):

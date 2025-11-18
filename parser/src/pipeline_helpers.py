@@ -7,34 +7,7 @@ import re
 from typing import Iterable
 
 from src.models import Chapter, Section, TableData
-
-_TABLE_HINT_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*",
-    re.IGNORECASE | re.MULTILINE,
-)
-_TABLE_LABEL_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*",
-    re.IGNORECASE | re.MULTILINE,
-)
-_FOOTER_PATTERNS: tuple[re.Pattern, ...] = (
-    re.compile(r"COPYRIGHT.*?TABLE", re.IGNORECASE | re.DOTALL),
-    re.compile(r"FEDERAL COPYRIGHT ACT.*?TABLE", re.IGNORECASE | re.DOTALL),
-    re.compile(r"LICENSE AGREEMENT.*?TABLE", re.IGNORECASE | re.DOTALL),
-)
-
-
-def page_has_table_hint(page_text: str) -> bool:
-    """Heuristic: detect obvious TABLE labels before invoking Camelot."""
-    if not page_text:
-        return False
-
-    for footer_pattern in _FOOTER_PATTERNS:
-        if footer_pattern.search(page_text):
-            clean_text = footer_pattern.sub("", page_text)
-            if not _TABLE_HINT_PATTERN.search(clean_text):
-                return False
-
-    return bool(_TABLE_HINT_PATTERN.search(page_text))
+from src.utils.tables import extract_table_labels, page_has_table_hint
 
 
 def attach_tables_to_sections(
@@ -61,17 +34,13 @@ def attach_tables_to_sections(
         )
         return
 
-    page_text_clean = page_text or ""
-    for footer_pattern in _FOOTER_PATTERNS:
-        page_text_clean = footer_pattern.sub("", page_text_clean)
-    label_matches = list(_TABLE_LABEL_PATTERN.finditer(page_text_clean))
+    label_texts = extract_table_labels(page_text)
 
     for idx, table_data in enumerate(tables):
         target_section = sections_on_page[min(idx, len(sections_on_page) - 1)]
         label = f"{page_num}.{idx + 1}"
-        if idx < len(label_matches):
-            match = label_matches[idx]
-            full_label = match.group(0).strip()
+        if idx < len(label_texts):
+            full_label = label_texts[idx]
             label = re.sub(r"^.*?TABLE\s+", "", full_label, flags=re.IGNORECASE)
 
         table_key = _dedupe_key(label, document_tables)
@@ -81,6 +50,10 @@ def attach_tables_to_sections(
             "page": table_data.page,
             "accuracy": table_data.accuracy,
         }
+        if table_data.image_path:
+            table_dict["image_path"] = table_data.image_path
+        if table_data.bbox:
+            table_dict["bbox"] = list(table_data.bbox)
         document_tables[table_key] = table_dict
 
         if table_key not in target_section.references.table:
@@ -90,13 +63,18 @@ def attach_tables_to_sections(
             target_section.metadata.has_table = True
             target_section.metadata.table_count = len(target_section.references.table)
 
+        accuracy_str = (
+            f"{table_data.accuracy:.1f}%" if table_data.accuracy is not None else "n/a"
+        )
+        bbox_desc = table_data.bbox or "unknown bbox"
+        image_desc = table_data.image_path or "no image"
         events_logger.info(
-            "Page %d: Extracted %s (accuracy: %.1f%%, %d cols × %d rows) -> Section %s",
+            "Page %d: Saved %s (accuracy: %s, image: %s, bbox: %s) -> Section %s",
             page_num,
             table_key,
-            table_data.accuracy or 0,
-            len(table_data.headers),
-            len(table_data.rows),
+            accuracy_str,
+            image_desc,
+            bbox_desc,
             target_section.section_number,
         )
 

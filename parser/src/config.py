@@ -1,5 +1,6 @@
 """Configuration settings for PDF parser."""
 
+import os
 from pathlib import Path
 
 # Project root directory
@@ -8,6 +9,8 @@ PROJECT_ROOT = Path(__file__).parent.parent
 # Input/Output directories
 OUTPUT_DIR = PROJECT_ROOT / "output"
 IMAGES_DIR = OUTPUT_DIR / "images"
+TABLE_IMAGES_DIR = OUTPUT_DIR / "tables"
+TABLE_REGIONS_FILE = OUTPUT_DIR / "table_regions.json"
 JSON_OUTPUT_FILE = OUTPUT_DIR / "parsed_document.json"
 
 # Default PDF parsing settings
@@ -20,6 +23,17 @@ DEFAULT_PAGE_COUNT = DEFAULT_END_PAGE_NUMBER - DEFAULT_START_PAGE_NUMBER + 1
 # Ensure output directories exist
 OUTPUT_DIR.mkdir(exist_ok=True)
 IMAGES_DIR.mkdir(exist_ok=True)
+TABLE_IMAGES_DIR.mkdir(exist_ok=True)
+
+# DeepSeek OCR configuration
+DEEPSEEK_OCR_ENABLED = os.getenv("DEEPSEEK_OCR_ENABLED", "true").lower() in {
+    "1",
+    "true",
+    "yes",
+}
+DEEPSEEK_OCR_MODEL = os.getenv("DEEPSEEK_OCR_MODEL", "deepseek-ai/deepseek-ocr")
+DEEPSEEK_OCR_DEVICE = os.getenv("DEEPSEEK_OCR_DEVICE")
+DEEPSEEK_OCR_MAX_TOKENS = int(os.getenv("DEEPSEEK_OCR_MAX_TOKENS", "512"))
 
 # Logging configuration
 LOG_LEVEL = "INFO"
