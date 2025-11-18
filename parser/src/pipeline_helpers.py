@@ -45,8 +45,6 @@ def attach_tables_to_sections(
 
         table_key = _dedupe_key(label, document_tables)
         table_dict = {
-            "headers": table_data.headers,
-            "rows": table_data.rows,
             "page": table_data.page,
             "accuracy": table_data.accuracy,
         }

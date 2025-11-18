@@ -30,8 +30,6 @@ class InternalSectionReference(Reference):
 class TableData(BaseModel):
     """Table structure data."""
 
-    headers: list[str] = Field(default_factory=list, description="Table column headers")
-    rows: list[list[str]] = Field(default_factory=list, description="Table rows")
     markdown: Optional[str] = Field(
         default=None,
         description="Markdown representation of the table extracted from the PDF",

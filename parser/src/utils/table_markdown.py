@@ -96,8 +96,6 @@ def rebuild_table_markdown(
                 continue
 
             entry["markdown"] = markdown
-            entry["headers"] = []
-            entry["rows"] = []
             processed += 1
 
     if processed:
