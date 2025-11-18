@@ -80,20 +80,20 @@ class TablePayload(BaseModel):
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
     table_id: str
-    headers: List[str] = Field(default_factory=list)
-    rows: List[List[str]] = Field(default_factory=list)
+    table_name: str | None = None
+    markdown: str | None = Field(default=None, description="Markdown representation of the table")
     page_number: int | None = None
     accuracy: float | None = None
     section_number_hint: str | None = None
     embedding: List[float] | None = None
 
-    def embedding_text(self, max_rows: int = 10) -> str:
+    def embedding_text(self) -> str:
         """Return a condensed textual representation of the table."""
 
-        header_line = " | ".join(self.headers)
-        row_lines = [" | ".join(row) for row in self.rows[:max_rows]]
-        parts = [f"Table {self.table_id}", header_line, *row_lines]
-        return "\n".join([part for part in parts if part]).strip()
+        title = self.table_name
+        if self.markdown:
+            return f"{title}\n{self.markdown}".strip()
+        return title
 
 
 class FigurePayload(BaseModel):
@@ -148,8 +148,8 @@ class DocumentPayload(BaseModel):
             tables.append(
                 TablePayload(
                     table_id=table_id,
-                    headers=list(table_data.get("headers") or []),
-                    rows=[list(row) for row in table_data.get("rows") or []],
+                    table_name=table_data.get("table_name"),
+                    markdown=table_data.get("markdown"),
                     page_number=table_data.get("page"),
                     accuracy=table_data.get("accuracy"),
                     section_number_hint=table_data.get("section_number") or guess_section_number(table_id),

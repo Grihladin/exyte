@@ -106,15 +106,15 @@ UV_CACHE_DIR=.uv-cache uv run python validate_output.py
 
 - `PyMuPDF (fitz)` – PDF text / block / image extraction
 - `pydantic` – strongly typed models
-- Custom table snapshotting built on PyMuPDF with DeepSeek OCR (tables saved as images and transcribed into structured rows)
+- Custom table snapshotting built on PyMuPDF with pdfplumber-based table parsing (tables saved as images for reference and converted directly to Markdown)
 - `tqdm` – progress bars for both phases
 
 Dependency versions are pinned in `pyproject.toml`; install via `uv sync`.
 
 ## Parser Utility Scripts
 
-- `python -m src.scripts.run_parse_media [PDF] [--pages N] [--start M]` – run structure parsing, extract figures, and save table images (no OCR).
-- `python -m src.scripts.run_table_ocr [--source parser/output/parsed_document.json] [--tables TABLE_ID ...]` – apply DeepSeek OCR to table snapshots and update the JSON in-place.
+- `python -m src.scripts.run_parse_media [PDF] [--pages N] [--start M]` – run structure parsing, extract figures, and save table snapshots plus Markdown.
+- `python -m src.scripts.run_table_ocr [--source parser/output/parsed_document.json] [--tables TABLE_ID ...]` – rebuild Markdown for stored tables using pdfplumber and saved bounding boxes.
 - `python -m src.scripts.run_embeddings [--source parser/output/parsed_document.json]` – execute the ingestion pipeline with embeddings enabled (writes to the configured database).
 
 Embedding notes:

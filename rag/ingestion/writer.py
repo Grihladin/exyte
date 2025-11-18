@@ -235,9 +235,9 @@ class DatabaseWriter:
             rows.append(
                 (
                     table.table_id,
+                    table.table_name,
                     section_id,
-                    Json(table.headers or []),
-                    Json(table.rows or []),
+                    table.markdown,
                     table.page_number,
                     table.accuracy,
                     table.embedding,
@@ -248,9 +248,9 @@ class DatabaseWriter:
             """
             INSERT INTO tables (
                 table_id,
+                table_name,
                 section_id,
-                headers,
-                rows,
+                markdown,
                 page_number,
                 accuracy,
                 embedding
@@ -258,9 +258,9 @@ class DatabaseWriter:
             VALUES (%s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (table_id) DO UPDATE
                 SET
+                    table_name = EXCLUDED.table_name,
                     section_id = EXCLUDED.section_id,
-                    headers = EXCLUDED.headers,
-                    rows = EXCLUDED.rows,
+                    markdown = EXCLUDED.markdown,
                     page_number = EXCLUDED.page_number,
                     accuracy = EXCLUDED.accuracy,
                     embedding = EXCLUDED.embedding

@@ -173,8 +173,8 @@ def _table_to_dict(table) -> Dict:
         "id": table.id,
         "table_id": table.table_id,
         "section_id": table.section_id,
-        "headers": table.headers,
-        "rows": table.rows,
+        "table_name": getattr(table, "table_name", None),
+        "markdown": table.markdown,
         "page_number": table.page_number,
     }
 

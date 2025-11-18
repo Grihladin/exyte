@@ -363,9 +363,9 @@ def table_to_dict(table) -> Dict:
     return {
         "id": table.id,
         "table_id": table.table_id,
+        "table_name": table.table_name,
         "section_id": table.section_id,
-        "headers": table.headers,
-        "rows": table.rows,
+        "markdown": table.markdown,
         "page_number": table.page_number,
     }
 

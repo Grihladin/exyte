@@ -53,9 +53,9 @@ class ReferenceResolver:
                 SELECT
                     id,
                     table_id,
+                    table_name,
                     section_id,
-                    headers,
-                    rows,
+                    markdown,
                     page_number
                 FROM tables
                 WHERE table_id = ANY(%s)
@@ -67,9 +67,9 @@ class ReferenceResolver:
             TableResult(
                 id=row[0],
                 table_id=row[1],
-                section_id=row[2],
-                headers=row[3] or [],
-                rows=row[4] or [],
+                table_name=row[2],
+                section_id=row[3],
+                markdown=row[4],
                 page_number=row[5],
             )
             for row in rows

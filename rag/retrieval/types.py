@@ -29,9 +29,9 @@ class SectionResult:
 class TableResult:
     id: int
     table_id: str
+    table_name: str | None
     section_id: Optional[int]
-    headers: List[str]
-    rows: List[List[str]]
+    markdown: Optional[str]
     page_number: Optional[int]
 
 

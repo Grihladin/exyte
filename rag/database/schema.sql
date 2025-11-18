@@ -69,9 +69,9 @@ CREATE INDEX IF NOT EXISTS idx_references_target ON section_references(target_se
 CREATE TABLE IF NOT EXISTS tables (
     id SERIAL PRIMARY KEY,
     table_id TEXT UNIQUE NOT NULL,
+    table_name TEXT,
     section_id INTEGER REFERENCES sections(id) ON DELETE CASCADE,
-    headers JSONB NOT NULL,
-    rows JSONB NOT NULL,
+    markdown TEXT,
     page_number INTEGER,
     accuracy DOUBLE PRECISION,
     embedding vector(1536)
