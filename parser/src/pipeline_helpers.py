@@ -7,7 +7,7 @@ import re
 from typing import Iterable
 
 from src.models import Chapter, Section, TableData
-from src.utils.tables import extract_table_labels, page_has_table_hint
+from src.utils.tables import extract_table_labels
 
 
 def attach_tables_to_sections(
@@ -50,10 +50,16 @@ def attach_tables_to_sections(
             "page": table_data.page,
             "accuracy": table_data.accuracy,
         }
+        if table_data.markdown:
+            table_dict["markdown"] = table_data.markdown
         if table_data.image_path:
             table_dict["image_path"] = table_data.image_path
         if table_data.bbox:
             table_dict["bbox"] = list(table_data.bbox)
+        if table_data.table_info:
+            table_dict["table_info"] = table_data.table_info
+        if table_data.table_name:
+            table_dict["table_name"] = table_data.table_name
         document_tables[table_key] = table_dict
 
         if table_key not in target_section.references.table:
@@ -115,7 +121,9 @@ def attach_figures_to_sections(
 
         if target_section.metadata:
             target_section.metadata.has_figure = True
-            target_section.metadata.figure_count = len(target_section.references.figures)
+            target_section.metadata.figure_count = len(
+                target_section.references.figures
+            )
 
         label = figure_data.get("label") or figure_data.get("figure_number")
         figure_desc = f"{figure_id} ({label})" if label else figure_id

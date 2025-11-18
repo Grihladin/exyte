@@ -25,16 +25,6 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 IMAGES_DIR.mkdir(exist_ok=True)
 TABLE_IMAGES_DIR.mkdir(exist_ok=True)
 
-# DeepSeek OCR configuration
-DEEPSEEK_OCR_ENABLED = os.getenv("DEEPSEEK_OCR_ENABLED", "true").lower() in {
-    "1",
-    "true",
-    "yes",
-}
-DEEPSEEK_OCR_MODEL = os.getenv("DEEPSEEK_OCR_MODEL", "deepseek-ai/deepseek-ocr")
-DEEPSEEK_OCR_DEVICE = os.getenv("DEEPSEEK_OCR_DEVICE")
-DEEPSEEK_OCR_MAX_TOKENS = int(os.getenv("DEEPSEEK_OCR_MAX_TOKENS", "512"))
-
 # Logging configuration
 LOG_LEVEL = "INFO"
 LOG_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

@@ -5,12 +5,13 @@ from __future__ import annotations
 import re
 
 # Regex patterns reused by pipeline helpers and table extraction
+# Updated to support optional prefixes like [F], [A], [BS], etc.
 _TABLE_HINT_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*",
+    r"(?:^|\n)\s*(?:\[[A-Z]+\]\s+)?TABLE\s+[A-Z0-9][\w\.\-()]*",
     re.IGNORECASE | re.MULTILINE,
 )
 _TABLE_LABEL_PATTERN = re.compile(
-    r"(?:^|\n)\s*TABLE\s+[A-Z0-9][\w\.\-()]*",
+    r"(?:^|\n)\s*(?:\[[A-Z]+\]\s+)?TABLE\s+[A-Z0-9][\w\.\-()]*",
     re.IGNORECASE | re.MULTILINE,
 )
 _FOOTER_PATTERNS: tuple[re.Pattern, ...] = (

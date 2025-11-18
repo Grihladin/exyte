@@ -58,7 +58,9 @@ class HeaderFooterFilter:
         bottom_texts = [p["bottom"] for p in page_blocks if p["bottom"].strip()]
         if bottom_texts:
             self.common_headers_footers.update(
-                text for text, count in Counter(bottom_texts).items() if count >= threshold
+                text
+                for text, count in Counter(bottom_texts).items()
+                if count >= threshold
             )
 
         copyright_patterns = [
@@ -69,7 +71,8 @@ class HeaderFooterFilter:
         self.common_headers_footers.update(copyright_patterns)
         if self.common_headers_footers:
             logger.info(
-                "Detected %d common header/footer patterns", len(self.common_headers_footers)
+                "Detected %d common header/footer patterns",
+                len(self.common_headers_footers),
             )
 
     def filter_text(self, text: str) -> str:
@@ -87,11 +90,15 @@ class HeaderFooterFilter:
             line_stripped = line.strip()
             if not line_stripped:
                 continue
-            if any(pattern in line_stripped or line_stripped in pattern for pattern in self.common_headers_footers):
+            if any(
+                pattern in line_stripped or line_stripped in pattern
+                for pattern in self.common_headers_footers
+            ):
                 prev_line_was_chapter = False
                 continue
-            if line_stripped in self.extractor.chapter_headers and not prev_line_was_chapter:
-                prev_line_was_chapter = False
+            # Skip duplicate chapter headers (e.g., repeated at top of pages)
+            # Only remove if this is NOT the first occurrence of a chapter header
+            if line_stripped.startswith("CHAPTER ") and prev_line_was_chapter:
                 continue
             if (
                 line_stripped

@@ -40,8 +40,6 @@ class ReferenceExtractor:
         
         # Extract each type of reference
         references.internal_sections = self._extract_internal_sections(text)
-        # NOTE: Tables are NOT part of references anymore - they're extracted by Camelot
-        # and added directly to section.tables (see pipeline.py _attach_tables_to_sections)
         references.figures = self._extract_figures(text)
         references.external_documents = self._extract_external_documents(text)
         

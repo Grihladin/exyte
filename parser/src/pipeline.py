@@ -11,10 +11,6 @@ from src.config import (
     IMAGES_DIR,
     TABLE_IMAGES_DIR,
     TABLE_REGIONS_FILE,
-    DEEPSEEK_OCR_ENABLED,
-    DEEPSEEK_OCR_MODEL,
-    DEEPSEEK_OCR_DEVICE,
-    DEEPSEEK_OCR_MAX_TOKENS,
 )
 from src.models import Chapter, Document, Section, TableData
 from src.parsers import (
@@ -28,10 +24,8 @@ from src.parsers.figure_extractor import FigureExtractor
 from src.pipeline_helpers import (
     attach_figures_to_sections,
     attach_tables_to_sections,
-    page_has_table_hint,
 )
 from src.utils.figures import extract_figure_labels
-from src.utils.deepseek_ocr import DeepSeekOCR
 from .pipeline_pdf import run_pdf_phase
 from tqdm.auto import tqdm
 
@@ -48,36 +42,16 @@ def run_structure_phase(
     pdf_path: str | Path,
     num_pages: int,
     start_page: int,
-    enable_table_ocr: bool | None = None,
 ) -> None:
     """Parse document structure with progress bar and event logging."""
     structure_parser = StructureParser()
     reference_extractor = ReferenceExtractor()
     metadata_collector = MetadataCollector()
 
-    if enable_table_ocr is None:
-        enable_table_ocr = DEEPSEEK_OCR_ENABLED
-
-    ocr_client: DeepSeekOCR | None = None
-    if enable_table_ocr:
-        try:
-            ocr_client = DeepSeekOCR(
-                model_name=DEEPSEEK_OCR_MODEL,
-                device=DEEPSEEK_OCR_DEVICE,
-                max_new_tokens=DEEPSEEK_OCR_MAX_TOKENS,
-            )
-        except Exception as exc:
-            _events_logger.error(
-                "Failed to initialize DeepSeek OCR (%s): %s",
-                DEEPSEEK_OCR_MODEL,
-                exc,
-            )
-
     table_extractor = TableExtractor(
         pdf_path,
         TABLE_IMAGES_DIR,
         TABLE_REGIONS_FILE,
-        ocr_client=ocr_client,
     )
 
     # Document-level tables and figures storage
@@ -86,7 +60,7 @@ def run_structure_phase(
 
     with PDFExtractor(pdf_path) as extractor:
         figure_extractor = FigureExtractor(extractor, IMAGES_DIR)
-        
+
         total_pages = extractor.get_page_count()
         if start_page >= total_pages:
             raise ValueError(
@@ -118,24 +92,22 @@ def run_structure_phase(
                         )
 
                 tables: list[TableData] = []
-                if page_has_table_hint(text):
-                    _events_logger.debug("Page %d: Table hint detected, attempting extraction", page_num + 1)
-                    tables = table_extractor.extract_tables(
+                # Always attempt table extraction - PyMuPDF's find_tables() is efficient
+                # and will only extract actual tables with proper boundaries
+                _events_logger.debug(
+                    "Page %d: Attempting table detection", page_num + 1
+                )
+                tables = table_extractor.extract_tables(
+                    page_num + 1,
+                    pdf_extractor=extractor,
+                    page_text=text,
+                )
+                if tables:
+                    _events_logger.debug(
+                        "Page %d: Successfully extracted %d table(s)",
                         page_num + 1,
-                        pdf_extractor=extractor,
-                        page_text=text,
+                        len(tables),
                     )
-                    if not tables:
-                        _events_logger.warning(
-                            "Page %d: Table hint detected but extraction failed (check table format)",
-                            page_num + 1,
-                        )
-                    else:
-                        _events_logger.debug(
-                            "Page %d: Successfully extracted %d table(s)",
-                            page_num + 1,
-                            len(tables)
-                        )
                 if tables:
                     attach_tables_to_sections(
                         chapters,
@@ -146,7 +118,7 @@ def run_structure_phase(
                         document_tables,
                         _events_logger,
                     )
-                
+
                 # Extract figures from page with detected labels/captions
                 figure_labels = extract_figure_labels(text)
                 figures = figure_extractor.extract_figures_from_page(
@@ -167,7 +139,10 @@ def run_structure_phase(
                 all_chapters = structure_parser.merge_chapters(all_chapters, chapters)
                 if structure_parser.current_chapter:
                     for ch in all_chapters:
-                        if ch.chapter_number == structure_parser.current_chapter.chapter_number:
+                        if (
+                            ch.chapter_number
+                            == structure_parser.current_chapter.chapter_number
+                        ):
                             structure_parser.current_chapter = ch
                             break
 

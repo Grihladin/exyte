@@ -59,7 +59,7 @@ class Document(BaseModel):
     )
     tables: dict[str, dict] = Field(
         default_factory=dict,
-        description="All extracted tables: {table_id: {headers, rows, page, accuracy}}"
+        description="All extracted tables: {table_id: {markdown, headers, rows, page, accuracy}}"
     )
     figures: dict[str, dict] = Field(
         default_factory=dict,
