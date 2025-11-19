@@ -1,14 +1,12 @@
-version: 1.2.1
+version: 1.3.1
 cache: false
 
 interface:
-  customWelcome: '${LIBRECHAT_WELCOME_MESSAGE}'
+  customWelcome: 'Welcome to the Building Code Assistant'
   fileSearch: false
-  privacyPolicy: null
-  termsOfService: null
-  endpointsMenu: false
-  modelSelect: false
-  parameters: false
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
   sidePanel: false
   presets: false
   prompts: false
@@ -26,25 +24,38 @@ interface:
 
 registration:
   socialLogins: []
+  allowedDomains: []
 
 actions:
   allowedDomains: []
 
 endpoints:
-  openAI:
-    apiKey: '${LIBRECHAT_RAG_API_KEY}'
-    baseURL: '${LIBRECHAT_RAG_BASE_URL}'
-    models:
-      default:
-        - '${LIBRECHAT_RAG_MODEL_ID}'
-      fetch: false
-    titleConvo: false
-    summarize: false
-    modelDisplayLabel: '${LIBRECHAT_RAG_DISPLAY_NAME}'
-    dropParams:
-      - 'frequency_penalty'
-      - 'presence_penalty'
-      - 'user'
+  custom:
+    - name: 'BuildingCodeRAG'
+      apiKey: 'rag-dev'
+      baseURL: 'http://rag-api:8000/v1'
+      models:
+        default:
+          - 'building-code-rag'
+        fetch: false
+      titleConvo: false
+      summarize: false
+      modelDisplayLabel: 'Building Code RAG'
+      dropParams:
+        - 'frequency_penalty'
+        - 'presence_penalty'
+        - 'user'
+
+modelSpecs:
+  enforce: true
+  prioritize: true
+  list:
+    - name: 'building-code-assistant'
+      label: 'Building Code Assistant'
+      description: 'RAG-powered assistant for building codes'
+      preset:
+        endpoint: 'BuildingCodeRAG'
+        model: 'building-code-rag'
 
 fileConfig:
   endpoints: {}
