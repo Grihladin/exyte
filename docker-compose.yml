@@ -1,4 +1,19 @@
 services:
+  # Ensure required git submodules are available before building other services
+  git-submodule-init:
+    image: alpine/git:latest
+    container_name: git-submodule-init
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        git config --global --add safe.directory /workspace &&
+        git submodule update --init --recursive
+    restart: "no"
+
   # PostgreSQL with pgvector extension
   postgres:
     image: pgvector/pgvector:pg16
@@ -40,6 +55,8 @@ services:
       POSTGRES_PORT: 5432
       DATABASE_URL: postgresql://${POSTGRES_USER:-rag_user}:${POSTGRES_PASSWORD:-rag_password}@postgres:5432/${POSTGRES_DB:-building_codes}
     depends_on:
+      git-submodule-init:
+        condition: service_completed_successfully
       postgres:
         condition: service_healthy
     networks:
@@ -50,6 +67,29 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+
+  # NextChat UI (OpenAI-compatible client)
+  nextchat:
+    build:
+      context: ./NextChat
+      dockerfile: Dockerfile
+    container_name: nextchat
+    restart: unless-stopped
+    environment:
+      OPENAI_API_KEY: ${NEXTCHAT_OPENAI_API_KEY:-rag-dev}
+      BASE_URL: ${NEXTCHAT_BASE_URL:-http://rag-api:8000}
+      CODE: ${NEXTCHAT_ACCESS_CODE:-}
+      PROXY_URL: ${NEXTCHAT_PROXY_URL:-}
+      ENABLE_MCP: ${NEXTCHAT_ENABLE_MCP:-false}
+    depends_on:
+      git-submodule-init:
+        condition: service_completed_successfully
+      rag-api:
+        condition: service_healthy
+    ports:
+      - "${NEXTCHAT_PORT:-3000}:3000"
+    networks:
+      - rag-network
 
 networks:
   rag-network:
