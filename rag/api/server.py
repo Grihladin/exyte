@@ -122,7 +122,7 @@ def create_app() -> FastAPI:
         }
 
     # Include routers
-    app.include_router(openai_compat.router)  # OpenAI-compatible for NextChat
+    app.include_router(openai_compat.router)  # OpenAI-compatible for LibreChat
     app.include_router(query.router)
     app.include_router(search.router)
     app.include_router(sections.router)

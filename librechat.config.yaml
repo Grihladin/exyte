@@ -1,0 +1,50 @@
+version: 1.2.1
+cache: false
+
+interface:
+  customWelcome: '${LIBRECHAT_WELCOME_MESSAGE}'
+  fileSearch: false
+  privacyPolicy: null
+  termsOfService: null
+  endpointsMenu: false
+  modelSelect: false
+  parameters: false
+  sidePanel: false
+  presets: false
+  prompts: false
+  bookmarks: false
+  multiConvo: false
+  agents: false
+  peoplePicker:
+    users: false
+    groups: false
+    roles: false
+  marketplace:
+    use: false
+  fileCitations: false
+  temporaryChatRetention: 24
+
+registration:
+  socialLogins: []
+
+actions:
+  allowedDomains: []
+
+endpoints:
+  openAI:
+    apiKey: '${LIBRECHAT_RAG_API_KEY}'
+    baseURL: '${LIBRECHAT_RAG_BASE_URL}'
+    models:
+      default:
+        - '${LIBRECHAT_RAG_MODEL_ID}'
+      fetch: false
+    titleConvo: false
+    summarize: false
+    modelDisplayLabel: '${LIBRECHAT_RAG_DISPLAY_NAME}'
+    dropParams:
+      - 'frequency_penalty'
+      - 'presence_penalty'
+      - 'user'
+
+fileConfig:
+  endpoints: {}

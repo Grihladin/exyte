@@ -1,13 +1,14 @@
-"""OpenAI-compatible chat completions endpoint for NextChat integration."""
+"""OpenAI-compatible chat completions endpoint for LibreChat integration."""
 
 from __future__ import annotations
 
 import logging
+import os
 import time
 import uuid
 from typing import List, Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Header, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 
@@ -16,6 +17,20 @@ from rag.graph.workflow import build_workflow
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/v1", tags=["openai-compat"])
+RAG_API_KEY = os.getenv("RAG_API_KEY")
+
+
+def _verify_api_key(authorization: Optional[str]) -> None:
+    """Enforce optional bearer auth for LibreChat/OpenAI-compatible requests."""
+    if not RAG_API_KEY:
+        return
+
+    if not authorization:
+        raise HTTPException(status_code=401, detail="Missing or invalid API key.")
+
+    scheme, _, candidate = authorization.partition(" ")
+    if scheme.lower() != "bearer" or candidate != RAG_API_KEY:
+        raise HTTPException(status_code=401, detail="Missing or invalid API key.")
 
 
 class ChatMessage(BaseModel):
@@ -82,14 +97,17 @@ class ModelsListResponse(BaseModel):
 
 
 @router.post("/chat/completions")
-async def chat_completions(request: ChatCompletionRequest):
+async def chat_completions(
+    request: ChatCompletionRequest, authorization: Optional[str] = Header(default=None)
+):
     """
     OpenAI-compatible chat completions endpoint.
 
     Extracts the user's last message and runs it through the RAG workflow.
-    Compatible with NextChat and other OpenAI-compatible clients.
+    Compatible with LibreChat and other OpenAI-compatible clients.
     Supports both streaming and non-streaming responses.
     """
+    _verify_api_key(authorization)
     logger.info(f"Received chat completion request for model: {request.model}")
 
     # Get last user message
@@ -185,8 +203,9 @@ async def chat_completions(request: ChatCompletionRequest):
 
 
 @router.get("/models", response_model=ModelsListResponse)
-async def list_models() -> ModelsListResponse:
-    """List available models for NextChat."""
+async def list_models(authorization: Optional[str] = Header(default=None)) -> ModelsListResponse:
+    """List available models for LibreChat/OpenAI-compatible clients."""
+    _verify_api_key(authorization)
     return ModelsListResponse(
         object="list",
         data=[

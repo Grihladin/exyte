@@ -51,26 +51,54 @@ services:
       retries: 3
       start_period: 40s
 
-  # NextChat UI (OpenAI-compatible client)
-  nextchat:
-    build:
-      context: ./NextChat
-      dockerfile: Dockerfile
-    container_name: nextchat
+  # LibreChat backing MongoDB
+  librechat-mongo:
+    image: mongo:7
+    container_name: librechat-mongo
     restart: unless-stopped
+    volumes:
+      - librechat-mongo-data:/data/db
+    networks:
+      - rag-network
+
+  # LibreChat UI (OpenAI-compatible client)
+  librechat:
+    build:
+      context: ./LibreChat
+      dockerfile: Dockerfile
+    container_name: librechat
+    restart: unless-stopped
+    env_file:
+      - .env
     environment:
-      OPENAI_API_KEY: ${NEXTCHAT_OPENAI_API_KEY:-rag-dev}
-      BASE_URL: ${NEXTCHAT_BASE_URL:-http://rag-api:8000}
-      CODE: ${NEXTCHAT_ACCESS_CODE:-}
-      PROXY_URL: ${NEXTCHAT_PROXY_URL:-}
-      ENABLE_MCP: ${NEXTCHAT_ENABLE_MCP:-false}
+      HOST: 0.0.0.0
+      PORT: ${LIBRECHAT_PORT:-3080}
+      MONGO_URI: mongodb://librechat-mongo:27017/LibreChat
+      DOMAIN_CLIENT: http://localhost:${LIBRECHAT_PORT:-3080}
+      DOMAIN_SERVER: http://localhost:${LIBRECHAT_PORT:-3080}
+      CONFIG_PATH: /app/librechat.yaml
+      SEARCH: "false"
+      MEILI_NO_SYNC: "true"
+      ALLOW_EMAIL_LOGIN: ${LIBRECHAT_ALLOW_EMAIL_LOGIN:-true}
+      ALLOW_REGISTRATION: ${LIBRECHAT_ALLOW_REGISTRATION:-false}
+      ALLOW_UNVERIFIED_EMAIL_LOGIN: ${LIBRECHAT_ALLOW_UNVERIFIED_EMAIL_LOGIN:-true}
+      ALLOW_SOCIAL_LOGIN: "false"
+      ALLOW_SOCIAL_REGISTRATION: "false"
+      ALLOW_PASSWORD_RESET: "false"
+      ALLOW_SHARED_LINKS: "false"
+      ALLOW_SHARED_LINKS_PUBLIC: "false"
+      OPENAI_MODERATION: "false"
     depends_on:
       rag-api:
         condition: service_healthy
+      librechat-mongo:
+        condition: service_started
     ports:
-      - "${NEXTCHAT_PORT:-3000}:3000"
+      - "${LIBRECHAT_PORT:-3080}:3080"
     networks:
       - rag-network
+    volumes:
+      - ./librechat.config.yaml:/app/librechat.yaml:ro
 
 networks:
   rag-network:
@@ -78,4 +106,6 @@ networks:
 
 volumes:
   postgres-data:
+    driver: local
+  librechat-mongo-data:
     driver: local
