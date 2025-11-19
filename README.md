@@ -42,13 +42,10 @@ uv sync
 
 If you previously cloned without `--recurse-submodules`, run `git submodule update --init --recursive` to pull `NextChat/`.
 
-Starting the Docker Compose stack now triggers a short-lived `git-submodule-init` service that does the same thing automatically, so a missing `NextChat/` checkout will be fixed the first time you run `docker compose up`.
-
 ## 2. Start the stack with Docker Compose
 
-The Compose file now orchestrates four services:
+The Compose file now orchestrates three services:
 
-- `git-submodule-init` – ensures the `NextChat/` submodule exists before anything else builds
 - `postgres` – Postgres 16 with pgvector plus the schema migrations under `rag/database`
 - `rag-api` – builds from the repo `Dockerfile` and exposes the FastAPI RAG server
 - `nextchat` – builds the ChatGPT Next Web UI and proxies requests to the local API using the `NEXTCHAT_*` environment variables
