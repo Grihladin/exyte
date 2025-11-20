@@ -1,54 +1,88 @@
 # Building Code RAG Platform
 
-An end-to-end toolkit for turning the 2021 International Building Code into a searchable Retrieval-Augmented Generation (RAG) assistant. The stack includes:
-
-- **Parser pipeline** that extracts sections, tables, and figures from the official PDF.
-- **Ingestion and embedding jobs** that normalize the parsed data and store it in Postgres with pgvector.
-- **FastAPI service** exposing native query/search endpoints plus an OpenAI-compatible `/v1/chat/completions` route for LibreChat and other clients.
-- **LibreChat UI** preconfigured to talk to the local RAG API.
-- **Static document hosting** so citations rendered in the UI deep-link into the source PDF.
+An end-to-end toolkit for turning the 2021 International Building Code into a searchable Retrieval-Augmented Generation (RAG) assistant.
 
 ---
 
 ## Table of Contents
 
 1. [Architecture Overview](#architecture-overview)  
-2. [Repository Layout](#repository-layout)  
-3. [Prerequisites](#prerequisites)  
+2. [System Overview](#system-overview--case-study-context)  
+3. [Repository Layout](#repository-layout)  
 4. [Environment Configuration](#environment-configuration)  
 5. [Quick Start with Docker Compose](#quick-start-with-docker-compose)  
-6. [Manual Workflow (Parser ➜ DB ➜ API)](#manual-workflow-parser--db--api)  
+6. [RAG Pipeline](#rag-pipeline)  
 7. [LibreChat Integration](#librechat-integration)  
 8. [RAG API Reference](#rag-api-reference)  
 9. [Static Document Hosting & Citation Links](#static-document-hosting--citation-links)  
 
 ---
 
+## System Overview
+
+This repository implements the **Document Intelligence & Compliance System** and the **Conversational AI Interface & Knowledge Assistant** for a construction-focused AI platform.
+
+- Parses the 2021 International Building Code (IBC) into structured JSON (chapters, sections, tables, figures).
+- Stores the normalized content in a **Postgres + pgvector** database.
+- Exposes a **RAG (Retrieval-Augmented Generation) API** via FastAPI.
+- Integrates with **LibreChat** to provide a chat-based assistant that can answer code/compliance questions with **grounded, cited answers**.
+
+This module acts as the **building code knowledge backbone** that other components (e.g., drawing/blueprint analysis, risk assessment engine) can query for regulatory constraints and explanations.
+
+
 ## Architecture Overview
+At a high level, the system consists of four main parts:
 
-```
-┌────────────┐      ┌─────────────┐      ┌─────────────┐      ┌──────────────┐
-│  Parser    │ ---> │  Ingestion  │ ---> │  Postgres   │ ---> │   RAG API    │
-│ (PDF → JSON│      │ + Embedding │      │ + pgvector  │      │ (FastAPI +   │
-│ + assets)  │      │             │      │             │      │ LangGraph)   │
-└────────────┘      └─────────────┘      └─────────────┘      └──────────────┘
-                                                                    │
-                                                                    ▼
-                                                           LibreChat (OpenAI API)
-                                                                    │
-                                                                    ▼
-                                                        Static PDF (clickable refs)
-```
+1. **Parsing Pipeline (`parser/`)**  
+   - Extracts text, tables, and figures from the IBC PDF.  
+   - Normalizes content into chapters, sections, table metadata, and image references.  
+   - Outputs a single `parsed_document.json` artifact.
 
-1. `parser/` extracts structured data from the PDF and saves it in `parser/output/`.
-2. `rag/ingestion/` loads that JSON, generates embeddings (OpenAI by default), and writes the results into Postgres with pgvector.
-3. `rag/api/` contains a FastAPI app with:
-   - `/query`, `/search`, `/sections` REST endpoints
-   - `/v1/chat/completions` OpenAI-compatible endpoint used by LibreChat.
-4. `LibreChat/` (git submodule) provides the UI. The bundled config points to the RAG API and strips unused features.
-5. `static/` serves the source PDF through FastAPI so citations in chat responses open the correct page.
+2. **RAG Ingestion (`rag/ingestion`)**  
+   - Loads `parsed_document.json`.  
+   - Chunks sections into retrieval units.  
+   - Generates embeddings (via OpenAI or a compatible model).  
+   - Persists sections + embeddings into Postgres with pgvector.
+
+3. **RAG API (`rag/api`)**  
+   - FastAPI service exposing:
+     - `/query` – RAG pipeline endpoint.
+     - `/search` – hybrid keyword / semantic search.
+     - `/sections/{id}` – direct section retrieval.
+     - `/v1/chat/completions` – OpenAI-compatible endpoint for LibreChat.
+
+4. **Chat UI (LibreChat)**  
+   - Front-end UI for human users.  
+   - Sends OpenAI-compatible chat requests to the local RAG API.  
+   - Displays model responses with citations back into the building code.
 
 ---
+
+## RAG Pipeline
+
+### Ingestion Flow
+
+1. **PDF → Parsed JSON**  
+   - `run_parser.py` processes the IBC PDF into `parsed_document.json`.
+
+2. **JSON → Embeddings + DB**  
+   - `run_embeddings.py` loads the parsed document, chunks it into retrieval units, calls the embedding model, and writes:
+     - `sections`
+     - `embeddings`
+     - optional `tables` / `figures` metadata  
+     into Postgres with pgvector.
+
+### Query Flow
+
+1. User asks a question in LibreChat or via `/query`.
+2. The RAG API:
+   - Embeds the query.
+   - Performs a vector similarity search combined with keyword filters.
+   - Ranks and selects a small set of relevant sections.
+3. The selected sections are passed as **grounding context** to the LLM.
+4. The LLM generates an answer **with inline citations** pointing back to the original IBC sections.
+5. The answer and retrieval metadata are logged for future evaluation and auditing.
+
 
 ## Repository Layout
 
