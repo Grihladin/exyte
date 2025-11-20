@@ -1,101 +1,177 @@
-# Building Code Parser & RAG Stack
+# Building Code RAG Platform
 
-This repository contains everything needed to parse the 2021 International Building Code PDF, normalize the contents (chapters, sections, tables, figures), load the data into a pgvector powered Postgres database, and expose a Retrieval-Augmented Generation (RAG) API that can be paired with the bundled LibreChat UI. The core goals are:
+An end-to-end toolkit for turning the 2021 International Building Code into a searchable Retrieval-Augmented Generation (RAG) assistant. The stack includes:
 
-- Fully reproducible parsing of the source PDF into structured JSON (`parser/`)
-- Embedding and persistence pipelines that populate Postgres (`rag/ingestion`)
-- A FastAPI service that serves search/query endpoints and an OpenAI-compatible chat interface (`rag/api`)
-- A front-end experience powered by LibreChat (`LibreChat/` submodule)
+- **Parser pipeline** that extracts sections, tables, and figures from the official PDF.
+- **Ingestion and embedding jobs** that normalize the parsed data and store it in Postgres with pgvector.
+- **FastAPI service** exposing native query/search endpoints plus an OpenAI-compatible `/v1/chat/completions` route for LibreChat and other clients.
+- **LibreChat UI** preconfigured to talk to the local RAG API.
+- **Static document hosting** so citations rendered in the UI deep-link into the source PDF.
 
-## Repository layout
+---
+
+## Table of Contents
+
+1. [Architecture Overview](#architecture-overview)  
+2. [Repository Layout](#repository-layout)  
+3. [Prerequisites](#prerequisites)  
+4. [Environment Configuration](#environment-configuration)  
+5. [Quick Start with Docker Compose](#quick-start-with-docker-compose)  
+6. [Manual Workflow (Parser ➜ DB ➜ API)](#manual-workflow-parser--db--api)  
+7. [LibreChat Integration](#librechat-integration)  
+8. [RAG API Reference](#rag-api-reference)  
+9. [Static Document Hosting & Citation Links](#static-document-hosting--citation-links)  
+10. [Development Notes](#development-notes)  
+11. [Troubleshooting](#troubleshooting)
+
+---
+
+## Architecture Overview
 
 ```
-parser/               PDF parsing pipeline, models, and utilities
-rag/                  RAG ingestion pipeline, database schema, API, and LangGraph workflow
-LibreChat/            LibreChat UI (git submodule) configured to hit the local RAG API
-librechat.config.yaml Minimal LibreChat configuration that targets the local OpenAI-compatible API
-docker-compose.yml    Postgres (with pgvector) + API service definition
-static/2021_International_Building_Code.pdf   Default parsing target (also served to UI)
-pyproject.toml, uv.lock                Python project definition (Python 3.12)
+┌────────────┐      ┌─────────────┐      ┌─────────────┐      ┌──────────────┐
+│  Parser    │ ---> │  Ingestion  │ ---> │  Postgres   │ ---> │   RAG API    │
+│ (PDF → JSON│      │ + Embedding │      │ + pgvector  │      │ (FastAPI +   │
+│ + assets)  │      │             │      │             │      │ LangGraph)   │
+└────────────┘      └─────────────┘      └─────────────┘      └──────────────┘
+                                                                    │
+                                                                    ▼
+                                                           LibreChat (OpenAI API)
+                                                                    │
+                                                                    ▼
+                                                        Static PDF (clickable refs)
 ```
 
-## Prerequisites
+1. `parser/` extracts structured data from the PDF and saves it in `parser/output/`.
+2. `rag/ingestion/` loads that JSON, generates embeddings (OpenAI by default), and writes the results into Postgres with pgvector.
+3. `rag/api/` contains a FastAPI app with:
+   - `/query`, `/search`, `/sections` REST endpoints
+   - `/v1/chat/completions` OpenAI-compatible endpoint used by LibreChat.
+4. `LibreChat/` (git submodule) provides the UI. The bundled config points to the RAG API and strips unused features.
+5. `static/` serves the source PDF through FastAPI so citations in chat responses open the correct page.
 
-- Python 3.12.x (the repo uses [`uv`](https://github.com/astral-sh/uv) but `pip` works too)
-- Node.js 18+ (for optional local LibreChat development)
-- Docker (optional but recommended for Postgres/pgvector)
-- An OpenAI API key if you want real embeddings and LLM responses (otherwise use deterministic fallbacks)
+---
 
-## 1. Clone and install
+## Repository Layout
+
+| Path | Purpose |
+|------|---------|
+| `parser/` | PDF parsing pipeline, models, helper scripts |
+| `rag/` | Ingestion jobs, database schema, LangGraph workflow, FastAPI server |
+| `static/2021_International_Building_Code.pdf` | Default source PDF, also mounted for the UI |
+| `LibreChat/` | LibreChat UI (submodule) configured for the custom endpoint |
+| `librechat.config.yaml` | Minimal LibreChat configuration pre-wired to the local API |
+| `docker-compose.yml` | Postgres + RAG API + LibreChat stack |
+| `pyproject.toml`, `uv.lock` | Python 3.12 project definition |
+
+---
+
+## Environment Configuration
+
+1. Copy the sample file and edit to match your environment:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Important variables:
+
+   `OPENAI_API_KEY` Required for embeddings + LLM answers
+   `Weights & Biases setup` Required for [`wandb.ai`](https://wandb.ai/site/)
+
+3. If you cloned without the LibreChat submodule:
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+---
+
+## Quick Start with Docker Compose
+
+The Compose file launches:
+
+| Service | Description | Ports |
+|---------|-------------|-------|
+| `postgres` | Postgres 16 + pgvector, auto-seeded with schema | `${POSTGRES_PORT:-55432}` |
+| `rag-api` | FastAPI app exposing REST + OpenAI-compatible endpoints | `${API_PORT:-8000}` |
+| `librechat-mongo` | MongoDB backing store for LibreChat | internal |
+| `librechat` | LibreChat UI/API talking to `rag-api` | `${LIBRECHAT_PORT:-3080}` |
+
+Bring everything up:
 
 ```bash
-git clone --recurse-submodules <this-repo-url>
-cd parsing
-
-# Copy environment template
-cp .env.example .env
-# Fill in POSTGRES_*, OPENAI_API_KEY, etc.
+docker compose up --build   # foreground
+docker compose up -d        # background
 ```
 
-If you previously cloned without `--recurse-submodules`, run `git submodule update --init --recursive` to pull `LibreChat/`.
 
-## 2. Start the stack with Docker Compose
+Health checks ensure `postgres` is ready before the API starts, and LibreChat waits for both the API and Mongo.
 
-The Compose file now orchestrates four services:
+When the stack is running:
 
-- `postgres` – Postgres 16 with pgvector plus the schema migrations under `rag/database`
-- `rag-api` – builds from the repo `Dockerfile` and exposes the FastAPI RAG server
-- `librechat-mongo` – MongoDB backing store required by LibreChat
-- `librechat` – builds the LibreChat UI/API and proxies OpenAI-compatible traffic to the local RAG API
+- API docs & health: http://localhost:8000/docs and `/health`
+- LibreChat UI: http://localhost:3080
+- Static PDF (for citations): http://localhost:8000/static/2021_International_Building_Code.pdf
 
-Bring the full stack online with:
+---
 
-```bash
-docker compose up --build
-# or keep it running in the background
-docker compose up -d
-```
+2. **Parse the PDF**
 
-- Postgres listens on `${POSTGRES_PORT:-55432}`
-- FastAPI is available on http://localhost:${API_PORT:-8000}
-- LibreChat is available on http://localhost:${LIBRECHAT_PORT:-3080}
+   ```bash
+   uv run python parser/src/scripts/run_parser.py \
+     --pdf static/2021_International_Building_Code.pdf \
+     --start-page 32 --end-page 769
+   ```
 
-Compose reads `.env`, so you can pin all of the container ports and LibreChat overrides in one place. LibreChat is configured through the tracked `librechat.config.yaml` file, which is mounted directly into the container via `CONFIG_PATH`. Environment variables referenced in that file (for example `LIBRECHAT_RAG_BASE_URL` and `LIBRECHAT_RAG_API_KEY`) must exist in your `.env`.
+   Outputs land in `parser/output/`:
 
-### LibreChat configuration
+   - `parsed_document.json` – canonical data set for ingestion
+   - `images/`, `tables/` – extracted assets
+   - `table_regions.json` – table detection metadata
 
-The default `librechat.config.yaml` strips the UI down to bare chat functionality and configures a single OpenAI-compatible endpoint that points at `rag-api`. Copy `.env.example` to `.env` and adjust the `LIBRECHAT_*` values to suit your environment. The base URL should include `/v1` because LibreChat sends `/chat/completions` to that path verbatim. Set `LIBRECHAT_RAG_API_KEY` to the same value as `RAG_API_KEY` if you want LibreChat to authenticate against the `/v1` endpoints; otherwise leave both empty to disable auth entirely.
+3. **Embed & ingest**
 
-Most LibreChat functionality (prompts, presets, agents, social auth, shared links, web search, etc.) is turned off by default. If you need to re-enable any of those modules you can modify `librechat.config.yaml` or override the relevant environment variables in `.env`. Registration is disabled out of the box; flip `LIBRECHAT_ALLOW_REGISTRATION=true` temporarily if you need to self-serve account creation.
+   ```bash
+   uv run python parser/src/scripts/run_embeddings.py
+   ```
 
-## 3. Parse the PDF
+   This writes sections, tables, figures, and embeddings to Postgres.
 
-Run the helper script from the repo root. It uses the configured defaults (2021 IBC PDF, start page 32, full span of pages) but you can override them with flags.
+## LibreChat Integration
 
-```bash
-# Parse the default range (writes to parser/output/)
-uv run python parser/src/scripts/run_parser.py
-```
+- `librechat.config.yaml` disables most modules (prompts, presets, search, agents) for a focused chat experience.
+- The `BuildingCodeRAG` endpoint is defined as a **custom provider** with:
+  - `baseURL`: `http://rag-api:8000/v1`
+  - `model`: `building-code-rag`
+  - `titleConvo: true` to auto-title conversations
+  - `summarize: false` (set to `true` if you want automatic context summarization)
+  - `dropParams` removing unsupported OpenAI parameters
+- Update `librechat.config.yaml` to expose additional models or features if needed.
+- When auth is enabled, LibreChat sends `Authorization: Bearer <LIBRECHAT_RAG_API_KEY>` and the FastAPI app verifies it against `RAG_API_KEY`.
 
-Outputs of interest:
+---
 
-- `parser/output/parsed_document.json` – normalized chapters/sections/tables/figures
-- `parser/output/images/` & `parser/output/tables/` – extracted figures and table crops
-- `parser/output/table_regions.json` – table detection metadata
+## RAG API Reference
 
-## 4. Ingest into Postgres (with embeddings)
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Health probe used by Compose and debugging |
+| `/query` | POST | Runs the LangGraph workflow (retrieval + answering) |
+| `/search` | GET | Hybrid keyword/vector search over ingested sections |
+| `/sections/{section_number}` | GET | Fetch metadata for a specific section |
+| `/v1/chat/completions` | POST | OpenAI-compatible endpoint used by LibreChat |
+| `/v1/models` | GET | Lists the custom `building-code-rag` model |
 
-Once `parsed_document.json` exists, run the ingestion/embedding script. It loads the JSON, generates embeddings (unless you skip them), and persists everything via `rag/ingestion.DatabaseWriter`.
+Responses produced by `/query` and `/v1/chat/completions` include Markdown-formatted answers plus a “References” section. When `REFERENCE_URL_TEMPLATE` is configured, each citation becomes a clickable link to the host PDF.
 
-```bash
-uv run python parser/src/scripts/run_embeddings.py
-```
+---
 
-## 5. Interact with the FastAPI RAG service
+## Static Document Hosting & Citation Links
 
-Key endpoints exposed:
+- `static/2021_International_Building_Code.pdf` is copied into the Docker image and mounted by FastAPI at `/static`.
+- Configure `REFERENCE_URL_TEMPLATE` (e.g. `http://localhost:8000/static/2021_International_Building_Code.pdf#page={page}`) so the backend can embed proper hyperlinks in its Markdown output.
+- The same value is stored on each section/table/figure record as `url`, making it trivial for other clients to provide rich previews.
+- If you need to serve additional files, drop them under `static/`
 
-- `POST /query` – RAG workflow answering natural-language questions
-- `GET /search` – hybrid semantic/keyword search of ingested sections
-- `GET /sections/{section_number}` – retrieve a specific section
-- `POST /v1/chat/completions` – OpenAI-compatible endpoint used by LibreChat
+---
