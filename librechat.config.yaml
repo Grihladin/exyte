@@ -38,7 +38,7 @@ endpoints:
         default:
           - 'building-code-rag'
         fetch: false
-      titleConvo: false
+      titleConvo: true
       summarize: false
       modelDisplayLabel: 'Building Code RAG'
       dropParams:

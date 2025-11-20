@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import time
 import uuid
 from typing import List, Optional
@@ -140,9 +141,9 @@ async def chat_completions(
             async def generate_stream():
                 import json
 
-                # Stream the answer word by word
-                words = answer.split()
-                for i, word in enumerate(words):
+                # Preserve whitespace (including newlines) to keep markdown intact
+                tokens = [token for token in re.split(r"(\s+)", answer) if token]
+                for i, token in enumerate(tokens):
                     chunk = {
                         "id": f"chatcmpl-{uuid.uuid4().hex[:8]}",
                         "object": "chat.completion.chunk",
@@ -151,11 +152,8 @@ async def chat_completions(
                         "choices": [
                             {
                                 "index": 0,
-                                "delta": {
-                                    "content": word
-                                    + (" " if i < len(words) - 1 else "")
-                                },
-                                "finish_reason": None if i < len(words) - 1 else "stop",
+                                "delta": {"content": token},
+                                "finish_reason": None if i < len(tokens) - 1 else "stop",
                             }
                         ],
                     }

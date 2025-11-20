@@ -279,10 +279,58 @@ def generate_answer(state: QueryState) -> QueryState:
 def format_response(state: QueryState) -> QueryState:
     sections = state.get("retrieved_sections") or []
     references = state.get("references") or {}
+    citations = state.get("citations", [])
+    answer = state.get("answer", "")
+
+    # Build Markdown response
+    md_parts = [answer]
+
+    # Check if we have any references/citations
+    ref_sections = references.get("sections", [])
+    ref_tables = references.get("tables", [])
+    ref_figures = references.get("figures", [])
+
+    if citations or ref_sections or ref_tables or ref_figures:
+        md_parts.append("### References")
+
+        # 1. Sections
+        # Combine citations and referenced sections
+        seen_sections = set()
+        section_lines = []
+
+        # Add citations first
+        for cit in citations:
+            sec_num = cit.get("section_number")
+            if sec_num and sec_num not in seen_sections:
+                seen_sections.add(sec_num)
+                title = cit.get("title", "")
+                section_lines.append(f"- **Section {sec_num}**: {title}")
+
+        # Add referenced sections
+        for sec in ref_sections:
+            if sec.section_number not in seen_sections:
+                seen_sections.add(sec.section_number)
+                section_lines.append(f"- **Section {sec.section_number}**: {sec.title}")
+
+        if section_lines:
+            md_parts.append("#### Sections\n" + "\n".join(section_lines))
+
+        # 2. Tables
+        if ref_tables:
+            table_lines = [f"- **Table {table.table_id}**: {table.table_name}" for table in ref_tables]
+            md_parts.append("#### Tables\n" + "\n".join(table_lines))
+
+        # 3. Figures
+        if ref_figures:
+            fig_lines = [f"- **Figure {fig.figure_id}**: {fig.caption}" for fig in ref_figures]
+            md_parts.append("#### Figures\n" + "\n".join(fig_lines))
+
+    formatted_answer = "\n\n".join(md_parts)
+
     result = {
         "query": state["query"],
-        "answer": state.get("answer", ""),
-        "citations": state.get("citations", []),
+        "answer": formatted_answer,
+        "citations": [],  # Clear citations to prevent double formatting in API
         "metadata": state.get("metadata", {}),
         "sections": [section_to_dict(section) for section in sections],
         "context": {
@@ -311,7 +359,7 @@ def format_response(state: QueryState) -> QueryState:
     log_event(
         "format_response",
         {
-            "citations": len(result.get("citations", [])),
+            "citations": len(citations),
             "sections": len(result.get("sections", [])),
         },
     )
