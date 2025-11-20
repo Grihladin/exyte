@@ -21,8 +21,6 @@ An end-to-end toolkit for turning the 2021 International Building Code into a se
 7. [LibreChat Integration](#librechat-integration)  
 8. [RAG API Reference](#rag-api-reference)  
 9. [Static Document Hosting & Citation Links](#static-document-hosting--citation-links)  
-10. [Development Notes](#development-notes)  
-11. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -119,9 +117,7 @@ When the stack is running:
 2. **Parse the PDF**
 
    ```bash
-   uv run python parser/src/scripts/run_parser.py \
-     --pdf static/2021_International_Building_Code.pdf \
-     --start-page 32 --end-page 769
+   uv run python parser/src/scripts/run_parser.py
    ```
 
    Outputs land in `parser/output/`:
