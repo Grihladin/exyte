@@ -68,9 +68,8 @@ services:
       dockerfile: Dockerfile
     container_name: librechat
     restart: unless-stopped
-    # Don't use env_file to avoid passing OPENAI_API_KEY which enables OpenAI endpoint
+    
     # env_file:
-    #   - .env
     environment:
       HOST: 0.0.0.0
       PORT: ${LIBRECHAT_PORT:-3080}
@@ -95,7 +94,6 @@ services:
       JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
       CREDS_KEY: ${CREDS_KEY}
       CREDS_IV: ${CREDS_IV}
-      # DO NOT include OPENAI_API_KEY - we only want custom endpoint
     depends_on:
       rag-api:
         condition: service_healthy
