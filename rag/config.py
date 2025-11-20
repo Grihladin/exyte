@@ -85,6 +85,21 @@ class Settings(BaseSettings):
     max_iterations: int = Field(
         default=5, ge=1, le=20, description="Maximum LangGraph workflow iterations"
     )
+    reference_url_template: Optional[str] = Field(
+        default=None,
+        description=(
+            "Optional format string used to generate clickable reference URLs. "
+            "Should contain a '{page}' placeholder that will be replaced with "
+            "the 1-indexed page number."
+        ),
+    )
+    static_files_dir: Optional[str] = Field(
+        default=str(Path(__file__).resolve().parent.parent / "static"),
+        description=(
+            "Directory to serve at /static for reference documents. "
+            "Set to an absolute path or leave as default to use rag/static."
+        ),
+    )
 
     # ========================================================================
     # Telemetry Configuration (Weights & Biases)

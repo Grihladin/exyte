@@ -15,7 +15,7 @@ rag/                  RAG ingestion pipeline, database schema, API, and LangGrap
 LibreChat/            LibreChat UI (git submodule) configured to hit the local RAG API
 librechat.config.yaml Minimal LibreChat configuration that targets the local OpenAI-compatible API
 docker-compose.yml    Postgres (with pgvector) + API service definition
-2021_International_Building_Code.pdf   Default parsing target
+static/2021_International_Building_Code.pdf   Default parsing target (also served to UI)
 pyproject.toml, uv.lock                Python project definition (Python 3.12)
 ```
 

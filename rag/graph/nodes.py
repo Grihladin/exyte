@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 import textwrap
 from functools import lru_cache
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable, List, Optional
 
 from langchain_openai import ChatOpenAI
 
@@ -303,26 +303,52 @@ def format_response(state: QueryState) -> QueryState:
             sec_num = cit.get("section_number")
             if sec_num and sec_num not in seen_sections:
                 seen_sections.add(sec_num)
-                title = cit.get("title", "")
-                section_lines.append(f"- **Section {sec_num}**: {title}")
+                title = cit.get("title") or ""
+                section_lines.append(
+                    format_reference_line(
+                        label=f"Section {sec_num}",
+                        title=title,
+                        page_number=cit.get("page"),
+                    )
+                )
 
         # Add referenced sections
         for sec in ref_sections:
             if sec.section_number not in seen_sections:
                 seen_sections.add(sec.section_number)
-                section_lines.append(f"- **Section {sec.section_number}**: {sec.title}")
+                section_lines.append(
+                    format_reference_line(
+                        label=f"Section {sec.section_number}",
+                        title=sec.title,
+                        page_number=sec.page_number,
+                    )
+                )
 
         if section_lines:
             md_parts.append("#### Sections\n" + "\n".join(section_lines))
 
         # 2. Tables
         if ref_tables:
-            table_lines = [f"- **Table {table.table_id}**: {table.table_name}" for table in ref_tables]
+            table_lines = [
+                format_reference_line(
+                    label=f"Table {table.table_id}",
+                    title=getattr(table, "table_name", None),
+                    page_number=getattr(table, "page_number", None),
+                )
+                for table in ref_tables
+            ]
             md_parts.append("#### Tables\n" + "\n".join(table_lines))
 
         # 3. Figures
         if ref_figures:
-            fig_lines = [f"- **Figure {fig.figure_id}**: {fig.caption}" for fig in ref_figures]
+            fig_lines = [
+                format_reference_line(
+                    label=f"Figure {fig.figure_id}",
+                    title=getattr(fig, "caption", None),
+                    page_number=getattr(fig, "page_number", None),
+                )
+                for fig in ref_figures
+            ]
             md_parts.append("#### Figures\n" + "\n".join(fig_lines))
 
     formatted_answer = "\n\n".join(md_parts)
@@ -381,6 +407,34 @@ def should_resolve_references(state: QueryState) -> str:
 # --------------------------------------------------------------------------- #
 # Helper functions
 # --------------------------------------------------------------------------- #
+def build_reference_url(page_number: Optional[int]) -> Optional[str]:
+    """Return a clickable URL for a reference if configured."""
+    template = settings.reference_url_template
+    if not template or not page_number:
+        return None
+
+    try:
+        return template.format(page=page_number)
+    except Exception as exc:  # pragma: no cover - defensive against bad template
+        logger.warning(
+            "Failed to format reference URL using template '%s': %s",
+            template,
+            exc,
+        )
+        return None
+
+
+def format_reference_line(label: str, title: Optional[str], page_number: Optional[int]) -> str:
+    """Format a markdown bullet with an optional clickable link."""
+    url = build_reference_url(page_number)
+    if url:
+        label = f"[{label}]({url})"
+    line = f"- **{label}**"
+    if title:
+        line += f": {title}"
+    return line
+
+
 def build_extractive_answer(sections: Iterable[SectionResult]) -> str:
     parts = []
     for section in sections:
@@ -404,6 +458,7 @@ def section_to_dict(section: SectionResult) -> Dict:
         "page_number": section.page_number,
         "metadata": section.metadata,
         "score": section.score,
+        "url": build_reference_url(section.page_number),
     }
 
 
@@ -415,6 +470,7 @@ def table_to_dict(table) -> Dict:
         "section_id": table.section_id,
         "markdown": table.markdown,
         "page_number": table.page_number,
+        "url": build_reference_url(getattr(table, "page_number", None)),
     }
 
 
@@ -426,4 +482,5 @@ def figure_to_dict(figure) -> Dict:
         "image_path": figure.image_path,
         "page_number": figure.page_number,
         "caption": figure.caption,
+        "url": build_reference_url(getattr(figure, "page_number", None)),
     }

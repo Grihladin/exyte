@@ -5,11 +5,13 @@ from __future__ import annotations
 import logging
 import time
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import AsyncIterator
 
 from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from rag.api.routes import openai_compat, query, search, sections
 from rag.config import settings
@@ -120,6 +122,19 @@ def create_app() -> FastAPI:
                 "health": "/health",
             },
         }
+
+    # Static files (reference PDFs, etc.)
+    if settings.static_files_dir:
+        static_path = Path(settings.static_files_dir).resolve()
+        if static_path.exists():
+            app.mount(
+                "/static",
+                StaticFiles(directory=str(static_path), check_dir=False),
+                name="static",
+            )
+            logger.info("Serving static files from %s", static_path)
+        else:
+            logger.warning("Static files directory does not exist: %s", static_path)
 
     # Include routers
     app.include_router(openai_compat.router)  # OpenAI-compatible for LibreChat

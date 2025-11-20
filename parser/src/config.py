@@ -14,7 +14,7 @@ TABLE_REGIONS_FILE = OUTPUT_DIR / "table_regions.json"
 JSON_OUTPUT_FILE = OUTPUT_DIR / "parsed_document.json"
 
 # Default PDF parsing settings
-DEFAULT_PDF_PATH = PROJECT_ROOT.parent / "2021_International_Building_Code.pdf"
+DEFAULT_PDF_PATH = PROJECT_ROOT.parent / "static" / "2021_International_Building_Code.pdf"
 DEFAULT_START_PAGE_NUMBER = 32  # Human-friendly numbering
 DEFAULT_END_PAGE_NUMBER = 769
 DEFAULT_START_PAGE_INDEX = DEFAULT_START_PAGE_NUMBER - 1  # Zero-based for extractor

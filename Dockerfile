@@ -32,8 +32,9 @@ RUN apt-get update && apt-get install -y \
 COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
-# Copy application code
+# Copy application code and static assets
 COPY rag/ ./rag/
+COPY static/ ./static/
 
 # Create non-root user
 RUN useradd -m -u 1000 raguser && \
