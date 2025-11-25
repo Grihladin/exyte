@@ -1,6 +1,13 @@
 # Building Code RAG Platform
 
-An end-to-end toolkit for turning the 2021 International Building Code into a searchable Retrieval-Augmented Generation (RAG) assistant.
+This repository implements the **Document Intelligence & Compliance System** and the **Conversational AI Interface & Knowledge Assistant** for a construction-focused AI platform.
+
+- Parses the 2021 International Building Code (IBC) into structured JSON (chapters, sections, tables, figures).
+- Stores the normalized content in a **Postgres + pgvector** database.
+- Exposes a **RAG (Retrieval-Augmented Generation) API** via FastAPI.
+- Integrates with **LibreChat** to provide a chat-based assistant that can answer code/compliance questions with **grounded, cited answers**.
+
+This module acts as the **building code knowledge backbone** that other components (e.g., drawing/blueprint analysis, risk assessment engine) can query for regulatory constraints and explanations.
 
 ---
 
@@ -22,19 +29,6 @@ An end-to-end toolkit for turning the 2021 International Building Code into a se
   - [Chat UI (LibreChat)](#chat-ui-librechat)
     - [LibreChat Integration](#librechat-integration)
 - [LangGraph Workflow Overview](#langgraph-workflow-overview)
-
----
-
-## System Overview
-
-This repository implements the **Document Intelligence & Compliance System** and the **Conversational AI Interface & Knowledge Assistant** for a construction-focused AI platform.
-
-- Parses the 2021 International Building Code (IBC) into structured JSON (chapters, sections, tables, figures).
-- Stores the normalized content in a **Postgres + pgvector** database.
-- Exposes a **RAG (Retrieval-Augmented Generation) API** via FastAPI.
-- Integrates with **LibreChat** to provide a chat-based assistant that can answer code/compliance questions with **grounded, cited answers**.
-
-This module acts as the **building code knowledge backbone** that other components (e.g., drawing/blueprint analysis, risk assessment engine) can query for regulatory constraints and explanations.
 
 ---
 
