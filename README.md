@@ -111,7 +111,7 @@ When the stack is running:
 ## Architecture Overview
 
 ### System Architecture Diagram
-![System Architecture](diagrams/System_Architecture.excalidraw)
+![System Architecture](diagrams/System_Architecture.svg)
 
 
 ### Parsing Pipeline
@@ -121,7 +121,7 @@ When the stack is running:
    - Outputs a single `parsed_document.json` artifact.
 
 ### Search Mechanics
-![Search](diagrams/Search.excalidraw)
+![Search](diagrams/Search.svg)
 
 
 1. **Embedding** (`rag/ingestion/embedder.OpenAIEmbedder`): cached singleton produces query vectors. Deterministic hashing fallback is available when no API key is configured (dev/testing).
@@ -182,7 +182,7 @@ Responses produced by `/query` and `/v1/chat/completions` include Markdown-forma
 ---
 
 ## LangGraph Workflow Overview
-![LangGraph workflow](diagrams/LangGraph.excalidraw)
+![LangGraph workflow](diagrams/LangGraph.svg)
 
 
 - **Analyze Query** (`rag/graph/nodes.py`): categorizes the prompt (factual/procedure/comparison) and locks in the requested strategy (`hybrid` by default or `vector` via `options.search_type`).
