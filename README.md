@@ -12,7 +12,6 @@ This module acts as the **building code knowledge backbone** that other componen
 ---
 
 ## Table of Contents
-- [System Overview](#system-overview)
 - [Quick Start](#quick-start)
   - [Prerequisites](#prerequisites)
   - [Environment Configuration](#environment-configuration)
