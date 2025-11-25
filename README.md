@@ -4,21 +4,10 @@ An end-to-end toolkit for turning the 2021 International Building Code into a se
 
 ---
 
-## System Overview
-
-This repository implements the **Document Intelligence & Compliance System** and the **Conversational AI Interface & Knowledge Assistant** for a construction-focused AI platform.
-
-- Parses the 2021 International Building Code (IBC) into structured JSON (chapters, sections, tables, figures).
-- Stores the normalized content in a **Postgres + pgvector** database.
-- Exposes a **RAG (Retrieval-Augmented Generation) API** via FastAPI.
-- Integrates with **LibreChat** to provide a chat-based assistant that can answer code/compliance questions with **grounded, cited answers**.
-
-This module acts as the **building code knowledge backbone** that other components (e.g., drawing/blueprint analysis, risk assessment engine) can query for regulatory constraints and explanations.
-
----
-
 ## Table of Contents
+- [System Overview](#system-overview)
 - [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
   - [Environment Configuration](#environment-configuration)
   - [Docker Compose](#docker-compose)
   - [Parse the PDF](#parse-the-pdf)
@@ -36,7 +25,27 @@ This module acts as the **building code knowledge backbone** that other componen
 
 ---
 
+## System Overview
+
+This repository implements the **Document Intelligence & Compliance System** and the **Conversational AI Interface & Knowledge Assistant** for a construction-focused AI platform.
+
+- Parses the 2021 International Building Code (IBC) into structured JSON (chapters, sections, tables, figures).
+- Stores the normalized content in a **Postgres + pgvector** database.
+- Exposes a **RAG (Retrieval-Augmented Generation) API** via FastAPI.
+- Integrates with **LibreChat** to provide a chat-based assistant that can answer code/compliance questions with **grounded, cited answers**.
+
+This module acts as the **building code knowledge backbone** that other components (e.g., drawing/blueprint analysis, risk assessment engine) can query for regulatory constraints and explanations.
+
+---
+
 ## Quick Start
+
+### Prerequisites
+
+- Python 3.11+ with [`uv`](https://docs.astral.sh/uv/) installed
+- Docker + Docker Compose
+- Access to an OpenAI API key (deterministic hash fallback used if not set; accuracy drops)
+- Postgres 16 with `pgvector` (auto-provisioned via Compose)
 
 ### Environment Configuration
 
@@ -151,6 +160,39 @@ Both helpers use shared database connections via `rag/database/connection.get_sy
 | `/v1/models` | GET | Lists the custom `building-code-rag` model |
 
 Responses produced by `/query` and `/v1/chat/completions` include Markdown-formatted answers plus a References section.
+
+**Example request (POST `/query`):**
+
+```json
+{
+  "query": "When are fire barriers required for vertical openings?",
+  "options": {
+    "search_type": "hybrid",
+    "max_sections": 5
+  }
+}
+```
+
+**Example response (truncated):**
+
+```json
+{
+  "answer": "Fire barriers are required where ...",
+  "sections": [
+    {
+      "section_number": "707.3",
+      "title": "Fire barriers",
+      "url": "http://localhost:8000/static/2021_International_Building_Code.pdf#page=120"
+    }
+  ],
+  "references": [
+    {
+      "type": "figure",
+      "label": "Figure 707.3.1"
+    }
+  ]
+}
+```
 
 ### Static Document Hosting & Citation Links
 
